@@ -1,0 +1,12 @@
+body{
+    background: radial-gradient(rgb(18, 0, 39), rgb(5, 5, 5));
+}
+.webgl
+{
+  position:absolute;
+  top:0;
+  left:0;
+  outline:none;
+  mix-blend-mode:normal;
+
+}
