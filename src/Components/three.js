@@ -1,12 +1,15 @@
 import React from "react";
 import * as THREE from "three";
 import img from "../images/earthMap2.png";
-import OrbitControls from 'three';
 import '../index.css';
 import './css/three.css'
-import { MTLLoader, OBJLoader } from "/node_modules/three/src/loaders/ObjectLoader.js";
-OBJLoader(THREE);
-import  objGlobe from '../images/Globe/Earth_2k.obj'
+import { OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
+import  objGlobe from '../images/Earth/Earth.obj'
+import  mtlGlobe from '../images/Earth/Earth.mtl'
+
+//import  night_light from '../images/Globe/textures/Night_light_2K.png'
 
 class three extends React.Component {
     componentDidMount() {
@@ -37,18 +40,29 @@ class three extends React.Component {
       material.roughness = 5
       material.color = new THREE.Color(0x292929)
       const sphere = new THREE.Mesh( geometry, material );
-      scene.add( sphere );
+      //scene.add( sphere );
 
-      //Loading 3D object
-      this.THREE = THREE;
-      const objLoader = new this.THREE.OBJLoader();
-      objLoader.load(objGlobe, function(object){
-          object.position.y -=60;
+      //Load 3D object Material (must come first)
+      const mtlloader = new MTLLoader();
+      //mtlloader.setPath('../images/Globe/')
+      mtlloader.load(mtlGlobe, function( materials){
+          materials.preload();
+
+          //Loading 3D object
+          const objLoader = new OBJLoader();
+          objLoader.setMaterials(materials);
+          //objLoader.setPath('../images/Globe/')
+          objLoader.load(objGlobe, function(object){
+          object.position.y = 0;
           scene.add(object);
+        })
       })
+      //Load 3d texture
+      //const globetexture = textureLoader.load(night_light)
+
 
       //camera positions
-      camera.position.z = 100;
+      camera.position.z = 200;
 
       //Auto update (eg when screen minimise)
       window.addEventListener('resize', () =>
@@ -68,15 +82,31 @@ class three extends React.Component {
 
       //Light 1
       const pointLight1 = new THREE.PointLight(0xffffff, 0.2)
-      pointLight1.intensity = 5;
+      pointLight1.intensity = 1;
       pointLight1.position.set(3.95,-10,20)
       scene.add(pointLight1)
 
       //Light 2 w/GUI
       const pointLight2 = new THREE.PointLight(0xffffff, .2)
-      pointLight2.intensity = 5;
+      pointLight2.intensity = .1;
       pointLight2.position.set(-10,4.2,-4)
       scene.add(pointLight2)
+
+      //Light 1 Directional
+      var fillLight = new THREE.DirectionalLight( 0xffffff, .5);
+      fillLight.position.set(-10, 0, 10);
+      //Light 2 Directional
+      var backLight = new THREE.DirectionalLight( 0xffffff, .75);
+      backLight.position.set(-10, 0, 10);
+
+      scene.add(backLight);
+      scene.add(fillLight);
+
+      //Add Mouse controls
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.campingFactor = 0.25;
+      controls.enableZoom = true;
 
       //Animate on mouse move
       document.addEventListener('mousemove', onDocumentMouseMove)
@@ -123,6 +153,7 @@ class three extends React.Component {
       {
         renderer.render(scene, camera);
         window.requestAnimationFrame(animate);
+        controls.update();
         update()
       };
 
