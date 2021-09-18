@@ -1,9 +1,9 @@
-import Three from './Components/three'
-
+import Homepage from './Views/Homepage.js'
+import './index.css'
 function App() {
   return (
     <div className="App">
-      <Three />
+      <Homepage />
     </div>
   );
 }
