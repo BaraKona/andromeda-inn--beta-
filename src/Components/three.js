@@ -3,6 +3,10 @@ import * as THREE from "three";
 import img from "../images/earthMap2.png";
 import OrbitControls from 'three';
 import '../index.css';
+import './css/three.css'
+import { MTLLoader, OBJLoader } from "/node_modules/three/src/loaders/ObjectLoader.js";
+OBJLoader(THREE);
+import  objGlobe from '../images/Globe/Earth_2k.obj'
 
 class three extends React.Component {
     componentDidMount() {
@@ -35,8 +39,16 @@ class three extends React.Component {
       const sphere = new THREE.Mesh( geometry, material );
       scene.add( sphere );
 
+      //Loading 3D object
+      this.THREE = THREE;
+      const objLoader = new this.THREE.OBJLoader();
+      objLoader.load(objGlobe, function(object){
+          object.position.y -=60;
+          scene.add(object);
+      })
+
       //camera positions
-      camera.position.z = 6;
+      camera.position.z = 100;
 
       //Auto update (eg when screen minimise)
       window.addEventListener('resize', () =>
