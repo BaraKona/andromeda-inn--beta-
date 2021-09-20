@@ -9,11 +9,13 @@
   min-height: 70px;
   transition: all .5s ease;
   background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(38, 15, 56, 0.288));
+
 }
 /* .navbar:hover{
   transition: all .5s ease;
   background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(0, 0, 0, 0));
 } */
+
 
 .navbar ul{
 display: flex;

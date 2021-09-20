@@ -1,7 +1,7 @@
 import './css/navbar.css'
 import { Link } from 'react-router-dom'
 
-const navbar = () => {
+export default function navbar() {
     return (
     //  Navigation bar
     <div class = "navbar">
@@ -10,7 +10,10 @@ const navbar = () => {
           <Link class="nav-link active" to="/about">About</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/">Explore</Link>
+          <Link class="nav-link" to="/">Home</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/explore">Explore</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/signup">Login</Link>
@@ -74,5 +77,3 @@ const navbar = () => {
     //     </div>
     // )
 }
-
-export default navbar
