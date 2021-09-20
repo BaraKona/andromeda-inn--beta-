@@ -1,40 +1,43 @@
 .navbar {
-    background: none;
-    background: transparent;
-    color: #fff;
-    /*text-transform: uppercase;*/
-    position: fixed;
-    z-index: 2;
-    min-width: 100%;
-    min-height: 70px;
-  }
-  .navbar:hover{
-    transition: all .5s ease;
-    background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(0, 0, 0, 0));
-  }
+  background: none;
+  background: transparent;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  position: fixed;
+  z-index: 2;
+  min-width: 100%;
+  min-height: 70px;
+  transition: all .5s ease;
+  background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(38, 15, 56, 0.288));
+}
+/* .navbar:hover{
+  transition: all .5s ease;
+  background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(0, 0, 0, 0));
+} */
 
 .navbar ul{
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 30px 0 20px 0;
-  border-bottom: solid;
-  border-width: 1px;
-  margin: 0 min(20%) 0 min(20%);
+display: flex;
+justify-content: center;
+list-style-type: none;
+padding: 30px 0 20px 0;
+border-bottom: solid;
+border-width: 1px;
+margin: 0 min(20%) 0 min(20%);
 }
 .nav-item{
-  padding: 0px 20px 0px 20px;
-  letter-spacing: 2px;
+padding: 0px 20px 0px 20px;
+letter-spacing: 2px;
 }
 
 .nav-link{
-  text-decoration: none;
-  color:white;
+text-decoration: none;
+color:white;
 }
-.navbar a:hover, a:active {
-    border-bottom: solid;
-    border-width: 1px;
-    padding-bottom: 5px;
-    letter-spacing: 5px;
-    /*font-weight: bold;*/
-  }
+.navbar a:hover, .navbar a:active {
+  border-bottom: solid;
+  border-width: 1px;
+  padding-bottom: 5px;
+  letter-spacing: 5px;
+  /*font-weight: bold;*/
+}
+

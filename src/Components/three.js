@@ -10,8 +10,19 @@ import Earth from '../images/Earth/Moon.glb'
 
 //import  night_light from '../images/Globe/textures/Night_light_2K.png'
 
+// const threeGLStyle = {
+//   position:"absolute",
+//   top:"-100px",
+//   left:"0",
+//   outline:"none",
+//   mixBlendMode:"normal",
+//   fontSize: "50px",
+//   maxHeight: "80vh",
+//   zIndex: -10
+
+// }
 class three extends React.Component {
-    componentDidMount() {
+  componentDidMount() {
     //Sizes
       const sizes =
       {
@@ -165,7 +176,7 @@ class three extends React.Component {
     }
     render()
     {
-      return <div ref={ref => (this.mount = ref)} className = ""/>;
+      return <div ref={ref => (this.mount = ref)}/>;
     }
 }
 
