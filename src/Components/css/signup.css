@@ -58,6 +58,7 @@
   .loginContainer:hover{
     border-bottom: solid white;
     border-width: 1px;
+    transition: all 400ms ease-in-out;
   }
 
   .login .loginContainer label {

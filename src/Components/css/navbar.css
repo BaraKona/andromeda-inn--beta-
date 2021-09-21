@@ -41,5 +41,6 @@ color:white;
   padding-bottom: 5px;
   letter-spacing: 5px;
   /*font-weight: bold;*/
+  transition: all 400ms ease-in-out;
 }
 
