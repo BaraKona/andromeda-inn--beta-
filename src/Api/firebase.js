@@ -1,7 +1,7 @@
-import firebase from 'firebase/compat/app'
-import "firebase/compat/auth"
+import firebase from 'firebase'
+// import "firebase/compat/auth"
 
-const app = firebase.initializeApp({
+const fire = firebase.initializeApp({
     apiKey: "AIzaSyBZWWlpZvF9ou5_Zu-nnTpSR6BB6npL8s4",
     authDomain: "andromeda-login-auth-dev-3c5ed.firebaseapp.com",
     projectId: "andromeda-login-auth-dev-3c5ed",
@@ -12,5 +12,5 @@ const app = firebase.initializeApp({
 })
 
 //exports authentication instance imported above
-export const auth = app.auth()
-export default app
+export const auth = fire.auth()
+export default fire
