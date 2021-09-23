@@ -1,8 +1,22 @@
 import './css/navbar.css'
 import { Link } from 'react-router-dom'
 
-export default function navbar() {
-    return (
+ const navbar = ({handleLogOut, hasAccount, setHasAccount, user, setUser, CurrentUser}) => {
+
+  function loginLogout(){
+    const empty = ''
+    if (user == ''){
+      return<li class="nav-item">
+      <Link class="nav-link" to="/signup">Login</Link>
+      </li>
+    }else {
+      return<li class="nav-item">
+      <Link class="nav-link" exact to="/"  onClick={() => {setUser(user == empty)}, handleLogOut}>Log Out</Link>
+    </li>
+    }
+  }
+
+  return (
     //  Navigation bar
     <div class = "navbar">
       <ul class="nav">
@@ -15,9 +29,7 @@ export default function navbar() {
         <li class="nav-item">
           <Link class="nav-link" to="/explore">Explore</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/signup">Login</Link>
-        </li>
+          {loginLogout()}
       </ul>
     </div>
     )
@@ -77,3 +89,4 @@ export default function navbar() {
     //     </div>
     // )
 }
+export default navbar

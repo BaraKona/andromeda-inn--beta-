@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import './css/signup.css'
 
 export default function Signup(props) {
@@ -16,15 +16,6 @@ export default function Signup(props) {
         emailError,
         passwordError,
     } = props;
-
-    // function signInSignOut(props){
-    //     const hasAccount = props.hasAccount;
-    //     if (hasAccount){
-    //         return<><button>Sign in</button><p>Don't have an account ? <span> Sign up</span></p></>
-    //     }else{
-    //         return<><button>Sign up</button><p>Have an account ? <span> Sign in</span> </p></>
-    //     }
-    // }
 
     return (
         <section className = "login">
@@ -44,13 +35,13 @@ export default function Signup(props) {
                     {hasAccount ? (
                         <>
                         <button onClick={handleLogin}> Login </button>
-                        <p>Don't have an account? <span onClick={() => setHasAccount(!hasAccount)}> Register here!
+                        <p>Don't have an account? <span onClick={() => {setHasAccount(!hasAccount);}}> Register here!
                         </span></p>
                         </>
                     ) : (
                         <>
                         <button onClick={handleSignup}> Register </button>
-                        <p>Already have an account? <span onClick={() => setHasAccount(!hasAccount)}> Login here! </span></p>
+                        <p>Already have an account? <span onClick={() => {setHasAccount(!hasAccount);}}> Login here! </span></p>
                         </>
                     )}
                 </div>
