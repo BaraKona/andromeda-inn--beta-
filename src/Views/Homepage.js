@@ -1,5 +1,5 @@
 // import Three from '../Components/three'
-import Navbar from '../Components/navbar'
+import Navbar from '../Components/layout/navbar'
 import LandingFrame from '../Components/landingFrame'
 
 function HomePage() {
