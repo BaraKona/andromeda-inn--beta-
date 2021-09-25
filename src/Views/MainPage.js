@@ -1,11 +1,14 @@
 import React from 'react';
+import {Switch, Route} from 'react-router-dom'
 import Mainbody from '../Components/mainbody.js'
-const MainPage = ({handleLogOut}) => {
+const MainPage = () => {
 
     return(
-        <section className="main">
-            <Mainbody />
-        </section>
+        <Switch>
+            <section className="main">
+                <Mainbody />
+            </section>
+        </Switch>
     );
 };
 
