@@ -34,7 +34,7 @@ export default function Signup() {
     <>
       <section className= "Signup">
         <div className = "signup-container">
-          <h2 className="text-center mb-4">Sign Up</h2>
+          <h2 className="text-center">Sign Up</h2>
           <p className = "errorMsg">{error}</p>
           <div>
             <div id="email">
@@ -53,7 +53,7 @@ export default function Signup() {
               Sign Up
             </button>
           </div>
-          <div className="w-100 text-center mt-2">
+          <div className="w-100 text-center">
             Already have an account? <Link to="/login">Sign in</Link>
           </div>
         </div>
