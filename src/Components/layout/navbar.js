@@ -31,7 +31,7 @@ import { useAuth } from '../../Contexts/AuthContext'
   return (
     //  Navigation bar
     <div class = "navbar">
-      <ul class="nav">
+      <ul class="navbar_maximised">
         <li class="nav-item">
           <Link class="nav-link active" to="/about">About</Link>
         </li>

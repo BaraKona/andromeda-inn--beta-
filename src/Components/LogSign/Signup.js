@@ -54,8 +54,10 @@ export default function Signup() {
               Sign Up
             </button>
           </div>
-          <div className="w-100 text-center">
-            Already have an account? <Link to="/login"><span>Sign in</span></Link>
+          <div className = "bottomContainer">
+            <div className="w-100 text-center">
+              Already have an account? <Link to="/login"><span>Sign in</span></Link>
+            </div>
           </div>
         </div>
       </section>

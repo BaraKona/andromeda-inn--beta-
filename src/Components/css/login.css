@@ -10,12 +10,25 @@
     letter-spacing: 1px;
     background: #603bbb;
     cursor: pointer;
-    margin: 30px 0 0 10px;
+    margin: 30px 0 -20px 0;
   }
   button:hover{
     background: #5433a8;
   }
 
+  .login h1,
+  .signup h1{
+    margin-bottom: -10px;
+    padding-bottom: 10px;
+    border-bottom: solid white 1px;
+    margin-right: 50px;
+    margin-left: 50px;
+    letter-spacing: 2px;
+  }
+  .forgotPassword h1{
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+  }
   .login, .signup,
   .forgotPassword{
     background-image:
@@ -45,7 +58,7 @@
     margin: auto;
     width: 100%;
     max-width: 400px;
-    min-height: 600px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,10 +96,13 @@
     border: none;
     outline: none;
     font-size: 19px;
-    padding: 10px;
+    padding: 10px 0 10px 0 ;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
     letter-spacing: 1px;
+  }
+  input{
+    padding: 100px;
   }
 
   .login .loginContainer .btnContainer
@@ -94,8 +110,13 @@
     width: 100%;
   }
 
-
-  .login .loginContainer .btnContainer p {
+  .login .bottomContainer,
+  .signup .bottomContainer,
+  .forgotPassword .bottomContainer {
+    padding-top: 25px;
+    text-align: right;
+  }
+  .login .loginContainer p {
     text-align: right;
     color: #fff;
   }

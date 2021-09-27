@@ -32,7 +32,7 @@ export default function Login() {
         <div className ="loginContainer">
           <h1 className="login-title">Log In</h1>
           <p className = "errorMsg">{error}</p>
-          <div >
+          <div>
             <div id="email">
               <label>Email</label>
               <input type="email" ref={emailRef} required />
@@ -45,11 +45,13 @@ export default function Login() {
               Log In
             </button>
           </div>
-          <div>
-            <Link to="/forgot-password"> <span>Forgot Password ?</span></Link>
-          </div>
-          <div>
-            Need an account? <Link to="/signup"><span>Sign Up</span></Link>
+          <div className = "bottomContainer">
+            <div>
+              <Link to="/forgot-password"><span>Forgot Password ?</span></Link>
+            </div>
+            <div>
+              Need an account? <Link to="/signup"><span>Sign Up</span></Link>
+            </div>
           </div>
         </div>
       </section>

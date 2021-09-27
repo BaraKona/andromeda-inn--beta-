@@ -42,11 +42,13 @@ export default function ForgotPassword() {
               Reset Password
             </button>
           </div>
-          <div className="w-100 text-center mt-3">
-            <Link to="/login"><span>Login</span></Link>
-          </div>
-          <div className="w-100 text-center mt-2">
-            Need an account? <Link to="/signup"><span>Sign Up</span></Link>
+          <div className = "bottomContainer">
+            <div className="w-100 text-center mt-3">
+              <Link to="/login"><span>Login</span></Link>
+            </div>
+            <div className="w-100 text-center mt-2">
+              Need an account? <Link to="/signup"><span>Sign Up</span></Link>
+            </div>
           </div>
         </div>
       </section>

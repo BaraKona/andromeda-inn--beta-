@@ -1,4 +1,7 @@
 .navbar {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
   background: none;
   background: transparent;
   color: #fff;
@@ -11,13 +14,18 @@
   background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(38, 15, 56, 0.288));
 
 }
+.navbar-toggled {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 /* .navbar:hover{
   transition: all .5s ease;
   background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(0, 0, 0, 0));
 } */
 
 
-.navbar ul{
+ul{
 display: flex;
 justify-content: center;
 list-style-type: none;
@@ -26,19 +34,21 @@ border-bottom: solid;
 border-width: 1px;
 margin: 0 min(20%) 0 min(20%);
 }
+
 .nav-item{
 padding: 0px 20px 0px 20px;
 letter-spacing: 2px;
 }
 
-.logout {
-  align-self: right;
+.logout:hover{
+  color:red;
 }
 
 .nav-link{
 text-decoration: none;
 color:white;
 }
+
 .navbar a:hover, .navbar a:active {
   border-bottom: solid;
   border-width: 1px;
@@ -47,4 +57,3 @@ color:white;
   /*font-weight: bold;*/
   transition: all 400ms ease-in-out;
 }
-
