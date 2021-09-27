@@ -13,15 +13,15 @@ export default function App() {
   return (
 
     <Router>
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <AuthProvider>
-          <Route path="/login" component={SignupPage} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          </AuthProvider>
-        </Switch>
-      </div>
+      <AuthProvider>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/login" component={SignupPage} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          </Switch>
+        </div>
+      </AuthProvider>
     </Router>
 
   );

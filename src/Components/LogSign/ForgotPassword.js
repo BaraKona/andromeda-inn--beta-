@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useAuth } from "../../Contexts/AuthContext"
 import { Link } from "react-router-dom"
+import '../css/login.css'
 
 export default function ForgotPassword() {
   const emailRef = useRef()
@@ -37,18 +38,19 @@ export default function ForgotPassword() {
               <label>Email</label>
               <input type="email" ref={emailRef} required />
             </div>
-            <button disabled={loading} className="w-100" type="submit" onSubmit={handleSubmit}>
+            <button disabled={loading} className="w-100" type="submit" onClick={handleSubmit}>
               Reset Password
             </button>
           </div>
           <div className="w-100 text-center mt-3">
-            <Link to="/login">Login</Link>
+            <Link to="/login"><span>Login</span></Link>
+          </div>
+          <div className="w-100 text-center mt-2">
+            Need an account? <Link to="/signup"><span>Sign Up</span></Link>
           </div>
         </div>
       </section>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
-      </div>
+
     </>
   )
 }

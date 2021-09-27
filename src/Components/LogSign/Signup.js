@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useAuth } from "../../Contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import '../css/login.css'
 
 export default function Signup() {
   const emailRef = useRef()
@@ -32,8 +33,8 @@ export default function Signup() {
 
   return (
     <>
-      <section className= "Signup">
-        <div className = "signup-container">
+      <section className= "signup">
+        <div className = "signupContainer">
           <h2 className="text-center">Sign Up</h2>
           <p className = "errorMsg">{error}</p>
           <div>
@@ -54,7 +55,7 @@ export default function Signup() {
             </button>
           </div>
           <div className="w-100 text-center">
-            Already have an account? <Link to="/login">Sign in</Link>
+            Already have an account? <Link to="/login"><span>Sign in</span></Link>
           </div>
         </div>
       </section>

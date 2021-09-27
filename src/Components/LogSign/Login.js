@@ -45,14 +45,15 @@ export default function Login() {
               Log In
             </button>
           </div>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password">Forgot Password?</Link>
+          <div>
+            <Link to="/forgot-password"> <span>Forgot Password ?</span></Link>
+          </div>
+          <div>
+            Need an account? <Link to="/signup"><span>Sign Up</span></Link>
           </div>
         </div>
       </section>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
-      </div>
+
     </>
   )
 }

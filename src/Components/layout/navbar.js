@@ -1,21 +1,30 @@
 import '../css/navbar.css'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../Contexts/AuthContext'
 
- const navbar = () => {
+ const Navbar = () => {
 
-  // function loginLogout(){
-  //   const empty = ''
-  //   if (if){
-  //     return<li class="nav-item">
-  //     <Link class="nav-link" to="/signup">Login</Link>
-  //     </li>
-  //   }else {
-  //     return<li class="nav-item">
-  //     <Link class="nav-link" exact to="/"  onClick={handleLogOut}>Log Out</Link>
-  //   </li>
-  //   }
-  // }
-
+  const { currentUser } = useAuth();
+  const { logout } = useAuth()
+  function navlog(){
+    if (currentUser !== null){
+          return <>
+            <li class="nav-item">
+              <Link class="nav-link"  to="/dashboard" >Dashboard</Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link"  to="/login" onClick = {logout} >Logout</Link>
+            </li>
+          </>
+    }
+    else {
+        return <>
+          <li class="nav-item">
+            <Link class="nav-link"  to="/login" >Login</Link>
+          </li>
+        </>
+    }
+}
   return (
     //  Navigation bar
     <div class = "navbar">
@@ -29,11 +38,9 @@ import { Link } from 'react-router-dom'
         <li class="nav-item">
           <Link class="nav-link" to="/explore">Explore</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link"  to="/login" >Log in</Link>
-        </li>
+        {navlog()}
       </ul>
     </div>
     )
 }
-export default navbar
+export default Navbar
