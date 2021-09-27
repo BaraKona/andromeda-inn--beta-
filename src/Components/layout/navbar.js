@@ -10,10 +10,13 @@ import { useAuth } from '../../Contexts/AuthContext'
     if (currentUser !== null){
           return <>
             <li class="nav-item">
-              <Link class="nav-link"  to="/dashboard" >Dashboard</Link>
+              <Link class="nav-link"  to="/dashboard"> Dashboard </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link"  to="/login" onClick = {logout} >Logout</Link>
+              <Link class="nav-link"  to="/connect"> Connect </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link logout"  to="/login" onClick = {logout} >Logout</Link>
             </li>
           </>
     }
@@ -36,7 +39,7 @@ import { useAuth } from '../../Contexts/AuthContext'
           <Link class="nav-link" to="/">Home</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/explore">Explore</Link>
+          <Link class="nav-link" to="/">Explore</Link>
         </li>
         {navlog()}
       </ul>
