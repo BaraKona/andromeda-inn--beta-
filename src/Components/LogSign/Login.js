@@ -30,7 +30,7 @@ export default function Login() {
     <>
       <section className ="login">
         <div className ="loginContainer">
-          <h2 className="login-title">Log In</h2>
+          <h1 className="login-title">Log In</h1>
           <p className = "errorMsg">{error}</p>
           <div >
             <div id="email">

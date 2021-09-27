@@ -1,5 +1,4 @@
-import "./css/landingFrame.css"
-import bkimg from '../images/Johannes-Plenio-1080.jpg'
+import "../css/landingFrame.css"
 
 const landingFrame = () => {
     return(

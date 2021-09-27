@@ -30,7 +30,7 @@ export default function ForgotPassword() {
     <>
       <section className = "forgotPassword">
         <div className = "forgotContainer">
-          <h2 className="text-center">Password Reset</h2>
+          <h1 className="text-center">Password Reset</h1>
           <div>
           <p className = "errorMsg">{error}</p>
           <p className = "errorMsg">{message}</p>

@@ -32,6 +32,12 @@
     color:white;
   }
 
+  .login .loginContainer h1,
+  .signup .signupContainer h1,
+  .forgotPassword .forgotContainer h1{
+    text-align: center;
+  }
+
   .login .loginContainer,
   .signup .signupContainer,
   .forgotPassword .forgotContainer {
