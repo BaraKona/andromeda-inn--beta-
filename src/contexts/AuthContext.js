@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import {auth} from '../Api/firebase'
+import {auth} from '../api/firebase'
 // This file allows use to have access our props/states anywhere in our app
 const AuthContext = React.createContext()
 

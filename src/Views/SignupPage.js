@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Switch, Route } from "react-router-dom";
-import Login from '../Components/LogSign/Login.js'
-import Signup from '../Components/LogSign/Signup.js'
-import ForgotPassword from '../Components/LogSign/ForgotPassword.js';
-import Navbar from '../Components/layout/navbar'
+import Login from '../components/logSign/Login.js'
+import Signup from '../components/logSign/Signup.js'
+import ForgotPassword from '../components/logSign/ForgotPassword.js';
+import Navbar from '../components/layout/navbar'
 function SignupPage() {
     return (
       <>
