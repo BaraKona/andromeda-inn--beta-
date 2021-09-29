@@ -1,11 +1,11 @@
 import React from "react"
-import HomePage from './Views/HomePage.js'
-import Dashboard from './Views/MainPage.js'
+import HomePage from './views/HomePage.js'
+import Dashboard from './views/MainPage.js'
 import './index.css'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SignupPage from './Views/SignupPage.js';
-import { AuthProvider } from './Contexts/AuthContext.js';
-import PrivateRoute from "./Route/PrivateRoute.js";
+import SignupPage from './views/SignupPage.js';
+import { AuthProvider } from './contexts/AuthContext.js';
+import PrivateRoute from "./route/PrivateRoute.js";
 
 
 export default function App() {

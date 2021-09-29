@@ -1,5 +1,5 @@
-import Navbar from '../Components/layout/navbar'
-import LandingFrame from '../Components/Homepage/landingFrame'
+import Navbar from '../components/layout/navbar'
+import LandingFrame from '../components/homepage/landingFrame'
 
 function HomePage() {
   return (

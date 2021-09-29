@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { useAuth } from "../../Contexts/AuthContext"
+import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import '../css/login.css'
 
