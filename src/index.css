@@ -1,0 +1,25 @@
+html, body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--lightmodecolour);
+    --darkmodecolour: rgb(30, 26, 31);
+    --lightmodecolour: rgb(241, 241, 241);
+  }
+  .webgl
+  {
+    position:absolute;
+    z-index: -5;
+    top:0;
+    left:0;
+    outline:none;
+    mix-blend-mode:normal;
+  }
+
+
+
+
+
