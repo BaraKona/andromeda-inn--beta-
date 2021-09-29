@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom'
-import Mainbody from '../Components/mainbody.js'
+import Mainbody from '../Components/MainPage/mainbody.js'
 import Navbar from '../Components/layout/navbar'
 const MainPage = () => {
 
