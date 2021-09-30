@@ -19,7 +19,7 @@ import img from '../../images/icons/magicbook2.svg'
               <Link class="nav-link" to="/">Explore</Link>
             </li>
             <li class = "nav-item">
-              <img src ={img}></img>
+              <Link class="nav-link" to="/"><img src ={img}></img></Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link"  to="/dashboard"> Dashboard </Link>
@@ -41,7 +41,7 @@ import img from '../../images/icons/magicbook2.svg'
           <Link class="nav-link" to="/">Home</Link>
         </li>
         <li class = "nav-item">
-          <img src ={img}></img>
+          <Link class="nav-link" to="/"><img src ={img}></img></Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/">Explore</Link>
