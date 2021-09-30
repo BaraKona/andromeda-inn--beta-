@@ -1,7 +1,7 @@
   .landing{
-    --purple: rgb(34, 41, 82);
-    --pink: rgb(172, 42, 165);
-    --redish: rgb(148, 34, 62);
+    --purple: rgb(9, 40, 211);
+    --pink: rgb(189, 38, 181);
+    --redish: rgb(206, 14, 62);
     --text: rgb(221, 221, 221);
     margin: 0;
     --color-text: #111;
@@ -65,18 +65,25 @@
       color: var(--color-link-hover);
       outline: none;
   }
+  .buttonContainer{
+    margin-top: 75px;
+  }
   .button {
       pointer-events: auto;
       cursor: pointer;
       background: transparent;
       border: none;
       padding: min(50px) 0 0 0;
-      margin: min(10px) min(10px) auto min(10px);
+      /* margin: min(10px) min(10px) auto min(10px); */
+      margin: auto;
       font-family: inherit;
       font-size: inherit;
       position: relative;
-      display: inline-block;
+      display: inline-flex;
       border-radius: 50px;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
   }
 
   .button::before,
@@ -145,4 +152,9 @@
     border-bottom-left-radius:50% min(80px);
     border-bottom-right-radius:50% min(80px);
     }
+  }
+  img{
+    width: 50px;
+    height: 50px;
+    /* transform: rotate(135deg) */
   }

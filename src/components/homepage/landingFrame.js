@@ -1,5 +1,5 @@
 import "../css/landingFrame.css"
-
+import img from '../../images/icons/key.svg'
 const landingFrame = () => {
     return(
         <div className = "landing">
@@ -10,7 +10,7 @@ const landingFrame = () => {
                 <p> A collaboration place for creatives. <br></br> Join writers from all corners of the literary world and collaborate together
                 inside the inn.
                 </p>
-                <div className= "button">
+                <div className= "buttonContainer">
                     <a className = "button button--dione">
                         <span><span>Explore</span></span>
                     </a>
@@ -19,13 +19,12 @@ const landingFrame = () => {
                     </a>
                 </div>
                 <p className ="floating">Journey in! </p>
-                <p className = "floating arrow"> &#8595; </p>
+                <p className = "floating arrow"><img src={img}></img></p>
+
             </div>
             </div>
         </div>
-
     )
-
 }
 
 export default landingFrame

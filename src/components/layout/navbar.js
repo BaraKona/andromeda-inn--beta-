@@ -1,7 +1,7 @@
 import '../css/navbar.css'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
-
+import img from '../../images/icons/magicbook2.svg'
  const Navbar = () => {
 
   const { currentUser } = useAuth();
@@ -9,6 +9,18 @@ import { useAuth } from '../../contexts/AuthContext'
   function navlog(){
     if (currentUser !== null){
           return <>
+            <li class="nav-item">
+              <Link class="nav-link active" to="/about">About</Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/">Home</Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/">Explore</Link>
+            </li>
+            <li class = "nav-item">
+              <img src ={img}></img>
+            </li>
             <li class="nav-item">
               <Link class="nav-link"  to="/dashboard"> Dashboard </Link>
             </li>
@@ -22,9 +34,21 @@ import { useAuth } from '../../contexts/AuthContext'
     }
     else {
         return <>
-          <li class="nav-item">
+        <li class="nav-item">
+          <Link class="nav-link active" to="/about">About</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/">Home</Link>
+        </li>
+        <li class = "nav-item">
+          <img src ={img}></img>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/">Explore</Link>
+        </li>
+        <li class="nav-item">
             <Link class="nav-link"  to="/login" >Login</Link>
-          </li>
+        </li>
         </>
     }
 }
@@ -32,15 +56,6 @@ import { useAuth } from '../../contexts/AuthContext'
     //  Navigation bar
     <div class = "navbar">
       <ul class="navbar_maximised">
-        <li class="nav-item">
-          <Link class="nav-link active" to="/about">About</Link>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/">Home</Link>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/">Explore</Link>
-        </li>
         {navlog()}
       </ul>
     </div>
