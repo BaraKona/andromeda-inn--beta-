@@ -1,5 +1,5 @@
 import "../css/landingFrame.css"
-import img from '../../images/icons/key.svg'
+import icon from '../../images/icons/key.svg'
 const landingFrame = () => {
     return(
         <div className = "landing">
@@ -19,7 +19,7 @@ const landingFrame = () => {
                     </a>
                 </div>
                 <p className ="floating">Journey in! </p>
-                <p className = "floating arrow"><img src={img}></img></p>
+                <p className = "floating arrow"><img src={icon}></img></p>
 
             </div>
             </div>

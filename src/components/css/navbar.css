@@ -9,7 +9,7 @@
   position: fixed;
   z-index: 2;
   min-width: 100%;
-  min-height: 70px;
+  min-height: 60px;
   transition: all .5s ease;
   background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(38, 15, 56, 0.288));
 
@@ -29,7 +29,6 @@ ul{
 display: flex;
 justify-content: center;
 list-style-type: none;
-padding: 20px 0 0 0;
 border-bottom: solid;
 border-width: 1px;
 margin: 0 min(20%) 0 min(20%);
@@ -38,6 +37,7 @@ margin: 0 min(20%) 0 min(20%);
 .nav-item{
 padding: 0px 20px 0px 20px;
 letter-spacing: 2px;
+align-self: center;
 }
 
 .logout:hover{
