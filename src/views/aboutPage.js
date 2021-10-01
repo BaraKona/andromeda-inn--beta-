@@ -8,7 +8,7 @@ export default function aboutPage() {
         <div className="aboutPage">
             <Navbar />
             <AboutAndro />
-            {/* <AboutMe /> */}
+            <AboutMe />
         </div>
     )
 }
