@@ -1,5 +1,40 @@
-.aboutAndro{
+.aboutFrame{
     margin-top: 0;
-    background-color: #191970;
-    height: 70vh;
+    background-image: url(./../../images/2k_stars_milky_way.jpg);
+    min-height: 40vh;
+    font-family: inherit;
+}
+.title1{
+    justify-content: center;
+    align-items: center;
+}
+
+.title1 h1{
+    padding-top: 150px;
+    text-align: center;
+    margin-top: 0px;
+    vertical-align: middle;
+    font-size: clamp(20px, 70px, 10vw);
+    font-weight:300;
+    color: white;
+}
+.flex_items {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(114, 62, 62);
+}
+/*selects direct children*/
+.flex_items > *{
+    flex: 1 1 200px;
+    min-height: 300px;
+    border-radius: 10px;
+    margin: 25px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.col{
+    box-sizing: border-box;
+    background-color: rgb(114, 62, 62);
 }
