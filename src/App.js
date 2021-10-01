@@ -18,10 +18,10 @@ export default function App() {
       <AuthProvider>
         <div className="App">
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/login" component={SignupPage} />
-            <Route path="/about" component={AboutPage} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/" component={HomePage}/>
+            <Route path="/login" component={SignupPage}/>
+            <Route path="/about" component={AboutPage}/>
+            <PrivateRoute exact path="/dashboard" component={Dashboard}/>
           </Switch>
         </div>
       </AuthProvider>
