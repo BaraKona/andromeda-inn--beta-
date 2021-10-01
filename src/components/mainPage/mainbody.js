@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import '../css/dashboard.css'
 
 export default function Dashboard() {
   const [error, setError] = useState("")
@@ -21,19 +22,16 @@ export default function Dashboard() {
   return (
     <>
       <div>
-        <div className="main-container">
-          <h2 className="text-center mb-4">Profile</h2>
+        <div className="dashboard">
+          <div className="dashboardContainer">
+            <h1> DASHBOARD in progress...</h1>
+          </div>
           <p className = "errorMsg">{error}</p>
           {/* <strong>Email:</strong> {currentUser.email} */}
-          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
+          {/* <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
             Update Profile
-          </Link>
+          </Link> */}
         </div>
-      </div>
-      <div className="w-100 text-center mt-2">
-        <button variant="link" onClick={handleLogout}>
-          Log Out
-        </button>
       </div>
     </>
   )
