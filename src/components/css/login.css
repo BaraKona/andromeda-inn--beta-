@@ -24,10 +24,12 @@
     margin-right: 50px;
     margin-left: 50px;
     letter-spacing: 2px;
+    font-size: 3em;
   }
   .forgotPassword h1{
     padding-bottom: 20px;
     letter-spacing: 2px;
+    font-size: 3em;
   }
   .login, .signup,
   .forgotPassword{
