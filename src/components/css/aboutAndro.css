@@ -64,12 +64,15 @@
     background-clip: text;
     color: transparent;
     letter-spacing: 2px;
-    transition: 1s;
+    transition: 1s ease-in-out;
+    border-bottom: solid white 1px;
+    padding-bottom: 5px;
+    margin: 0 min(15%) 0 min(15%);
 }
 .col:hover .cardImg{
     width: 60px;
     height: 60px;
-    transition: 1s;
+    transition: all 1s ease-in-out;
 }
 .cardText{
     padding: 30px;
