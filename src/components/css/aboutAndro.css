@@ -7,26 +7,42 @@
 .title1{
     justify-content: center;
     align-items: center;
+    color: white;
+    text-align: center;
 }
 
 .title1 h1{
     padding-top: 150px;
-    text-align: center;
     margin-top: 0px;
     vertical-align: middle;
-    font-size: clamp(20px, 70px, 10vw);
+    font-size: clamp(20px, 70px, 8vw);
     font-weight:300;
-    color: white;
+}
+.wHub{
+    letter-spacing: 3px;
+    font-size: 20px;
+    margin-top: -30px;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+.wHub:hover::after{
+    content: "with some extra spice→";
+    background-image: -webkit-linear-gradient(40deg,
+    rgb(189, 38, 181), rgb(206, 14, 62), rgb(9, 40, 211));
+    background-clip: text;
+    color: transparent;
 }
 .flex_items {
-    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     background-image: url(./../../images/2k_stars_milky_way.jpg);
+    text-align: center;
 }
 /*selects direct children*/
 .flex_items > *{
-    flex: 1 1 200px;
+    flex: 1 1 300px;
     min-height: 300px;
     border-radius: 10px;
     margin: 25px;
@@ -39,7 +55,29 @@
     background:linear-gradient(to bottom,
     rgb(14, 6, 31), rgba(38, 15, 56, 0.288));
 }
+.col h2{
+    font-size: 30px;
+}
+.col:hover h2{
+    background-image: -webkit-linear-gradient(40deg,
+    rgb(189, 38, 181), rgb(206, 14, 62), rgb(9, 40, 211));
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    transition: 1s;
+}
+.col:hover .cardImg{
+    width: 60px;
+    height: 60px;
+    transition: 1s;
+}
 .cardText{
-    padding: 20px;
+    padding: 30px;
     color:white;
+    font-size: 1.2em;
+}
+
+.cardImg{
+    height: 30px;
+    width: 30px;
 }
