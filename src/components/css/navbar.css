@@ -74,16 +74,23 @@
   .navbar{
     padding-top: 20px;
   }
-  .navbarUl{
+  .navbar ul{
     flex-direction: column;
     border-bottom: none;
     width: 100%;
+    padding: 50px 0 0 0;
+    border-bottom: 1px solid white;
+    margin-left: 20%;
+    margin-right:20%;
   }
-  .navbar li{
+  .nav-link{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav-item{
     width:100%;
     text-align: center;
     padding: 10px;
-    margin-left:-40px;
     display:none;
   }
   #centerImg1{
@@ -98,5 +105,8 @@
   }
   .nav-item.active {
     display:flex;
+  }
+  .navbar.active{
+    background:linear-gradient(to bottom, rgb(14, 6, 31), rgba(38, 15, 56, 0.966));
   }
 }
