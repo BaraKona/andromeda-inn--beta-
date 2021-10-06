@@ -11,15 +11,15 @@ const landingFrame = () => {
                 inside the inn.
                 </p>
                 <div className= "buttonContainer">
-                    <a className = "button button--dione">
+                    <a href="/#" className = "button button--dione">
                         <span><span>Explore</span></span>
                     </a>
-                    <a className = "button button--dione">
+                    <a href="/#" className = "button button--dione">
                         <span><span>Connect</span></span>
                     </a>
                 </div>
                 <p className ="floating">Journey in! </p>
-                <p className = "floating arrow"><img src={icon}></img></p>
+                <p className = "floating arrow"><img src={icon} alt="centerIcon"></img></p>
 
             </div>
             </div>

@@ -25,7 +25,7 @@ export default function aboutAndro() {
                             will soon litter the books. Assemble other creatives and weave epic stories
                             with scope larger than any one person could on their own.
                         </p>
-                        <img className="cardImg" src={cauldron}/>
+                        <img className="cardImg" src={cauldron} alt="cauldron"/>
                     </div>
                 </div>
                 <div className = "col">
@@ -36,7 +36,7 @@ export default function aboutAndro() {
                             will facilitate collaborative writing. <br/><br/>Sounds technical right?
                             Do not despair, we will walk you through it.
                         </p>
-                        <img className="cardImg" src={witch} />
+                        <img className="cardImg" src={witch} alt="witch"/>
                     </div>
                 </div>
                 <div className = "col">
@@ -46,7 +46,7 @@ export default function aboutAndro() {
                             other creatives. Use these to inspire you to craft your own story, or even better! Join them
                             in their journey and perhaps the story will expand to new heights.
                         </p>
-                        <img className="cardImg" src={globe}/>
+                        <img className="cardImg" src={globe} alt="globe"   />
                     </div>
                 </div>
                 {/* <div className = "col">

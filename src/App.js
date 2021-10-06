@@ -1,6 +1,6 @@
 import React from "react"
 import HomePage from './views/HomePage.js'
-import Dashboard from './views/MainPage.js'
+import Dashboard from './views/dashboardPage.js'
 import SignupPage from './views/SignupPage.js'
 import AboutPage from './views/aboutPage.js'
 import './index.css'

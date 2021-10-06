@@ -1,10 +1,9 @@
 import '../css/navbar.css'
-import React, {ReactDOM} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import img from '../../images/icons/magicbook2.svg'
  const Navbar = () => {
-
   const { currentUser } = useAuth();
   const { logout } = useAuth();
 
@@ -21,7 +20,7 @@ import img from '../../images/icons/magicbook2.svg'
               <Link class="nav-link" to="/">Explore</Link>
             </li>
             <li class = "nav-item">
-              <Link class="nav-link" to="/" id="centerImg"><img src ={img}></img></Link>
+              <Link class="nav-link" to="/" id="centerImg"><img src ={img} alt="centerImg"></img></Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link"  to="/dashboard"> Dashboard </Link>
@@ -43,7 +42,7 @@ import img from '../../images/icons/magicbook2.svg'
           <Link class="nav-link" to="/">Home</Link>
         </li>
         <li class = "nav-item">
-          <Link class="nav-link" to="/" id="centerImg"><img src ={img}></img></Link>
+          <Link class="nav-link" to="/" id="centerImg"><img src ={img} alt="centerImg"></img></Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/">Explore</Link>
@@ -60,7 +59,7 @@ import img from '../../images/icons/magicbook2.svg'
       <ul class="navbarUl">
         {navlog()}
       </ul>
-      <div id="centerImg1" ><img src ={img}></img></div>
+      <div id="centerImg1" ><img src ={img} alt="centerImg"></img></div>
     </div>
     )
 }
