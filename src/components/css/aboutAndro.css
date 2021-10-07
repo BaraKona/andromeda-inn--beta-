@@ -3,6 +3,7 @@
     background-image: url(./../../images/2k_stars_milky_way.jpg);
     min-height: 40vh;
     font-family: inherit;
+    margin-bottom: 100px;
 }
 .title1{
     justify-content: center;

@@ -16,7 +16,6 @@ export default function aboutAndro() {
                 </div>
             </div>
             <div className = "flex_items">
-
                 <div className = "col">
                     <div className="cardText">
                         <h2> Collaborate </h2>
