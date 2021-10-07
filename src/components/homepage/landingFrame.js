@@ -19,7 +19,7 @@ const landingFrame = () => {
                     </a>
                 </div>
                 <p className ="floating">Journey in! </p>
-                <p className = "floating arrow"><img src={icon} alt="centerIcon"></img></p>
+                <p className = "floating arrow"><img className="iconImg" src={icon} alt="centerIcon"></img></p>
 
             </div>
             </div>

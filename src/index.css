@@ -1,12 +1,21 @@
 html, body {
-    margin: 0;
-    font-family: Palatino, URW Palladio L, serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: var(--lightmodecolour);
-    --darkmodecolour: rgb(30, 26, 31);
-    --lightmodecolour: rgb(241, 241, 241);
-
+  margin: 0;
+  font-family: Palatino, URW Palladio L, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--lightmodecolour);
+  --darkmodecolour: rgb(30, 26, 31);
+  --lightmodecolour: rgb(241, 241, 241);
+  --purple: rgb(9, 40, 211);
+  --pink: rgb(189, 38, 181);
+  --redish: rgb(206, 14, 62);
+  --text: rgb(221, 221, 221);
+  --color-text: #111;
+  --color-number: #999;
+  --color-bg: rgb(226, 226, 226);
+  --color-link: #1352d1;
+  --color-link-hover: rgb(61, 19, 44);
+  --font: Palatino, URW Palladio L, serif;
   }
   /* width */
 ::-webkit-scrollbar {

@@ -3,6 +3,8 @@ import '../css/aboutAndro.css'
 import cauldron from '../../images/icons/cauldron.svg'
 import witch from '../../images/icons/witch2.svg'
 import globe from '../../images/icons/globe.svg'
+import apple from '../../images/icons/apple.svg'
+import andrew from '../../images/andrew-seaman.jpg'
 
 export default function aboutAndro() {
     return (
@@ -10,9 +12,15 @@ export default function aboutAndro() {
             <div className = "aboutFrame">
                 <div className = "androContainer">
                     <div className = "title1">
-                        <h1> What is Andromeda Inn ?</h1>
+                        <h1> What is <span>Andromeda Inn </span> ?</h1>
                         <p className="wHub"> A writing hub </p>
                     </div>
+                </div>
+            </div>
+            <div className = "problemStatement">
+                <div className = "problemContainer">
+                    <img className="appleIcon floating" src={apple} alt="cauldron"/>
+                    <h1> The Problem </h1>
                 </div>
             </div>
             <div className = "flex_items">
@@ -65,6 +73,7 @@ export default function aboutAndro() {
                     </div>
                 </div> */}
             </div>
+                {/* <div className ="whiteLine"></div> */}
 
         </section>
     )
