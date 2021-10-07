@@ -13,7 +13,7 @@ const Navbar = () => {
   const switchMobile = () =>{
     setMobileMenu( mobileMenu === "" ? "active" : "" )
   }
-  function navlog(){
+  function loggedIn(){
     if (currentUser !== null){
           return <>
             <li className={`nav-item ${mobileMenu}`}>
@@ -26,7 +26,7 @@ const Navbar = () => {
               <Link className="nav-link" to="/">Explore</Link>
             </li>
             <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link" to="/" id="centerImg"><img src ={img} alt="centerImg"></img></Link>
+              <Link className="nav-link" to="/" id="centerImg"><img className="iconImg" src ={img} alt="centerImg"></img></Link>
             </li>
             <li className={`nav-item ${mobileMenu}`}>
               <Link className="nav-link"  to="/dashboard"> Dashboard </Link>
@@ -35,7 +35,7 @@ const Navbar = () => {
               <Link className="nav-link"  to="/connect"> Connect </Link>
             </li>
             <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link logout"  to="/login" id="loginButton" onClick = {logout} >Logout</Link>
+              <Link className="nav-link logout"  to="/login" id="logout" onClick = {logout} >Logout</Link>
             </li>
           </>
     }
@@ -48,7 +48,7 @@ const Navbar = () => {
           <Link className="nav-link" to="/">Home</Link>
         </li>
         <li className={`nav-item ${mobileMenu}`}>
-          <Link className="nav-link" to="/" id="centerImg"><img src ={img} alt="centerImg"></img></Link>
+          <Link className="nav-link" to="/" id="centerImg"><img className="iconImg" src ={img} alt="centerImg"></img></Link>
         </li>
         <li className={`nav-item ${mobileMenu}`}>
           <Link className="nav-link" to="/">Explore</Link>
@@ -63,9 +63,9 @@ const Navbar = () => {
     //  Navigation bar
     <div className = {`navbar ${mobileMenu}`}>
       <ul>
-        {navlog()}
+        {loggedIn()}
       </ul>
-      <div id="centerImg1" onClick={switchMobile}><img  src ={img} alt="centerImg1"></img></div>
+      <div id="centerImg1" onClick={switchMobile}><img className="iconImg" src ={img} alt="centerImg1"></img></div>
     </div>
     )
 }

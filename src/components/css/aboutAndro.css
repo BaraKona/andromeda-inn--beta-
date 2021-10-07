@@ -1,14 +1,18 @@
+.aboutAndro{
+    background-color: rgb(204, 204, 204);
+}
 .aboutFrame{
     margin-top: 0;
     background-image: url(./../../images/2k_stars_milky_way.jpg);
-    min-height: 40vh;
+    background-attachment: fixed;
+    min-height: 50vh;
     font-family: inherit;
-    margin-bottom: 100px;
+    padding-bottom: 2%;
 }
 .title1{
     justify-content: center;
     align-items: center;
-    color: white;
+    color:white;
     text-align: center;
 }
 
@@ -16,9 +20,11 @@
     padding-top: 150px;
     margin-top: 0px;
     vertical-align: middle;
-    font-size: clamp(20px, 70px, 8vw);
+    font-size: clamp(45px, 80px, 8vw);
     font-weight:300;
+    color: var(--text);
 }
+
 .wHub{
     letter-spacing: 3px;
     font-size: 20px;
@@ -39,7 +45,9 @@
     display: flex;
     flex-wrap: wrap;
     background-image: url(./../../images/2k_stars_milky_way.jpg);
+    background-attachment: fixed;
     text-align: center;
+    padding-top: 50px;
 }
 /*selects direct children*/
 .flex_items > *{
@@ -47,9 +55,6 @@
     min-height: 300px;
     border-radius: 10px;
     margin: 25px;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .col{
     box-sizing: border-box;
@@ -80,8 +85,60 @@
     color:white;
     font-size: 1.2em;
 }
-
 .cardImg{
     height: 30px;
     width: 30px;
+}
+.problemStatement{
+    min-height: 130vh;
+    margin-top: -100px;
+    border-top-left-radius: 60% min(100px);
+    border-top-right-radius: 60% min(100px);
+    background-color: rgb(247, 247, 247);
+    width:100%;
+}
+/* .whiteLine{
+    position: absolute;
+    top: 1450px;
+    background-color: white;
+    z-index: 10;
+    height: 200px;
+    width: 100%;
+    border-bottom-left-radius: 50% min(100px);
+    border-bottom-right-radius: 50% min(100px);
+} */
+.problemContainer{
+    padding: 100px 50px 0 50px;
+
+}
+.problemContainer h1{
+    text-align: center;
+    padding: 0;
+    font-size: clamp(40px, 65px, 8vw);
+    /* text-orientation: upright;
+    writing-mode: vertical-rl;
+    text-transform: uppercase; */
+    background-image: url(./../../images/2k_stars_milky_way.jpg);
+    background-attachment: fixed;
+    background-clip: text;
+    color:transparent;
+    text-decoration: underline;
+    letter-spacing: 3px;
+}
+.problemContainer p{
+    padding-top: 10px;
+}
+.appleIcon{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: -50px auto 10px auto;
+}
+
+
+@media only screen and (max-width: 700px){
+    .problemContainer h1{
+        text-orientation:sideways;
+        writing-mode:horizontal-tb;
+    }
 }

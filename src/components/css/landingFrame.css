@@ -1,15 +1,5 @@
   .landing{
-    --purple: rgb(9, 40, 211);
-    --pink: rgb(189, 38, 181);
-    --redish: rgb(206, 14, 62);
-    --text: rgb(221, 221, 221);
     margin: 0;
-    --color-text: #111;
-    --color-number: #999;
-    --color-bg: rgb(226, 226, 226);
-    --color-link: #1352d1;
-    --color-link-hover: rgb(61, 19, 44);
-    --font: Palatino, URW Palladio L, serif;
     background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0)),
     url(./../../images/Johannes-Plenio-1080.jpg);
@@ -153,7 +143,7 @@
     border-bottom-right-radius:50% min(80px);
     }
   }
-  img{
+  .iconImg{
     width: 50px;
     height: 50px;
     /* transform: rotate(135deg) */
