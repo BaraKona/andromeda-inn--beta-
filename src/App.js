@@ -6,7 +6,6 @@ import AboutPage from './views/aboutPage.js'
 import ConnectPage from './views/connectPage'
 import './index.css'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import { AuthProvider } from './contexts/AuthContext.js';
 import PrivateRoute from "./route/PrivateRoute.js";
 
@@ -14,7 +13,6 @@ import PrivateRoute from "./route/PrivateRoute.js";
 export default function App() {
 
   return (
-
     <Router>
       <AuthProvider>
         <div className="App">
@@ -28,7 +26,6 @@ export default function App() {
         </div>
       </AuthProvider>
     </Router>
-
   );
 }
 
