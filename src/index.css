@@ -32,7 +32,6 @@ html, body {
   background-image: -webkit-linear-gradient(40deg, var(--purple), var(--purple), var(--purplish));
 }
 
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;

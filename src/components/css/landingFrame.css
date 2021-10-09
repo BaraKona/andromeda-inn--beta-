@@ -10,6 +10,7 @@
     -moz-osx-font-smoothing: grayscale;
     border-bottom-left-radius:50% min(150px);
     border-bottom-right-radius:50% min(150px);
+    height: 80vh;
   }
   .landing-text{
     text-align: center;
