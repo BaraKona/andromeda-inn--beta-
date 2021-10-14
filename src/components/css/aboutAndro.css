@@ -203,8 +203,19 @@
     .aboutText{grid-template-rows: 500px 500px 500px; grid-row-gap: 200px;}
     .flex_items {margin: 50px 0;}
 }
-@media only screen and (max-width: 420px){
+@media only screen and (max-width: 450px){
     .aboutText{grid-template-rows: 500px 500px 500px; grid-row-gap: 250px;}
     .aboutFrame{height: 70vh}
 }
-
+@media only screen and (max-width: 410px){
+    .aboutText{grid-template-rows: 500px 500px 500px; grid-row-gap: 270px;}
+}
+@media only screen and (max-width: 390px){
+    .aboutText{grid-template-rows: 500px 500px 500px; grid-row-gap: 350px;}
+}
+@media only screen and (max-width: 340px){
+    .aboutText{grid-template-rows: 500px 500px 500px; grid-row-gap: 400px;}
+}
+@media only screen and (max-width: 300px){
+    .aboutText{grid-template-rows: 500px 500px 500px; grid-row-gap: 450px;}
+}
