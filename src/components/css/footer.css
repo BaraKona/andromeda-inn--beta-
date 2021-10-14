@@ -1,11 +1,13 @@
 .footer{
     width: 100%;
-    min-height: 15vh;
+    min-height: 10vh;
     background: linear-gradient(rgb(14, 6, 31), rgb(20, 4, 46)) ;
     position: relative;
-    margin-top: auto;
+    margin-bottom:-100px;
 }
 .footer p {
+    margin-top: auto;
+    margin-bottom: auto;
     color: white;
     letter-spacing: 2px;
     text-align: center;
@@ -13,7 +15,7 @@
 .footerContainer{
     /* background: radial-gradient(rgb(16, 3, 37), rgb(20, 4, 46)); */
     height: inherit;
-    min-height: 8vh;
+    min-height: 2vh;
     margin: auto 10%;
     padding-top: 10px;
     display:flex;

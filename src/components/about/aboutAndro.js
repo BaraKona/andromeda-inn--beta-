@@ -20,10 +20,60 @@ export default function aboutAndro() {
             <div className = "problemStatement">
                 <div className = "problemContainer">
                     <img className="appleIcon floating" src={apple} alt="cauldron"/>
-                    <h1> The Problem </h1>
+                    <h1 className = "hCh1"> The Problem </h1>
                 </div>
+                <div className = "quote">
+                    <p> "So here is why I write what I do: We all have futures. We all have
+                        pasts. We all have stories. And we all, every single one of us, no
+                        matter who we are and no matter what’s
+                        been taken from us or what poison we’ve internalized or how hard we’ve had to work to expel
+                        it<br/> –– we all get to dream."</p>
+                </div>
+                <hr className = "hr"/>
+                <div className = "aboutText">
+                    <div className = "aboutT1">
+                        <p>
+                            Eiusmod ex ipsum dolore labore dolor anim mollit eu sit
+                            nostrud. Laboris quis amet consequat sit. In aliquip aliquip
+                            excepteur officia. Aliqua excepteur ipsum Lorem nostrud
+                            cillum commodo ad magna occaecat esse voluptate. Laborum
+                            ea reprehenderit minim in ad aliquip sit irure fugiat
+                            consequat irure excepteur consequat. Consequat aliquip eu
+                            ipsum commodo. <br/><br/>
+                            Eiusmod ex ipsum dolore labore dolor anim mollit eu sit
+                            nostrud. Laboris quis amet consequat sit. In aliquip aliquip
+                            excepteur officia. Aliqua excepteur ipsum Lorem nostrud
+                            cillum commodo ad magna occaecat esse voluptate. Laborum
+                            ea reprehenderit minim in ad aliquip sit irure fugiat
+                            consequat irure excepteur consequat. Consequat aliquip eu
+                            ipsum commodo.
+                        </p>
+                    </div>
+                    <div className = "aboutT2">
+                        <p>
+                            Eiusmod ex ipsum dolore labore dolor anim mollit eu sit
+                            nostrud. Laboris quis amet consequat sit. In aliquip aliquip
+                            excepteur officia. Aliqua excepteur ipsum Lorem nostrud
+                            cillum commodo ad magna occaecat esse voluptate. Laborum
+                            ea reprehenderit minim in ad aliquip sit irure fugiat
+                            consequat irure excepteur consequat. Consequat aliquip eu
+                            ipsum commodo. <br/><br/>
+                            Eiusmod ex ipsum dolore labore dolor anim mollit eu sit
+                            nostrud. Laboris quis amet consequat sit. In aliquip aliquip
+                            excepteur officia. Aliqua excepteur ipsum Lorem nostrud
+                            cillum commodo ad magna occaecat esse voluptate. Laborum
+                            ea reprehenderit minim in ad aliquip sit irure fugiat
+                            consequat irure excepteur consequat. Consequat aliquip eu
+                            ipsum commodo.
+                        </p>
+                    </div>
+                    <div className = "aboutT3" />
+                </div>
+                <hr />
+                <h1 className = "hCh1"> The Solution </h1>
             </div>
             <div className = "flex_items">
+
                 <div className = "col">
                     <div className="cardText">
                         <h2> Collaborate </h2>
@@ -56,25 +106,7 @@ export default function aboutAndro() {
                         <img className="cardImg" src={globe} alt="globe"   />
                     </div>
                 </div>
-                {/* <div className = "col">
-                    <div className="cardText">
-                        Laboris dolor tempor cillum veniam nisi et
-                        commodo non voluptate mollit pariatur ea amet.
-                        Eiusmod aute ad officia ad ullamco excepteur id dolore.
-                        Fugiat cupidatat elit minim duis id.
-                    </div>
-                </div>
-                <div className = "col">
-                    <div className="cardText">
-                        Laboris dolor tempor cillum veniam nisi et
-                        commodo non voluptate mollit pariatur ea amet.
-                        Eiusmod aute ad officia ad ullamco excepteur id dolore.
-                        Fugiat cupidatat elit minim duis id.
-                    </div>
-                </div> */}
             </div>
-                {/* <div className ="whiteLine"></div> */}
-
         </section>
     )
 }

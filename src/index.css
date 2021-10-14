@@ -36,7 +36,9 @@ html, body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+hr{
+  width: 50%;
+}
 
 
 

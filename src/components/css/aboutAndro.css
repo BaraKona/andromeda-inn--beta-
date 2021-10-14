@@ -1,5 +1,5 @@
 .aboutAndro{
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(247, 247, 247);
 }
 .aboutFrame{
     margin-top: 0;
@@ -20,7 +20,7 @@
     padding-top: 150px;
     margin-top: 0px;
     vertical-align: middle;
-    font-size: clamp(45px, 80px, 8vw);
+    font-size: clamp(60px, 80px, 8vw);
     font-weight:300;
     color: var(--text);
 }
@@ -44,14 +44,12 @@
 .flex_items {
     display: flex;
     flex-wrap: wrap;
-    background-image: url(./../../images/2k_stars_milky_way.jpg);
-    background-attachment: fixed;
     text-align: center;
-    padding-top: 50px;
+    margin: 50px 5%;
 }
 /*selects direct children*/
 .flex_items > *{
-    flex: 1 1 300px;
+    flex: 1 1 400px;
     min-height: 300px;
     border-radius: 10px;
     margin: 25px;
@@ -59,10 +57,10 @@
 .col{
     box-sizing: border-box;
     background:linear-gradient(to bottom,
-    rgb(14, 6, 31), rgba(38, 15, 56, 0.288));
+    rgb(0, 0, 0), rgb(14, 6, 31));
 }
 .col h2{
-    font-size: 30px;
+    font-size: 35px;
 }
 .col:hover h2{
     background-image: -webkit-linear-gradient(40deg,
@@ -83,38 +81,28 @@
 .cardText{
     padding: 30px;
     color:white;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 .cardImg{
     height: 30px;
     width: 30px;
 }
 .problemStatement{
-    min-height: 130vh;
+    min-height: 150vh;
     margin-top: -100px;
     border-top-left-radius: 60% min(100px);
     border-top-right-radius: 60% min(100px);
     background-color: rgb(247, 247, 247);
     width:100%;
 }
-/* .whiteLine{
-    position: absolute;
-    top: 1450px;
-    background-color: white;
-    z-index: 10;
-    height: 200px;
-    width: 100%;
-    border-bottom-left-radius: 50% min(100px);
-    border-bottom-right-radius: 50% min(100px);
-} */
 .problemContainer{
     padding: 100px 50px 0 50px;
 
 }
-.problemContainer h1{
+.hCh1{
     text-align: center;
     padding: 0;
-    font-size: clamp(40px, 65px, 8vw);
+    font-size: clamp(50px, 65px, 8vw);
     /* text-orientation: upright;
     writing-mode: vertical-rl;
     text-transform: uppercase; */
@@ -122,7 +110,6 @@
     background-attachment: fixed;
     background-clip: text;
     color:transparent;
-    text-decoration: underline;
     letter-spacing: 3px;
 }
 .problemContainer p{
@@ -134,11 +121,80 @@
     display: block;
     margin: -50px auto 10px auto;
 }
+.quote{
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1%;
+}
+.quote p{
+    font-size: clamp(16px, 35px, 40px);
+    margin: 50px 5%;
+}
+.aboutText{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px 800px;
+    grid-column-gap: 2%;
+    grid-row-gap: 40px;
+    font-size: 25px;
+    margin: 50px 5%;
+    text-align: justify;
+}
+.aboutText .aboutT1{
+    grid-column: 1;
+    grid-row: 1;
+}
+.aboutText .aboutT2{
+    grid-column: 2;
+    grid-row: 1;
+}
+.aboutText .aboutT3{
+    grid-column: 1 / 3;
+    grid-row: 2;
+    background-image: url('../../images/yannick-pulver-hopX_jpVtRM-unsplash.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
 
-
-@media only screen and (max-width: 700px){
-    .problemContainer h1{
-        text-orientation:sideways;
-        writing-mode:horizontal-tb;
+@media only screen and (max-width: 1450px){
+    .aboutText{
+        grid-row-gap: 120px;
     }
+}
+@media only screen and (max-width: 1200px){
+    .aboutText{
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 300px 400px;
+        grid-row-gap: 50px;
+        text-align: center;
+    }
+    .aboutText .aboutT1{ grid-column: 1; grid-row: 1}
+    .aboutText .aboutT2{ grid-column: 1; grid-row: 2}
+    .aboutText .aboutT3{ grid-column: 1; grid-row: 3}
+}
+@media only screen and (max-width: 1020px){
+    .aboutText{grid-row-gap: 70px;}
+}
+@media only screen and (max-width: 860px){
+    .aboutText{grid-row-gap: 100px;}
+}
+@media only screen and (max-width: 750px){
+    .aboutText{grid-row-gap: 120px;}
+}
+@media only screen and (max-width: 720px){
+    .aboutText{grid-row-gap: 150px;}
+}
+@media only screen and (max-width: 660px){
+    .aboutText{ grid-row-gap: 180px;}
+}
+@media only screen and (max-width: 620px){
+    .aboutText{grid-row-gap: 210px;}
+}
+@media only screen and (max-width: 590px){
+    .aboutText{grid-row-gap: 250px;}
+}
+@media only screen and (max-width: 555px){
+    .aboutText{grid-row-gap: 300px;}
 }
