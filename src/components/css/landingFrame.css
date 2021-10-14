@@ -5,7 +5,7 @@
     url(./../../images/Johannes-Plenio-1080.jpg);
     background-repeat: no-repeat;
     background-position-y: 0;
-    background-size: 100%;
+    background-size: 100% cover;
     background-position-x: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
