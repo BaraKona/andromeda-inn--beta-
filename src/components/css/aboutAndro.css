@@ -191,6 +191,7 @@
 }
 @media only screen and (max-width: 620px){
     .aboutText{grid-row-gap: 210px;}
+    .aboutFrame{height: 60vh}
 }
 @media only screen and (max-width: 590px){
     .aboutText{grid-row-gap: 250px;}
@@ -198,3 +199,12 @@
 @media only screen and (max-width: 555px){
     .aboutText{grid-row-gap: 300px;}
 }
+@media only screen and (max-width: 510px){
+    .aboutText{grid-template-rows: 500px 500px 500px; grid-row-gap: 200px;}
+    .flex_items {margin: 50px 0;}
+}
+@media only screen and (max-width: 420px){
+    .aboutText{grid-template-rows: 500px 500px 500px; grid-row-gap: 250px;}
+    .aboutFrame{height: 70vh}
+}
+

@@ -44,8 +44,15 @@
 }
 
 @media only screen and (max-width: 950px){
-
     .footerContainer img{ margin: auto 10px; }
     .footerContainer a { margin: auto 10px; }
     .footerContainer { margin: auto 2% }
+}
+
+@media only screen and (max-width: 600px){
+
+    .footerContainer{
+        flex-direction: column;
+    }
+    .footerContainer img{ margin: auto auto }
 }
