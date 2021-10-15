@@ -67,10 +67,12 @@ export default function aboutAndro() {
                             ipsum commodo.
                         </p>
                     </div>
-                    <div className = "aboutT3" />
                 </div>
+                <div className = "aboutT3" />
                 <hr />
-                <h1 className = "hCh1"> The Solution </h1>
+                <div className = "solution">
+                    <h1 className = "hCh1"> The Solution </h1>
+                </div>
             </div>
             <div className = "flex_items">
 
@@ -107,6 +109,7 @@ export default function aboutAndro() {
                     </div>
                 </div>
             </div>
+            <hr />
         </section>
     )
 }
