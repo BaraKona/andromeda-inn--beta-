@@ -30,6 +30,7 @@ export default function Login() {
   return (
     <>
       <section className ="login">
+        <div className = "loginBackground" />
         <div className ="loginContainer">
           <h1 className="login-title">Log In</h1>
           <p className = "errorMsg">{error}</p>

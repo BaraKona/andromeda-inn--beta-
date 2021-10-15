@@ -82,6 +82,9 @@
     padding: 30px;
     color:white;
     font-size: 1.5em;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .cardImg{
     height: 30px;
@@ -102,7 +105,7 @@
 .hCh1{
     text-align: center;
     padding: 0;
-    font-size: clamp(50px, 65px, 8vw);
+    font-size: clamp(55px, 65px, 8vw);
     /* text-orientation: upright;
     writing-mode: vertical-rl;
     text-transform: uppercase; */
@@ -128,7 +131,7 @@
     padding: 1%;
 }
 .quote p{
-    font-size: clamp(16px, 35px, 40px);
+    font-size: clamp(16px, 30px, 40px);
     margin: 50px 5%;
 }
 .aboutText{

@@ -1,179 +1,150 @@
 
 
-  button {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 15px 0;
-    color: #fff;
-    font-size: 16px;
-    letter-spacing: 1px;
-    background: #603bbb;
-    cursor: pointer;
-    margin: 30px 0 -20px 0;
-  }
-  button:hover{
-    background: #5433a8;
-  }
+button {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: #603bbb;
+  cursor: pointer;
+  margin: 30px 0 -20px 0;
+}
+button:hover{
+  background: #5433a8;
+}
 
-  .login h1,
-  .signup h1{
-    margin-bottom: -10px;
-    padding-bottom: 10px;
-    border-bottom: solid white 1px;
-    margin-right: 50px;
-    margin-left: 50px;
-    letter-spacing: 2px;
-    font-size: 3em;
-  }
-  .forgotPassword h1{
-    padding-bottom: 20px;
-    letter-spacing: 2px;
-    font-size: 3em;
-  }
-  .login, .signup,
-  .forgotPassword{
-    background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0)),
-    url(./../../images/Johannes-Plenio-1080.jpg);
-    border-bottom-right-radius:150% min(100px);
-    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.3);
-    background-repeat: no-repeat;
-    background-position-y: 0  ;
-    background-position-x: center;
-    min-width: 400px;
-    min-height: 100vh;
-    display: flex;
-    color:white;
-  }
+.login h1,
+.signup h1{
+  margin-bottom: -10px;
+  padding-bottom: 10px;
+  border-bottom: solid white 1px;
+  margin-right: 50px;
+  margin-left: 50px;
+  letter-spacing: 2px;
+  font-size: 3em;
+}
+.forgotPassword h1{
+  padding-bottom: 20px;
+  letter-spacing: 2px;
+  font-size: 3em;
+}
 
-  .login .loginContainer h1,
-  .signup .signupContainer h1,
-  .forgotPassword .forgotContainer h1{
-    text-align: center;
-  }
+.login, .signup,
+.forgotPassword{
+  background-image:
+  linear-gradient(to bottom, rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0)),
+  url(./../../images/Johannes-Plenio-1080.jpg);
+  box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.3);
+  background-repeat: no-repeat;
+  background-position-y: 0  ;
+  background-position-x: center;
+  min-width: 400px;
+  min-height: 100vh;
+  display: flex;
+  color:white;
+}
 
-  .login .loginContainer,
-  .signup .signupContainer,
-  .forgotPassword .forgotContainer {
-    padding: 60px;
-    margin: auto;
-    width: 100%;
-    max-width: 400px;
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: radial-gradient(
-      ellipse at left bottom,
-      rgba(22, 24, 47, 1) 0%,
-      rgba(38, 20, 72, 0.9) 59%,
-      rgb(14, 6, 31)
-    );
-    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.6);
-  }
+.login .loginContainer h1,
+.signup .signupContainer h1,
+.forgotPassword .forgotContainer h1{
+  text-align: center;
+}
 
-  .loginContainer:hover,
-  .signupContainer:hover,
-  .forgotContainer:hover{
-    border-bottom: solid white;
-    border-width: 1px;
-    transition: all 400ms ease-in-out;
-  }
+.login .loginContainer,
+.signup .signupContainer,
+.forgotPassword .forgotContainer {
+  padding: 60px;
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(
+    ellipse at left bottom,
+    rgba(22, 24, 47, 1) 0%,
+    rgba(38, 20, 72, 0.9) 59%,
+    rgb(14, 6, 31)
+  );
+  border-radius: 10px;
+  box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.6);
+}
 
-  .login .loginContainer label,
-  .signup .signupContainer label,
-  .forgotPassword .forgotContainer label {
-    color: white;
-    margin: 14px 0;
-    display: block;
-    font-size: 22px;
-    line-height: 1;
-  }
+.loginContainer:hover,
+.signupContainer:hover,
+.forgotContainer:hover{
+  border-bottom: solid white;
+  border-width: 1px;
+  transition: all 400ms ease-in-out;
+}
 
-  .login .loginContainer input,
-  .signup .signupContainer input,
-  .forgotPassword .forgotContainer input {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 19px;
-    padding: 10px 0 10px 0 ;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    letter-spacing: 1px;
-  }
-  input{
-    padding: 100px;
-  }
+.login .loginContainer label,
+.signup .signupContainer label,
+.forgotPassword .forgotContainer label {
+  color: white;
+  margin: 14px 0;
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+}
 
-  .login .loginContainer .btnContainer
+.login .loginContainer input,
+.signup .signupContainer input,
+.forgotPassword .forgotContainer input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  padding: 10px 0 10px 0 ;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  letter-spacing: 1px;
+}
+input{
+  padding: 100px;
+}
+
+.login .loginContainer .btnContainer
+{
+  width: 100%;
+}
+
+.login .bottomContainer,
+.signup .bottomContainer,
+.forgotPassword .bottomContainer {
+  padding-top: 25px;
+  text-align: right;
+}
+.login .loginContainer p {
+  text-align: right;
+  color: #fff;
+}
+
+.login .loginContainer span,
+.signup .signupContainer span,
+.forgotPassword .forgotContainer span {
+  color: yellow;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+}
+
+.login .loginContainer span:hover,
+.signup .signupContainer span:hover,
+.forgotPassword .forgotContainer span:hover {
+  color: red;
+}
+
+.login .loginContainer .errorMsg,
+.signup .signupContainer .errorMsg,
+.forgotPassword .forgotContainer .errorMsg
   {
-    width: 100%;
-  }
-
-  .login .bottomContainer,
-  .signup .bottomContainer,
-  .forgotPassword .bottomContainer {
-    padding-top: 25px;
-    text-align: right;
-  }
-  .login .loginContainer p {
-    text-align: right;
-    color: #fff;
-  }
-
-  .login .loginContainer span,
-  .signup .signupContainer span,
-  .forgotPassword .forgotContainer span {
-    color: yellow;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin-left: 5px;
-    cursor: pointer;
-    transition: all 400ms ease-in-out;
-  }
-
-  .login .loginContainer span:hover,
-  .signup .signupContainer span:hover,
-  .forgotPassword .forgotContainer span:hover {
-    color: red;
-  }
-
-  .login .loginContainer .errorMsg,
-  .signup .signupContainer .errorMsg,
-  .forgotPassword .forgotContainer .errorMsg
-   {
-    color: red;
-    font-size: 16px;
-  }
-/*
-  .hero {
-    width: 100%;
-    min-height: 100vh;
-    background: radial-gradient(
-      ellipse at left bottom,
-      rgba(22, 24, 47, 1) 0%,
-      rgba(38, 20, 72, 0.9) 59%,
-      rgba(17, 27, 75, 0.9) 100%
-    );
-  } */
-
-  /* .hero nav {
-    background: #603bbb;
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .hero nav h2 {
-    color: #fff;
-  }
-
-  .hero nav button {
-    width: 86px;
-    padding: 8px 0;
-    background: #3a2b58;
-  } */
+  color: red;
+  font-size: 16px;
+}

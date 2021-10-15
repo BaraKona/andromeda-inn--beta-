@@ -14,9 +14,9 @@ const landingFrame = () => {
                     <a href="/#" className = "button button--dione">
                         <span><span>Explore</span></span>
                     </a>
-                    <a href="/#" className = "button button--dione">
+                    {/* <a href="/#" className = "button button--dione">
                         <span><span>Connect</span></span>
-                    </a>
+                    </a> */}
                 </div>
                 <p className ="floating">Journey in! </p>
                 <p className = "floating arrow"><img className="iconImg" src={icon} alt="centerIcon"></img></p>

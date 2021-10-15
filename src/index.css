@@ -5,7 +5,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--lightmodecolour);
   --darkmodecolour: rgb(30, 26, 31);
-  --lightmodecolour: rgb(241, 241, 241);
+  --lightmodecolour: rgb(247, 247, 247);
   --purple: rgb(9, 40, 211);
   --pink: rgb(189, 38, 181);
   --redish: rgb(206, 14, 62);

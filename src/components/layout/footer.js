@@ -14,6 +14,7 @@ function mainFooter() {
                 <Link to="/contact"> Contact us</Link>
                 <Link to="/terms"> Terms </Link>
             </div>
+            <hr />
             <p> Default Copyright stuff </p>
         </section>
     )

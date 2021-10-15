@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../css/aboutAndro.css'
 import cauldron from '../../images/icons/cauldron.svg'
 import witch from '../../images/icons/witch2.svg'
@@ -105,7 +106,7 @@ export default function aboutAndro() {
                             other creatives. Use these to inspire you to craft your own story, or even better! Join them
                             in their journey and perhaps the story will expand to new heights.
                         </p>
-                        <img className="cardImg" src={globe} alt="globe"   />
+                        <Link to="/"><img className="cardImg" src={globe} alt="globe"/></Link>
                     </div>
                 </div>
             </div>

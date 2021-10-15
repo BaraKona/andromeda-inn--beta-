@@ -23,9 +23,6 @@
     justify-content: center;
     text-align: center;
     letter-spacing: 2px;
-    border-top: 2px solid white;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
 }
 
 .footerContainer img{ margin: auto 40px; }
@@ -38,9 +35,8 @@
     color: white;
 }
 .footerContainer a:hover{
-    border-bottom: solid white 1px;
+    letter-spacing: 5px;
     transition: ease-in-out 400ms;
-    padding-bottom: 5px;
 }
 
 @media only screen and (max-width: 950px){
