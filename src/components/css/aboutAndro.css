@@ -56,8 +56,10 @@
 }
 .col{
     box-sizing: border-box;
-    background:linear-gradient(to bottom,
-    rgb(0, 0, 0), rgb(14, 6, 31));
+    /* background:linear-gradient(to bottom,
+    rgb(0, 0, 0), rgb(14, 6, 31)); */
+    background-image: url(./../../images/2k_stars_milky_way.jpg);
+    background-attachment: fixed;
 }
 .col h2{
     font-size: 35px;
