@@ -31,10 +31,10 @@ export default function Login() {
     <>
       <section className ="login">
         <div className = "loginBackground" />
-        <div className ="loginContainer">
+        <div className ="loginContainer" >
           <h1 className="login-title">Log In</h1>
           <p className = "errorMsg">{error}</p>
-          <div>
+          <form onSubmit={handleSubmit}>
             <div id="email">
               <label>Email</label>
               <input type="email" ref={emailRef} required />
@@ -43,10 +43,10 @@ export default function Login() {
               <label>Password</label>
               <input type="password" ref={passwordRef} required />
             </div>
-            <button disabled={loading} className="w-100" type="submit" onClick={handleSubmit}>
+            <button disabled={loading} className="w-100" type="submit">
               Log In
             </button>
-          </div>
+          </form>
           <div className = "bottomContainer">
             <div>
               <Link to="/forgot-password"><span>Forgot Password ?</span></Link>

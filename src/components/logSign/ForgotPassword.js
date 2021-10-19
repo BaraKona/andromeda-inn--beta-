@@ -31,17 +31,17 @@ export default function ForgotPassword() {
       <section className = "forgotPassword">
         <div className = "forgotContainer">
           <h1 className="text-center">Password Reset</h1>
-          <div>
+          <form onSubmit={handleSubmit}>
           <p className = "errorMsg">{error}</p>
           <p className = "errorMsg">{message}</p>
             <div id="email">
               <label>Email</label>
               <input type="email" ref={emailRef} required />
             </div>
-            <button disabled={loading} className="w-100" type="submit" onClick={handleSubmit}>
+            <button disabled={loading} className="w-100" type="submit">
               Reset Password
             </button>
-          </div>
+          </form>
           <div className = "bottomContainer">
             <div className="w-100 text-center mt-3">
               <Link to="/login"><span>Login</span></Link>

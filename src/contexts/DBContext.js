@@ -10,23 +10,14 @@ export function useData() {
 
 export function DataProvider({ children }) {
 
-  function writeUserData(userId, name, email, imageUrl) {
-    const db = getDatabase();
-      set(ref(db, 'users/' + userId), {
-        username: name,
-        email: email,
-        profile_picture : imageUrl
-      });
-    }
-
 
   const dataValue = {
-    writeUserData
+
   }
 
   return (
     <DataContext.Provider value={dataValue}>
-      {!loading && children}
+      {children}
     </DataContext.Provider>
   )
 }

@@ -23,7 +23,7 @@ export default function Signup() {
       setError("")
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
-      history.push("/login")
+      history.push("/")
     } catch {
       setError("Failed to create an account")
     }
@@ -37,7 +37,7 @@ export default function Signup() {
         <div className = "signupContainer">
           <h1 className="text-center">Sign Up</h1>
           <p className = "errorMsg">{error}</p>
-          <div>
+          <form onSubmit={handleSubmit}>
             <div id="email">
               <label>Email</label>
               <input type="email" ref={emailRef} required />
@@ -50,10 +50,10 @@ export default function Signup() {
               <label>Password Confirmation</label>
               <input type="password" ref={passwordConfirmRef} required />
             </div>
-            <button disabled={loading} className="w-100" type="submit" onClick={handleSubmit}>
+            <button disabled={loading} className="w-100" type="submit">
               Sign Up
             </button>
-          </div>
+          </form>
           <div className = "bottomContainer">
             <div className="w-100 text-center">
               Already have an account? <Link to="/login"><span>Sign in</span></Link>
