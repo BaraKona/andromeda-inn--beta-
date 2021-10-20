@@ -32,8 +32,8 @@ export default function ForgotPassword() {
         <div className = "forgotContainer">
           <h1 className="text-center">Password Reset</h1>
           <form onSubmit={handleSubmit}>
-          <p className = "errorMsg">{error}</p>
-          <p className = "errorMsg">{message}</p>
+            <p className = "errorMsg">{error}</p>
+            <p className = "errorMsg">{message}</p>
             <div id="email">
               <label>Email</label>
               <input type="email" ref={emailRef} required />

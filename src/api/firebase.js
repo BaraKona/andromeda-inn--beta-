@@ -16,4 +16,4 @@ const fire = firebase.initializeApp({
 //exports authentication instance imported above
 export const auth = fire.auth()
 export const db = fire.database()
-export default firebase
+export default fire

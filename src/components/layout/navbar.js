@@ -15,29 +15,29 @@ const Navbar = () => {
   }
   function loggedIn(){
     if (currentUser !== null){
-          return <>
-            <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link active" to="/about">About</Link>
-            </li>
-            <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link" to="/">Home</Link>
-            </li>
-            <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link" to="/"> Explore</Link>
-            </li>
-            <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link" to="/" id="centerImg"><img className="iconImg" src ={img} alt="centerImg"></img></Link>
-            </li>
-            <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link"  to="/dashboard"> Dashboard </Link>
-            </li>
-            <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link"  to="/connect"> Connect </Link>
-            </li>
-            <li className={`nav-item ${mobileMenu}`}>
-              <Link className="nav-link logout"  to="/login" id="logout" onClick = {logout} >Logout</Link>
-            </li>
-          </>
+      return <>
+        <li className={`nav-item ${mobileMenu}`}>
+          <Link className="nav-link active" to="/about">About</Link>
+        </li>
+        <li className={`nav-item ${mobileMenu}`}>
+          <Link className="nav-link" to="/">Home</Link>
+        </li>
+        <li className={`nav-item ${mobileMenu}`}>
+          <Link className="nav-link" to="/"> Explore</Link>
+        </li>
+        <li className={`nav-item ${mobileMenu}`}>
+          <Link className="nav-link" to="/" id="centerImg"><img className="iconImg" src ={img} alt="centerImg"></img></Link>
+        </li>
+        <li className={`nav-item ${mobileMenu}`}>
+          <Link className="nav-link"  to="/dashboard"> Dashboard </Link>
+        </li>
+        <li className={`nav-item ${mobileMenu}`}>
+          <Link className="nav-link"  to="/connect"> Connect </Link>
+        </li>
+        <li className={`nav-item ${mobileMenu}`}>
+          <Link className="nav-link logout"  to="/login" id="logout" onClick = {logout} >Logout</Link>
+        </li>
+      </>
     }
     else {
         return <>
@@ -56,7 +56,7 @@ const Navbar = () => {
         <li className={`nav-item ${mobileMenu}`}>
             <Link className="nav-link"  to="/login" id="loginButton" >Login</Link>
         </li>
-        </>
+      </>
     }
 }
   return (
