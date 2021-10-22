@@ -11,9 +11,10 @@ const landingFrame = () => {
                 inside the inn.
                 </p>
                 <div className= "buttonContainer">
-                    <a href="/#" className = "button button--dione">
+                    <button class="button-57" role="button"><span class="text">Explore</span><span> Don't Get Lost </span></button>
+                    {/* <a href="/#" className = "button button--dione">
                         <span><span>Explore</span></span>
-                    </a>
+                    </a> */}
                     {/* <a href="/#" className = "button button--dione">
                         <span><span>Connect</span></span>
                     </a> */}
@@ -23,6 +24,7 @@ const landingFrame = () => {
 
             </div>
             </div>
+
         </div>
     )
 }

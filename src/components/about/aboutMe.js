@@ -1,10 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../css/aboutAndro.css'
-export default function aboutMe() {
+import axios from 'axios'
+
+export default function AboutMe() {
+    useEffect(() => {
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then((res) => {
+            console.log(res)
+        })
+    },[])
+
     return (
         <div className = "aboutMe">
             <div className = "aboutMeContainer">
-                <h1></h1>
+                <h1> Hi</h1>
             </div>
         </div>
     )
