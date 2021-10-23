@@ -93,4 +93,5 @@
 }
 @media only screen and (max-width: 490px) {
     .profile{margin-left: 0}
+    .profileText p:nth-child(2){font-size: 1.05rem;}
 }
