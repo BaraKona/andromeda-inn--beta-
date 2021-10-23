@@ -36,6 +36,19 @@ export function AuthProvider({ children }) {
     return currentUser.updatePassword(password)
   }
 
+  function displayName() {
+    if (currentUser.displayName === null){
+      const displayName = 'Unknown'
+      return displayName}
+    else {return currentUser.displayName}
+  }
+  function displayImg() {
+    if (currentUser.photoURL === null){
+      const photoURL = 'https://res.cloudinary.com/andromeda-inn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1635003692/images/marin-tulard-QdD8NwVjlGU-unsplash_ehbg4w.jpg'
+      return photoURL}
+    else {return currentUser.photoURL}
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
@@ -52,7 +65,9 @@ export function AuthProvider({ children }) {
     logout,
     resetPassword,
     updateEmail,
-    updatePassword
+    updatePassword,
+    displayName,
+    displayImg
   }
 
   return (
