@@ -160,3 +160,8 @@
 .solution h1{
     margin-top: 5%;
 }
+@media only screen and (max-width: 500px){
+    .aboutFrame{
+        min-height: 70vh;
+    }
+}
