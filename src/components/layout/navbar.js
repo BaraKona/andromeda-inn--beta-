@@ -6,8 +6,7 @@ import img from '../../images/icons/magicbook2.svg'
 
 
 const Navbar = () => {
-  const { currentUser } = useAuth();
-  const { logout } = useAuth();
+  const { currentUser, logout, displayImg, displayName} = useAuth();
   const [mobileMenu, setMobileMenu] = useState("");
 
   const switchMobile = () =>{
@@ -64,7 +63,10 @@ const Navbar = () => {
     <div className = {`navbar ${mobileMenu}`}>
       <ul>
         {loggedIn()}
+
       </ul>
+      {/* <p>Hi {displayName()}</p>
+      <img src = {displayImg()} className="profileIcon"></img> */}
       <div id="centerImg1" onClick={switchMobile}><img className="iconImg" src ={img} alt="centerImg1"></img></div>
     </div>
     )

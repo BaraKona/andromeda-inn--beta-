@@ -39,6 +39,8 @@
     color: rgb(231, 231, 231);
 }
 .profileIcon{
+    display:block;
+    margin: auto auto;
     border-radius: 50%;
     width: 45px;
     height: 45px;

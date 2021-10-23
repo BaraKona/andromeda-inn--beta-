@@ -17,8 +17,20 @@ const { currentUser, logout, displayImg, displayName } = useAuth()
                         <p><span>Writer</span>{' '}-{' '}<span>Consumer</span>{' '}-{' '}<span>World Builder</span></p>
                     </div>
                 </div>
+                <hr/>
                 <div className = "editProfile">
-
+                    <div className = "profileInfo">
+                        <div className = "profileText"><p> Display Name </p><p>{displayName()}</p></div>
+                        <button> Edit </button>
+                    </div>
+                    <div className = "profileInfo">
+                        <div className = "profileText"><p> Email </p><p>{currentUser.email}</p></div>
+                        <button> Edit </button>
+                    </div>
+                    <div className = "profileInfo">
+                        <div className = "profileText"><p> Password </p> <p>*************</p></div>
+                        <button> Change </button>
+                    </div>
                 </div>
             </div>
         </section>
