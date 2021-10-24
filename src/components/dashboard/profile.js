@@ -1,10 +1,52 @@
-import React from 'react';
-import {Switch} from 'react-router-dom'
+import React, {useState, useRef} from 'react';
 import {useAuth} from '../../contexts/AuthContext'
 import '../css/profile.css'
 
 const Profile = () => {
-const { currentUser, logout, displayImg, displayName } = useAuth()
+const { currentUser, logout, displayImg, displayName, updateProfile } = useAuth()
+const displayRef = useRef()
+const [error, setError] = useState("")
+const [loading, setLoading] = useState(false)
+const [input, setInput] = useState(false);
+const [displayed, setDisplayed] = useState(<p>{displayName()}</p>);
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+
+        try {
+        setError("")
+        setLoading(true)
+        await updateProfile(displayRef.current.value)
+        } catch {
+        setError("failed to update Profile")
+        console.log(error)
+        }
+
+        setLoading(false)
+    }
+    const edit = () => {
+        console.log('pressed edit')
+        if (input === true){
+            setDisplayed(<p>{displayName()}</p>)
+            setInput(!input)
+            console.log(input)
+        }
+        else {
+            setDisplayed(<input type="text" className ="profileInput" placeholder={displayName()} ref={displayRef}/>)
+            setInput(!input)
+            console.log(input)
+        }
+        // setInput (input == <p>{displayName()}</p> ? <input type="email" placeholder={displayName()}/> : <p>{displayName()}</p>)
+    }
+    function buttonText(){
+        if (input === true){
+            return('Save')
+        }
+        else {
+            return('edit')
+        }
+    }
+
     return(
         <>
         <section className = "profile">
@@ -19,18 +61,18 @@ const { currentUser, logout, displayImg, displayName } = useAuth()
                 </div>
                 <hr/>
                 <div className = "editProfile">
-                    <div className = "profileInfo">
-                        <div className = "profileText"><p> Display Name </p><p>{displayName()}</p></div>
-                        <button> Edit </button>
-                    </div>
-                    <div className = "profileInfo">
+                    <form className = "profileInfo" onSubmit={handleSubmit}>
+                        <div className = "profileText"><p> Display Name </p>{displayed}</div>
+                        <button onClick={edit}> {buttonText()}  </button>
+                    </form>
+                    <form className = "profileInfo">
                         <div className = "profileText"><p> Email </p><p>{currentUser.email}</p></div>
-                        <button> Edit </button>
-                    </div>
-                    <div className = "profileInfo">
+                        <button> {buttonText()}  </button>
+                    </form>
+                    <form className = "profileInfo">
                         <div className = "profileText"><p> Password </p> <p>*************</p></div>
-                        <button> Change </button>
-                    </div>
+                        <button> {buttonText()} </button>
+                    </form>
                 </div>
             </div>
         </section>

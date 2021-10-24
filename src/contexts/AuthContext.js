@@ -35,7 +35,10 @@ export function AuthProvider({ children }) {
   function updatePassword(password) {
     return currentUser.updatePassword(password)
   }
-
+  function updateProfile(displayName){
+    currentUser.displayName = displayName
+    return currentUser.displayName
+  }
   function displayName() {
     if (currentUser.displayName === null){
       const displayName = 'Unknown'
@@ -67,7 +70,8 @@ export function AuthProvider({ children }) {
     updateEmail,
     updatePassword,
     displayName,
-    displayImg
+    displayImg,
+    updateProfile
   }
 
   return (
