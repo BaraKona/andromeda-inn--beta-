@@ -1,5 +1,7 @@
 .aboutAndro{
-    background-color: rgb(247, 247, 247);
+    /* background-color: rgb(247, 247, 247); */
+    background:-webkit-linear-gradient(45deg,
+    rgb(14, 6, 31), rgb(23, 23, 36), rgb(38, 15, 56))no-repeat  fixed;
 }
 .aboutFrame{
     margin-top: 0;
@@ -97,7 +99,10 @@
     margin-top: -100px;
     border-top-left-radius: 60% min(100px);
     border-top-right-radius: 60% min(100px);
-    background-color: rgb(247, 247, 247);
+    /* background-color: rgb(247, 247, 247); */
+    background:-webkit-linear-gradient(45deg,
+    rgb(14, 6, 31), rgb(23, 23, 36), rgb(38, 15, 56))no-repeat  fixed;
+    color:rgb(247, 247, 247);
     width:100%;
 }
 .problemContainer{

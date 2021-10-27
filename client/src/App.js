@@ -15,6 +15,7 @@ export default function App() {
   useEffect(() =>{
       dispatch(getPosts());
   }, [dispatch])
+
   return (
     <Router>
       <AuthProvider>
