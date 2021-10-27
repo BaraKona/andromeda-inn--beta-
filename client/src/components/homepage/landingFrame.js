@@ -11,7 +11,7 @@ const landingFrame = () => {
                 inside the inn.
                 </p>
                 <div className= "buttonContainer">
-                    <button class="button-57" role="button"><span class="text">Explore</span><span> Don't Get Lost </span></button>
+                    <button className="button-57" role="button"><span className="text">Explore</span><span> Don't Get Lost </span></button>
                     {/* <a href="/#" className = "button button--dione">
                         <span><span>Explore</span></span>
                     </a> */}
@@ -19,8 +19,8 @@ const landingFrame = () => {
                         <span><span>Connect</span></span>
                     </a> */}
                 </div>
-                <p className ="floating">Journey in! </p>
-                <p className = "floating arrow"><img className="iconImg" src={icon} alt="centerIcon"></img></p>
+                {/* <p className ="floating">Journey in! </p>
+                <p className = "floating arrow"><img className="iconImg" src={icon} alt="centerIcon"></img></p> */}
 
             </div>
             </div>

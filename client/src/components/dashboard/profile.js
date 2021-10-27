@@ -49,7 +49,7 @@ const [displayed, setDisplayed] = useState(<p>{displayName()}</p>);
 
     return(
         <>
-        <section className = "profile">
+        <section className = "profile Home">
             <div className = "profileContainer">
                 <div className = "profileItems">
                     <div className = "profileImgContainer"><img src={displayImg()} className = "profileImg"></img></div>

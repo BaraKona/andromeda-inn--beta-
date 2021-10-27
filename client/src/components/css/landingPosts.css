@@ -1,0 +1,13 @@
+.landingPosts{
+    min-height: 100vh;
+}
+.landingKey{
+    align-items: center;
+    text-align: center;
+}
+.landingPostsContainer{
+    max-width:1500px;
+    display: block;
+    margin: 100px auto;
+    color: white;
+}
