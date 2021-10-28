@@ -1,0 +1,51 @@
+.postForm{
+    background-color: rgb(30, 28, 36);
+    min-height: 120vh;
+    margin-left: 50px;
+}
+.postFormContainer{
+    max-width: 85%;
+    margin: auto;
+}
+.formTitleContainer{
+    color: white;
+    text-align: center;
+}
+.postFormForm >* input, .postFormForm >* textarea{
+  width: 98%;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  padding: 10px 0 10px 2% ;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  letter-spacing: 1px;
+}
+#postContent textarea, #postReContent textarea{
+    max-width: 98%;
+    min-width: 98%;
+}
+
+.postFormForm >* {
+    padding: 15px 5%;
+}
+.postSubContainer{
+    min-height: 700px;
+    max-width: 1000px;
+    background-color: rgb(45, 45, 56);
+    margin:auto;
+    border-radius: 15px;
+}
+.cardIcon{
+    width:250px;
+    height:250px;
+}
+.postSubmit, .postClear{
+    display:block;
+    width: auto;
+    padding:10px;
+    margin: 15px 5%15px auto;
+}
+.postClear{
+    background-color:red;
+}

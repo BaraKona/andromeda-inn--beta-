@@ -119,7 +119,7 @@
     background-image: url(./../../images/2k_stars_milky_way.jpg);
     background-attachment: fixed;
     background-clip: text;
-    color:transparent;
+    color:rgba(255, 255, 255, 0.507);
     letter-spacing: 3px;
 }
 .problemContainer p{

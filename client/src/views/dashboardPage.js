@@ -4,6 +4,7 @@ import { useHistory, Link } from "react-router-dom"
 import img from '../images/icons/magicbook2.svg'
 import wizard from '../images/icons/wizard.svg'
 import Profile from '../components/dashboard/profile'
+import PostForm from '../components/dashboard/postForm'
 import '../components/css/dashboard.css'
 
 export default function Dashboard() {
@@ -32,6 +33,7 @@ export default function Dashboard() {
         <div className="dashboard">
           <div className="dashboardContainer">
             <Profile/>
+            <PostForm/>
           </div>
         </div>
       </div>
