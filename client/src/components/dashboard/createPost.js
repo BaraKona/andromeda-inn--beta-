@@ -60,6 +60,7 @@ function PostForm() {
                             <input type="text" value={postData.postGenre} onChange={(e) => setPostData({ ...postData, postGenre: e.target.value })} required />
                         </div>
                         <div className="fileInput">
+                            <label> Choose a cover image </label>
                             <FileBase type="file" multiple={false} onDone = {({base64}) => setPostData({ ...postData, selectedFile: base64})} required/>
                         </div>
                             <button className="postSubmit" type="submit">Submit</button>

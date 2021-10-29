@@ -1,8 +1,7 @@
 .postForm{
     background-color: rgb(30, 28, 36);
-    min-height: 120vh;
+    min-height: 140vh;
     margin-left: 50px;
-    margin-top: 50px;
 }
 .postFormContainer{
     max-width: 85%;
@@ -16,7 +15,7 @@
   width: 98%;
   border: none;
   outline: none;
-  font-size: 19px;
+  font-size: 12px;
   padding: 10px 0 10px 2% ;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
@@ -26,7 +25,9 @@
     max-width: 98%;
     min-width: 98%;
 }
-
+.postFormForm >* textarea{
+    min-height: 70px;
+}
 .postFormForm >* {
     padding: 15px 5%;
 }
@@ -40,6 +41,7 @@
 .cardIcon{
     max-width:250px;
     max-height:250px;
+    margin-top: 50px;
 }
 .postSubmit, .postClear{
     display:block;
