@@ -2,6 +2,7 @@
     background-color: rgb(30, 28, 36);
     min-height: 120vh;
     margin-left: 50px;
+    margin-top: 50px;
 }
 .postFormContainer{
     max-width: 85%;
@@ -37,8 +38,8 @@
     border-radius: 15px;
 }
 .cardIcon{
-    width:250px;
-    height:250px;
+    max-width:250px;
+    max-height:250px;
 }
 .postSubmit, .postClear{
     display:block;
@@ -51,4 +52,8 @@
 }
 .postSubContainer .errorMsg{
     color: green;
+}
+@media only screen and (max-width: 490px) {
+    .postForm{margin-left: 0}
+
 }
