@@ -1,6 +1,7 @@
 import React, {useState}from 'react'
 import card from '../../images/icons/cards.svg'
 import FileBase from 'react-file-base64'
+import Dashboard from '../../views/dashboardPage'
 import { useDispatch } from 'react-redux'
 import { useAuth } from '../../contexts/AuthContext'
 
@@ -10,19 +11,28 @@ import './css/postForm.css'
 function PostForm() {
     const [postData, setPostData] = useState({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: ''})
     const {currentUser} = useAuth()
+    const [error, setError] = useState("")
 
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setPostData({...postData, postCreator: currentUser.displayName})
-        dispatch(createPost(postData));
+        try {
+            setPostData({...postData, postCreator: currentUser.displayName})
+            dispatch(createPost(postData));
+            setError("Noted and Posted")
+        } catch (error) {
+            setError(error)
+        }
+
     }
     const clear = () => {
 
     }
     console.log(currentUser)
     return (
+    <>
+        <Dashboard/>
         <section className="postForm Home">
             <div className = "postFormContainer">
                 <div className = "formTitleContainer">
@@ -54,10 +64,12 @@ function PostForm() {
                         </div>
                             <button className="postSubmit" type="submit">Submit</button>
                             <button className="postClear" onClick={clear}>Clear</button>
+                            <p className = "errorMsg">{error}</p>
                     </form>
                 </div>
             </div>
         </section>
+    </>
     )
 }
 

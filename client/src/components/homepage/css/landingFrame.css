@@ -2,11 +2,11 @@
     margin: 0;
     background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0)),
-    url(./../../images/Johannes-Plenio-1080.jpg);
+    url(../../../images/Johannes-Plenio-1080.jpg);
     background-repeat: no-repeat;
-    background-position-y: 0;
     background-size: 100% cover;
     background-position-x: center;
+    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     border-bottom-left-radius:50% min(150px);
@@ -25,6 +25,7 @@
 
   span{
     background-image: -webkit-linear-gradient(40deg, var(--pink), var(--redish), var(--purple));
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     background-size: 250%;
@@ -159,8 +160,9 @@
   text-decoration: none;
   cursor: pointer;
   background: #fff;
-  user-select: none;
   -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   touch-action: manipulation;
   width: 150px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,

@@ -1,7 +1,7 @@
 .footer{
     width: 100%;
     min-height: 10vh;
-    background: linear-gradient(rgb(14, 6, 31), rgb(20, 4, 46)) ;
+    background: linear-gradient(rgb(23, 23, 36), rgb(20, 4, 46)) ;
     position: relative;
     margin-bottom:-100px;
 }

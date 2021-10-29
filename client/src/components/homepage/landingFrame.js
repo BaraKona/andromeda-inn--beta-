@@ -1,4 +1,4 @@
-import "../css/landingFrame.css"
+import "./css/landingFrame.css"
 import icon from '../../images/icons/key.svg'
 const landingFrame = () => {
     return(

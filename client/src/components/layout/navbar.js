@@ -28,7 +28,7 @@ const Navbar = () => {
           <Link className="nav-link" to="/" id="centerImg"><img className="iconImg" src ={img} alt="centerImg"></img></Link>
         </li>
         <li className={`nav-item ${mobileMenu}`}>
-          <Link className="nav-link"  to="/dashboard"> Dashboard </Link>
+          <Link className="nav-link"  to="/dashboard/profile"> Dashboard </Link>
         </li>
         <li className={`nav-item ${mobileMenu}`}>
           <Link className="nav-link"  to="/connect"> Connect </Link>

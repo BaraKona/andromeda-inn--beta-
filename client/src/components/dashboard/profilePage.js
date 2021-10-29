@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import Dashboard from '../../views/dashboardPage'
 import {useAuth} from '../../contexts/AuthContext'
 import './css/profile.css'
 
@@ -49,6 +50,7 @@ const [displayed, setDisplayed] = useState(<p>{displayName()}</p>);
 
     return(
         <>
+        <Dashboard/>
         <section className = "profile Home">
             <div className = "profileContainer">
                 <div className = "profileItems">

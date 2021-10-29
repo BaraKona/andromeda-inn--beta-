@@ -49,3 +49,6 @@
 .postClear{
     background-color:red;
 }
+.postSubContainer .errorMsg{
+    color: green;
+}

@@ -1,0 +1,17 @@
+.postItem{
+    max-width: 350px;
+    background:-webkit-linear-gradient(45deg,
+    rgb(33, 11, 75), rgb(38, 38, 66), rgb(86, 47, 116))no-repeat  fixed;
+}
+
+.postCard{
+    color: var(--text);
+    margin: 10px;
+}
+.postImg{
+    height: 200px;
+    width: 100%;
+}
+.postTitle{
+    position: relative;
+}
