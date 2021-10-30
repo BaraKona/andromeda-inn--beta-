@@ -2,7 +2,7 @@ import React from 'react'
 import icon from '../../images/icons/key.svg'
 import {useSelector} from 'react-redux';
 import {getPosts, getPostsLimit} from '../../actions/posts'
-import Post from './post/post'
+import Post from '../post/post'
 import './css/posts.css'
 
 const Posts = ()=> {

@@ -19,7 +19,7 @@
   .login {
     background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0)),
-    url(./../../images/Johannes-Plenio-1080.jpg);
+    url(../../../images/Johannes-Plenio-1080.jpg);
     border-bottom-right-radius:150% min(100px);
     box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.3);
     background-repeat: no-repeat;

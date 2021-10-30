@@ -1,8 +1,9 @@
 import React, {useState}from 'react'
 import card from '../../images/icons/cards.svg'
 import FileBase from 'react-file-base64'
-import Dashboard from '../../views/dashboardPage'
-import { useDispatch } from 'react-redux'
+import Dashboard from './dashboardFrame'
+import Post from '../post/post'
+import { useDispatch, useSelector } from 'react-redux'
 import { useAuth } from '../../contexts/AuthContext'
 
 import {createPost} from '../../actions/posts'
@@ -12,7 +13,7 @@ function PostForm() {
     const [postData, setPostData] = useState({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: ''})
     const {currentUser} = useAuth()
     const [error, setError] = useState("")
-
+    const posts = useSelector((state) => state.posts);
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
@@ -67,6 +68,23 @@ function PostForm() {
                             <button className="postClear" onClick={clear}>Clear</button>
                             <p className = "errorMsg">{error}</p>
                     </form>
+                </div>
+            </div>
+            <div className = "yourPosts">
+
+                <div className = "yourPostContainer">
+                    <h1> Your Posts: </h1>
+                        <div className ="yourPosts">
+                            {!posts.length ? <div> Loading... </div> : (
+                                <div className="postMap"> {posts.slice(0, 4).map((post) => (
+                                    <div className = "postItem" key={post._id}>
+                                        <Post post={post}></Post>
+                                        <button className = "updatePostButton"> Update your post?</button>
+                                    </div>
+                                ))}
+                                </div>
+                            )}
+                        </div>
                 </div>
             </div>
         </section>

@@ -55,6 +55,27 @@
 .postSubContainer .errorMsg{
     color: green;
 }
+.yourPostContainer{
+    max-width: 85%;
+    margin: auto;
+}
+.postMap{
+    display:flex;
+    flex-wrap: wrap;
+}
+.postMap > *{
+    flex: 1 1 400px;
+    min-height: 450px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.updatePostButton{
+    margin:0;
+    margin-top: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 @media only screen and (max-width: 490px) {
     .postForm{margin-left: 0}
 

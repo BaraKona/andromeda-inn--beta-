@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import Dashboard from '../../views/dashboardPage'
+import Dashboard from './dashboardFrame'
 import {useAuth} from '../../contexts/AuthContext'
 import './css/profile.css'
 

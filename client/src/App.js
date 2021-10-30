@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-import { HomePage, Dashboard, SignupPage, AboutPage, ConnectPage} from './views'
+import { HomePage, SignupPage, AboutPage, ConnectPage} from './views'
 import ProfilePage from './components/dashboard/profilePage'
 import CreatePostPage from './components/dashboard/createPost'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -26,7 +26,6 @@ export default function App() {
             <Route exact path="/" component={ HomePage }/>
             <Route path="/login" component={ SignupPage }/>
             <Route path="/about" component={ AboutPage }/>
-            <PrivateRoute exact path="/dashboard" component={ Dashboard }/>
             <PrivateRoute exact path="/dashboard/profile" component={ProfilePage}/>
             <PrivateRoute exact path="/dashboard/create-post" component={CreatePostPage}/>
             <PrivateRoute exact path="/connect" component={ ConnectPage }/>

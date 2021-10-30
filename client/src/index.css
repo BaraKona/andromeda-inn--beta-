@@ -29,7 +29,7 @@ html, body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-image: -webkit-linear-gradient(40deg, var(--purple), var(--purple), var(--purplish));
+  background: #555;
 }
 
 /* Handle on hover */

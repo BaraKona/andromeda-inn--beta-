@@ -1,10 +1,10 @@
 import React, { useState} from "react"
-import { useAuth } from "../contexts/AuthContext"
+import { useAuth } from "../../contexts/AuthContext"
 import { useHistory, Link } from "react-router-dom"
-import img from '../images/icons/magicbook2.svg'
-import card from '../images/icons/cards.svg'
-import wizard from '../images/icons/wizard.svg'
-import '../components/css/dashboard.css'
+import img from '../../images/icons/magicbook2.svg'
+import card from '../../images/icons/cards.svg'
+import wizard from '../../images/icons/wizard.svg'
+import './css/dashboard.css'
 
 export default function Dashboard() {
   const { currentUser, logout, displayImg, displayName } = useAuth()

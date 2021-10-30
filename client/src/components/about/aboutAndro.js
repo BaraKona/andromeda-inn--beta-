@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../css/aboutAndro.css'
+import './css/aboutAndro.css'
 import cauldron from '../../images/icons/cauldron.svg'
 import witch from '../../images/icons/witch2.svg'
 import globe from '../../images/icons/globe.svg'

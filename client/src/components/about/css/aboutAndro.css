@@ -5,7 +5,7 @@
 }
 .aboutFrame{
     margin-top: 0;
-    background-image: url(./../../images/2k_stars_milky_way.jpg);
+    background-image: url(../../../images/2k_stars_milky_way.jpg);
     background-attachment: fixed;
     min-height: 50vh;
     font-family: inherit;
@@ -60,7 +60,7 @@
     box-sizing: border-box;
     /* background:linear-gradient(to bottom,
     rgb(0, 0, 0), rgb(14, 6, 31)); */
-    background-image: url(./../../images/2k_stars_milky_way.jpg);
+    background-image: url(../../../images/2k_stars_milky_way.jpg);
     background-attachment: fixed;
 }
 .col h2{
@@ -116,7 +116,7 @@
     /* text-orientation: upright;
     writing-mode: vertical-rl;
     text-transform: uppercase; */
-    background-image: url(./../../images/2k_stars_milky_way.jpg);
+    background-image: url(../../../images/2k_stars_milky_way.jpg);
     background-attachment: fixed;
     background-clip: text;
     color:rgba(255, 255, 255, 0.507);
@@ -157,7 +157,7 @@
 .aboutT3{
     height: 600px;
     margin: 5%;
-    background-image: url('../../images/yannick-pulver-hopX_jpVtRM-unsplash.jpg');
+    background-image: url('../../../images/yannick-pulver-hopX_jpVtRM-unsplash.jpg');
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;

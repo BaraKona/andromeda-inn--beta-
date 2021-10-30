@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import img from '../../images/icons/magicbook2.svg'
-import '../css/footer.css'
+import './css/footer.css'
 
 
 function mainFooter() {

@@ -1,5 +1,4 @@
 export { default as AboutPage } from './aboutPage'
 export { default as ConnectPage } from './connectPage'
-export { default as Dashboard } from './dashboardPage'
 export { default as HomePage } from './HomePage'
 export { default as SignupPage } from './SignupPage'
