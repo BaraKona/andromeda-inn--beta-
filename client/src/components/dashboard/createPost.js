@@ -78,6 +78,7 @@ function PostForm() {
                             {!posts.length ? <div> Loading... </div> : (
                                 <div className="postMap"> {posts.slice(0, 4).map((post) => (
                                     <div className = "postItem" key={post._id}>
+                                        <p><span> You have 0 Posts left</span></p>
                                         <Post post={post}></Post>
                                         <button className = "updatePostButton"> Update your post?</button>
                                     </div>
