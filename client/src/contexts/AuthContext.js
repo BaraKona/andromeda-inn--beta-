@@ -10,6 +10,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState()
+  const [currentPostId, setCurrentPostId] = useState()
   const [loading, setLoading] = useState(true)
 
   function signup(email, password) {
@@ -71,7 +72,9 @@ export function AuthProvider({ children }) {
     updatePassword,
     displayName,
     displayImg,
-    updateProfile
+    updateProfile,
+    currentPostId,
+    setCurrentPostId
   }
 
   return (

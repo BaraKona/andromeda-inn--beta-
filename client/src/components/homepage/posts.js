@@ -21,7 +21,7 @@ const Posts = ()=> {
                 <h1> Explore the most recent enquiries</h1>
                 <div className ="recentPosts">
                     {!posts.length ? <div> Loading... </div> : (
-                        <div className="postMap"> {posts.slice(0, 8).map((post) => (
+                        <div className="postMap"> {posts.slice(0, 4).map((post) => (
                             <div className = "postItem" key={post._id}>
                                 <Post post={post}></Post>
                             </div>

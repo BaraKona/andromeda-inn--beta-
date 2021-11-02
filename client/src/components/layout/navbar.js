@@ -22,7 +22,7 @@ const Navbar = () => {
           <Link className="nav-link" to="/">Home</Link>
         </li>
         <li className={`nav-item ${mobileMenu}`}>
-          <Link className="nav-link" to="/"> Explore</Link>
+          <Link className="nav-link" to="/explore"> Explore</Link>
         </li>
         <li className={`nav-item ${mobileMenu}`}>
           <Link className="nav-link" to="/" id="centerImg"><img className="iconImg" src ={img} alt="centerImg"></img></Link>
