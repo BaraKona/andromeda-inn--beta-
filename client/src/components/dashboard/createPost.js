@@ -12,14 +12,15 @@ import './css/postForm.css'
 function PostForm() {
     const [postData, setPostData] = useState({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: ''})
     const {currentUser, currentPostId, setCurrentPostId} = useAuth()
-    const posts = useSelector((state) => state.posts);
-    const post = useSelector((state) => currentPostId ? state.posts.find((post) => post._id === currentPostId): null);
+    const posts = useSelector((state) => currentUser ? state.posts.filter((posts) => posts.postCreator === currentUser.uid): null);
+    // const posts = useSelector((state) => state.posts);
+    const editPost = useSelector((state) => currentPostId ? state.posts.find((post) => post._id === currentPostId && post.postCreator === currentUser.uid): null);
     const [error, setError] = useState("")
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(post) setPostData(post)
-    }, [post])
+        if(editPost) setPostData(editPost)
+    }, [editPost])
 
 
     const handleSubmit = (e) => {
@@ -36,9 +37,15 @@ function PostForm() {
         }
         else{
             try {
-                setPostData({...postData, postCreator: currentUser.uid})
-                dispatch(createPost(postData));
-                setError("Noted and Posted")
+                if(posts.length == 3){
+                    setError("You have reached your maximum number of posts. Please delete one to make another :)")
+                }
+                else {
+                    setPostData({...postData, postCreator: currentUser.uid})
+                    dispatch(createPost(postData));
+                    setError("Noted and Posted")
+                }
+
             } catch (error) {
                 setError(error)
             }
@@ -50,6 +57,7 @@ function PostForm() {
         setPostData({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: ''})
     }
     console.log(currentUser.uid)
+    console.log('print' + posts)
     return (
     <>
         <Dashboard/>
@@ -94,9 +102,9 @@ function PostForm() {
                 <div className = "yourPostContainer">
                     <h1> Your Posts: </h1>
                         <div className ="yourPosts">
-                        <p><span> You have 0 Posts left</span></p>
+                        <p><span> You have {3 - posts.length} / 3 Posts left </span></p>
                             {!posts.length ? <div> Loading... </div> : (
-                                <div className="postMap"> {posts.slice(0, 3).map((post) => (
+                                <div className="postMap"> {posts.map((post) => (
                                     <div className = "postItem" key={post._id}>
                                         <Post post={post}></Post>
                                         <button className = "updatePostButton" onClick={() => setCurrentPostId(post._id)}> Update your post?</button>
