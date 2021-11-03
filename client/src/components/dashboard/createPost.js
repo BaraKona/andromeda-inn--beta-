@@ -19,7 +19,7 @@ function PostForm() {
 
     useEffect(() => {
         if(editPost) setPostData(editPost)
-    }, [editPost])
+    }, [editPost, dispatch])
 
 
     const handleSubmit = (e) => {
@@ -30,7 +30,7 @@ function PostForm() {
                 dispatch(updatePost(currentPostId, postData))
                 setError("Your post has been edited")
             } catch (error) {
-                setError(error)
+                setError('failed to edit. Try again later or contact support')
             }
 
         }
@@ -56,7 +56,7 @@ function PostForm() {
         setPostData({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: ''})
     }
     console.log(currentUser.uid)
-    console.log('print' + posts)
+    console.log('print ' + posts)
     return (
     <>
         <Dashboard/>

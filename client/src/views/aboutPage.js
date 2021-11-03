@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/layout/navbar'
 import AboutMe from '../components/about/aboutMe'
 import AboutAndro from '../components/about/aboutAndro'
-import Footer from "../components/layout/footer.js"
+import Footer from "../components/layout/footer"
 
 export default function aboutPage() {
     return (
