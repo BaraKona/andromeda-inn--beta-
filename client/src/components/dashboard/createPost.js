@@ -5,8 +5,7 @@ import Dashboard from './dashboardFrame'
 import Post from '../post/post'
 import { useDispatch, useSelector } from 'react-redux'
 import { useAuth } from '../../contexts/AuthContext'
-
-import {createPost, updatePost} from '../../actions/posts'
+import {createPost, updatePost, deletePost} from '../../actions/posts'
 import './css/postForm.css'
 
 function PostForm() {
@@ -107,7 +106,10 @@ function PostForm() {
                                 <div className="postMap"> {posts.map((post) => (
                                     <div className = "postItem" key={post._id}>
                                         <Post post={post}></Post>
-                                        <button className = "updatePostButton" onClick={() => setCurrentPostId(post._id)}> Update your post?</button>
+                                        <div className = "postButtons">
+                                            <button className = "updatePostButton" onClick={() => setCurrentPostId(post._id)}> Update your post?</button>
+                                            <button className = "deletePostButton" onClick={() => dispatch(deletePost(post._id))}> Delete your post?</button>
+                                        </div>
                                     </div>
                                 ))}
                                 </div>
