@@ -109,6 +109,7 @@ function PostForm() {
                                         <div className = "postButtons">
                                             <button className = "updatePostButton" onClick={() => setCurrentPostId(post._id)}> Update your post?</button>
                                             <button className = "deletePostButton" onClick={() => dispatch(deletePost(post._id))}> Delete your post?</button>
+                                            {/* <button className = "deletePostButton" onClick={() => dispatch(deletePost(post._id))}> Delete your post?</button> */}
                                         </div>
                                     </div>
                                 ))}
