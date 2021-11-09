@@ -2,6 +2,7 @@ import "./css/landingFrame.css"
 import icon from '../../images/icons/key.svg'
 const landingFrame = () => {
     return(
+        <>
         <div className = "landing">
             <div className = "landing-frame">
             {/* <div class = "background"> <img src={bkimg} alt="image by Johannes-Plenio"></img></div> */}
@@ -24,8 +25,8 @@ const landingFrame = () => {
 
             </div>
             </div>
-
         </div>
+        </>
     )
 }
 

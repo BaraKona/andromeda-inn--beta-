@@ -34,6 +34,9 @@
   align-self: center;
 }
 
+.onAbout, .onHome{
+  border-bottom: 1px solid white;
+}
 #logout:hover{
   color:red;
 }

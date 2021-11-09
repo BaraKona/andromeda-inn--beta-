@@ -14,7 +14,7 @@ const Posts = ()=> {
 
         <section className="landingPosts">
             <div className = "landingKey">
-                <p className ="floating">Journey in! </p>
+                <p className ="floating">Journey in! <br/><br/></p>
                 <p className = "floating arrow"><img className="iconImg" src={icon} alt="centerIcon"></img></p>
             </div>
             <div className ="landingPostsContainer">

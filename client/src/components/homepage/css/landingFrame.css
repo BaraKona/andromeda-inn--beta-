@@ -9,9 +9,9 @@
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    border-bottom-left-radius:50% min(150px);
-    border-bottom-right-radius:50% min(150px);
-    min-height: 80vh;
+    /* border-bottom-left-radius:50% min(150px);
+    border-bottom-right-radius:50% min(150px); */
+    min-height: 60vh;
   }
   .landing-text{
     text-align: center;

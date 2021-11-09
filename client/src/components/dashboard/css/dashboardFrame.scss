@@ -33,6 +33,8 @@
     /* border-top-left-radius: 25px;
     border-bottom-left-radius: 25px; */
     left: 0;
+    transition: all ease-in;
+    transition-duration: 0.5s;
 }
 .topUser{
     align-self: center;
@@ -46,8 +48,12 @@
     height: 45px;
 }
 .sidebar:hover{
-    width: 150px;
-    transition-delay: .5s;
+    width: 180px;
+    .sidebarList p{
+        opacity: 1;
+        visibility:visible;
+        transition-delay: .5s;
+    }
 }
 .sidebarContainer{
     margin-top: 75px;
@@ -62,6 +68,22 @@
 .dashboardContainer{
     background-color: rgb(30, 28, 36);
     height: 100vh;
+}
+.sidebarList{
+    display: flex;
+    flex-direction: column;
+}
+.sidebarList a{
+    display:flex;
+    height: 60px;
+    transition: all 0s;
+}
+.sidebarList a:hover{color: white;}
+
+
+.sidebarList p{
+    opacity: 0;
+    visibility: hidden;
 }
 @media only screen and (max-width: 490px) {
     .sidebar{display:none}

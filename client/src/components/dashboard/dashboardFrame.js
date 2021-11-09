@@ -4,7 +4,9 @@ import { useHistory, Link } from "react-router-dom"
 import img from '../../images/icons/magicbook2.svg'
 import card from '../../images/icons/cards.svg'
 import wizard from '../../images/icons/wizard.svg'
-import './css/dashboard.css'
+import genie from '../../images/icons/genieLamp.svg'
+import mirror from '../../images/icons/mirror.svg'
+import './css/dashboardFrame.scss'
 
 export default function Dashboard() {
   const { currentUser, logout, displayImg, displayName } = useAuth()
@@ -23,8 +25,10 @@ export default function Dashboard() {
         <div className = "sidebar">
           <div className = "sidebarContainer">
             <div className= "sidebarList">
-            <Link to="/dashboard/profile"><img src={wizard} className="iconImg"></img></Link>
-            <Link to="/dashboard/create-post"><img src={card} className="iconImg"></img></Link>
+              <Link to="/dashboard"><img src={genie} className="iconImg"></img><p> Hub </p></Link>
+              <Link to="/dashboard/create-post"><img src={mirror} className="iconImg"></img><p> Friends</p></Link>
+              <Link to="/dashboard/create-post"><img src={card} className="iconImg"></img><p> Your Posts</p></Link>
+              <span><Link to="/dashboard/profile"><img src={wizard} className="iconImg"></img><p> Profile </p></Link></span>
             </div>
           </div>
         </div>

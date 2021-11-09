@@ -1,15 +1,21 @@
 .postItem{
     max-width: 350px;
     background:-webkit-linear-gradient(45deg,
-    rgb(33, 11, 75), rgb(38, 38, 66), rgb(86, 47, 116))no-repeat  fixed;
+    rgb(75, 37, 11), rgb(66, 38, 60), rgb(56, 25, 95))no-repeat  fixed;
 }
-
+.smallPostItem{
+    max-height: 300px;
+}
 .postCard{
     color: var(--text);
     margin: 10px;
 }
 .postImg{
     height: 200px;
+    width: 100%;
+}
+.smallPostImg{
+    max-height: 150px;
     width: 100%;
 }
 .postTitle{
