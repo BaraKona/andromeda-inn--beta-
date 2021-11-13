@@ -36,7 +36,7 @@ const Navbar = () => {
           <Link className="nav-link"  to="/connect"> Connect </Link>
         </li> */}
         <li className={`nav-item ${mobileMenu}`}>
-          <Link className="nav-link logout"  to="/login" id="logout" onClick = {logout} >Logout</Link>
+          <Link className="nav-link logout" id="loginButton" to="/login" id="logout" onClick = {logout} >Logout</Link>
         </li>
       </>
     }

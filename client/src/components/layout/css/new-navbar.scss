@@ -1,0 +1,28 @@
+
+.navContainer{
+    display: flex;
+    width: 90vw;
+    margin: auto;
+    padding-top: 10px;
+}
+.navbar_links{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.nav-items{
+    margin: auto 0;
+    padding: 10px;
+    font-size: 1rem;
+    color: rgb(145, 145, 145);
+    cursor: pointer;
+}
+.nav-items:hover{
+    border-bottom: solid 1px;
+}
+.nav-items:nth-child(2){
+    margin-left:auto;
+}
+.nav-items:nth-child(4){
+    margin-right:auto;
+}

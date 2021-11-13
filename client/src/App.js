@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 import { HomePage, SignupPage, AboutPage} from './views'
 import ProfilePage from './components/dashboard/profilePage'
+import NewHome from './components/homepage/newHome'
 import CreatePostPage from './components/dashboard/createPost'
 import Dashboard from './components/dashboard/dashboard'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -24,6 +25,7 @@ export default function App() {
         <div className="App">
           <Switch>
             <Route exact path="/" component={ HomePage }/>
+            <Route exact path="/home" component={ NewHome }/>
             <Route path="/login" component={ SignupPage }/>
             <Route path="/about" component={ AboutPage }/>
             {/* <Route path="/explore" component={ ExplorePage }/> */}
