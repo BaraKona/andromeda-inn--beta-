@@ -1,0 +1,74 @@
+.newAbout{
+    min-height: 100vh;
+    background: rgb(32,47,51);
+    color: rgb(249,218,196);
+}
+.aboutTitle{
+    margin: -20px auto;
+    max-width: 800px;
+    font-size: 60px;
+    font-weight: 100;
+    text-align: left;
+}
+.aboutContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 50px;
+    gap: 3%;
+}
+.aboutContainer > *{
+    padding: 10px;
+    font-size: 1.5em;
+    flex: 1 1 400px;
+    p{
+        margin-top: 0;
+    }
+    span{
+        float: right;
+    }
+}
+.aboutSectionImage{
+    background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1633888415/images/andrew-seaman_ysodyl.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 400px;
+    margin-top: 50px;
+}
+.aboutSectionImage1{
+    display: block;
+    margin-left: auto;
+    max-width: 435px;
+    min-height: 650px;
+    background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636995193/images/annie-spratt-7eDCK1U--OE-unsplash_ewhsma.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-top-left-radius: 300px;
+}
+.aboutFlex{
+    display:flex;
+    flex-wrap: wrap;
+}
+.aboutFlex >*{
+    flex: 1 1 400px;
+    margin: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.aboutCardText{
+    min-height: 400px;
+    padding: 30px;
+    font-size: 1.5em;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    h2{text-align: right;}
+    p{text-align: justify;}
+}
+.cardImg{
+    display:block;
+    margin: auto;
+}
+.aboutCards:hover .cardImg{
+    width: 60px;
+    height: 60px;
+    transition: all 1s ease-in-out;
+}

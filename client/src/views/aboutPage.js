@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../components/layout/navbar'
 import AboutMe from '../components/about/aboutMe'
-import AboutAndro from '../components/about/aboutAndro'
+import About from '../components/about/newAbout'
 import Footer from "../components/layout/footer"
 
 export default function aboutPage() {
     return (
         <div className="aboutPage">
             <Navbar />
-            <AboutAndro />
+            <About />
             <AboutMe />
             <Footer />
         </div>

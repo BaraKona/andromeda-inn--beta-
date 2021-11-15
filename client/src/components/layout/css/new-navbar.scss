@@ -1,5 +1,6 @@
 
 .navContainer{
+    text-underline: none;
     display: flex;
     width: 90vw;
     margin: auto;
@@ -16,6 +17,7 @@
     font-size: 1rem;
     color: rgb(145, 145, 145);
     cursor: pointer;
+    text-decoration: none;
 }
 .nav-items:hover{
     border-bottom: solid 1px;

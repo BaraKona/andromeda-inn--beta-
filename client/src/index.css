@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
-  font-family: Palatino, URW Palladio L, serif;
+  /* font-family: 'Alegreya Sans SC'; */
+  font-family: Palatino serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--lightmodecolour);
@@ -15,33 +16,37 @@ html, body {
   --color-bg: rgb(226, 226, 226);
   --color-link: #1352d1;
   --color-link-hover: rgb(61, 19, 44);
-  --font: Palatino, URW Palladio L, serif;
+  --green: rgb(2, 110, 2);
+  --neonBlue: rgb(0, 91, 175);
+  /* --font: Palatino, URW Palladio L, serif; */
+
   }
   /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(20, 4, 46);
+  background: grey;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #555;
+  border-radius: 50px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+  border-radius: 50px;
 }
 hr{
   width: 50%;
 }
 .Home{
-  background:-webkit-linear-gradient(45deg,
-  rgb(45, 41, 53), rgb(34, 34, 68), rgb(73, 29, 107))no-repeat  fixed;
+  background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
 }
 
 

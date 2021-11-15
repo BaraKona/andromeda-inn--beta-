@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="navContainer">
         <div className="navbar_links">
             <img src={book1} className="svgIcon"/><h1> AI </h1>
-            <Link className="nav-items" to="/about">About</Link>
+            <Link className="nav-items" to="/new-about">About</Link>
             <Link className="nav-items" to="/">Home</Link>
             <Link className="nav-items"  to="/dashboard"> Dashboard </Link>
             {loggedIn()}

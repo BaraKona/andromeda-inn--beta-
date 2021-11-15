@@ -1,5 +1,5 @@
-import Navbar from '../components/layout/navbar'
-import LandingFrame from '../components/homepage/landingFrame'
+import Navbar from '../components/layout/newNavbar'
+import Home from '../components/homepage/newHome'
 import Posts from '../components/homepage/posts'
 import Footer from "../components/layout/footer.js"
 
@@ -7,9 +7,8 @@ function HomePage() {
   return (
     <div className="Home">
       <Navbar />
-      <LandingFrame />
+      <Home />
       <Posts/>
-      <Footer />
     </div>
   );
 }

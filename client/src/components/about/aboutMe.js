@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import './css/aboutAndro.css'
 import axios from 'axios'
 
 export default function AboutMe() {
