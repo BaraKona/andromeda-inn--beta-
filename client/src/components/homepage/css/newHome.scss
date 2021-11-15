@@ -3,17 +3,25 @@
     background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
 }
 .imageContainer{
-    margin: 150px auto;
-    border: solid black 0.5px;
-    border-radius: 200px;
-    background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1633888417/images/Johannes-Plenio-1080_xl7ke3.jpg);
+    background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636984601/images/portal-g0acf30396_1920_ga3r45.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    max-width: 350px;
+    background-size: 100% center;
+    border-radius:ellipse(25% 40% at 50% 50%);
+    // clip-path: ellipse(25% 40% at 50% 50%);
+    max-width: 500px;
     min-height: 500px;
+    box-shadow: rgb(2, 189, 111) 0px 50px 50px -20px;
+    border-radius:50%;
+    border: solid rgb(114, 114, 114) .5px;
+    transition: all 2s ease-in-out;
+}
+.imageContainer:hover{
+    background-position-x: -700px;
+    background-position-y: -450px;
+    // background-size: 110% 110%;
 }
 .homeContainer{
+    margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
 }
@@ -21,5 +29,7 @@
     flex: 1 1 200px;
 }
 .homeContainer >*:nth-child(2){
-    flex: 1 1 600px;
+
+    flex: 1 1 500px;
+    margin: 10px 5%;
 }

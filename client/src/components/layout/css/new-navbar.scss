@@ -20,9 +20,15 @@
 .nav-items:hover{
     border-bottom: solid 1px;
 }
-.nav-items:nth-child(2){
+.nav-items:nth-child(3){
     margin-left:auto;
 }
-.nav-items:nth-child(4){
+.nav-items:nth-child(5){
     margin-right:auto;
+}
+.svgIcon{
+    display:block;
+    margin: auto 10px auto 0;
+    height: 50px;
+    width: 50px;
 }
