@@ -1,6 +1,5 @@
 import React from 'react'
 import './css/newHome.scss'
-import NavBar from '../../components/layout/newNavbar'
 
 function NewHome() {
     return (

@@ -1,7 +1,10 @@
 .homePage{
-  min-height: 100vh;
-  background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
+  margin-top: -90px;
+  min-height: 102vh;
+  // background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
+  background: linear-gradient(110deg, rgb(26, 129, 86) 55%, rgb(255, 242, 224) 55%)
 }
+
 .imageContainer{
   background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636984601/images/portal-g0acf30396_1920_ga3r45.jpg);
   background-repeat: no-repeat;
@@ -26,12 +29,14 @@
   background-position-y: -450px;
 }
 .homeContainer{
-  margin: 50px auto;
+  padding-top: 150px;
+  margin: auto auto;
   display: flex;
   flex-wrap: wrap;
 }
 .homeContainer >*:nth-child(1), .homeContainer>*:nth-child(3){
   flex: 1 1 200px;
+  min-width: 350px;
 
 }
 .homeContainer >*:nth-child(2){

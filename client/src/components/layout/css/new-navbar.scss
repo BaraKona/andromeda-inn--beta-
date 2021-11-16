@@ -1,6 +1,12 @@
-
+.mainNavbar{
+    width: 100%;
+    display: block;
+    background: none;
+    background: transparent;
+    color: black;
+    z-index: 5;
+}
 .navContainer{
-    text-underline: none;
     display: flex;
     width: 90vw;
     margin: auto;
@@ -15,11 +21,12 @@
     margin: auto 0;
     padding: 10px;
     font-size: 1rem;
-    color: rgb(145, 145, 145);
+    color: rgb(199, 199, 199);
     cursor: pointer;
     text-decoration: none;
 }
 .nav-items:hover{
+    color: black;
     border-bottom: solid 1px;
 }
 .nav-items:nth-child(3){
@@ -33,4 +40,10 @@
     margin: auto 10px auto 0;
     height: 50px;
     width: 50px;
+}
+.navActive{color: rgb(255, 255, 255);}
+.navActive:hover{color: rgb(255, 255, 255);}
+
+.loginLogout{
+    // color: black;
 }
