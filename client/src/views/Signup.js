@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
-import { useAuth } from "../../contexts/AuthContext"
+import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import Navbar from '../components/layout/newNavbar'
 import './css/login.css'
 
 export default function Signup() {
@@ -34,6 +35,7 @@ export default function Signup() {
   return (
     <>
       <section className= "signup">
+      <Navbar />
         <div className = "signupContainer">
           <h1 className="text-center">Sign Up</h1>
           <p className = "errorMsg">{error}</p>

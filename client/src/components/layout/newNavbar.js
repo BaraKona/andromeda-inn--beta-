@@ -3,8 +3,8 @@ import React, {useState, useEffect, useRef} from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import img from '../../images/icons/magicbook2.svg'
-import book1 from '../../images/Icon/cyclops.svg'
-import book2 from '../../images/Icon/cyclopsW.svg'
+import book1 from '../../images/Icon/cyclops_2.svg'
+import book2 from '../../images/Icon/cyclops_1.svg'
 
 const Navbar = () => {
   const { currentUser, logout, displayImg, displayName} = useAuth();

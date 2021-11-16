@@ -1,17 +1,20 @@
 .homePage{
-  margin-top: -90px;
-  min-height: 102vh;
+  min-height: 100vh;
   // background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
-  background: linear-gradient(110deg, rgb(26, 129, 86) 55%, rgb(255, 242, 224) 55%)
+  background: linear-gradient(115deg, rgb(32,47,51) 55%, rgb(249,218,196) 55%);
+  z-index: 50vh;
 }
 
 .imageContainer{
+  display:block;
+  margin:auto;
   background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636984601/images/portal-g0acf30396_1920_ga3r45.jpg);
   background-repeat: no-repeat;
   background-size: 100% center;
   max-width: 500px;
   min-height: 500px;
-  box-shadow: rgb(2, 189, 111) 0px 50px 50px -20px;
+  max-height: 500px;
+  box-shadow: rgb(3, 116, 116) 0px 50px 50px -20px;
   border: solid rgb(114, 114, 114) .5px;
   transition: all 2s ease-in-out;
   animation-name: circle;
@@ -30,7 +33,7 @@
 }
 .homeContainer{
   padding-top: 150px;
-  margin: auto auto;
+  margin: auto 5% auto 5%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -41,22 +44,35 @@
 }
 .homeContainer >*:nth-child(2){
   flex: 1 1 500px;
+  max-height: 500px;
   margin: 10px 5%;
 }
 .homeItemRight{
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .homeItemRight > *{
     flex: 1 1 100%;
+    font-size: 1.2em;
 }
-
-
-
+.homeSubItem{
+  display: flex;
+  flex-wrap: wrap;
+}
+.homeSubItem > *{
+  flex: 1 1 150px;
+  text-align: justify;
+}
+.hold{
+  display: block;
+  margin: 25px auto auto auto;
+  width: 150px;
+  height: 150px;
+}
 
 .home-text{
   text-align: right;
-  color: rgb(66, 66, 66);
+  color: rgb(180, 161, 152);
   h1{
     font-size: clamp(20px, 70px, 10vw);
     font-weight:300;

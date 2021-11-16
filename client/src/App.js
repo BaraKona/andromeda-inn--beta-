@@ -1,7 +1,6 @@
 import React, {useEffect} from "react"
-import { HomePage, SignupPage, AboutPage} from './views'
+import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage} from './views'
 import ProfilePage from './components/dashboard/profilePage'
-import NewHome from './components/homepage/newHome'
 import NewAbout from './components/about/newAbout'
 import CreatePostPage from './components/dashboard/createPost'
 import Dashboard from './components/dashboard/dashboard'
@@ -25,8 +24,10 @@ export default function App() {
       <AuthProvider>
         <div className="App">
           <Switch>
+            <Route path="/login" component={LoginPage} />
+            <Route path="/signup" component={SignupPage} />
+            <Route path="/forgot-password" component={ForgotPasswordPage} />
             <Route exact path="/" component={ HomePage }/>
-            <Route path="/login" component={ SignupPage }/>
             <Route path="/about" component={ AboutPage }/>
             <Route path="/new-about" component={NewAbout}/>
             {/* <Route path="/explore" component={ ExplorePage }/> */}

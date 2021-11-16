@@ -1,5 +1,7 @@
 export { default as AboutPage } from './aboutPage'
 export { default as ConnectPage } from './connectPage'
 export { default as HomePage } from './HomePage'
-export { default as SignupPage } from './SignupPage'
 export { default as ExplorePage } from './explorePage'
+export { default as SignupPage } from './Signup'
+export { default as LoginPage } from './Login'
+export { default as ForgotPasswordPage } from './ForgotPassword'

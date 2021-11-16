@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
-import { useAuth } from "../../contexts/AuthContext"
+import { useAuth } from "../contexts/AuthContext"
 import { Link } from "react-router-dom"
+import Navbar from '../components/layout/newNavbar'
 import './css/login.css'
 
 export default function ForgotPassword() {
@@ -29,6 +30,7 @@ export default function ForgotPassword() {
   return (
     <>
       <section className = "forgotPassword">
+      <Navbar />
         <div className = "forgotContainer">
           <h1 className="text-center">Password Reset</h1>
           <form onSubmit={handleSubmit}>

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
-import { useAuth } from "../../contexts/AuthContext"
+import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import Navbar from '../components/layout/newNavbar'
 import './css/login.css'
 
 export default function Login() {
@@ -19,7 +20,7 @@ export default function Login() {
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
       history.push("/")
-      window.location.reload()
+      // window.location.reload()
       } catch {
       setError("Failed to log in")
     }
@@ -30,6 +31,7 @@ export default function Login() {
   return (
     <>
       <section className ="login">
+      <Navbar />
         <div className = "loginBackground" />
         <div className ="loginContainer" >
           <h1 className="login-title">Log In</h1>
