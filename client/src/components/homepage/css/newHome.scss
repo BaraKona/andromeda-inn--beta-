@@ -11,6 +11,7 @@
   background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636984601/images/portal-g0acf30396_1920_ga3r45.jpg);
   background-repeat: no-repeat;
   background-size: 100% center;
+  background-position-x: -685px;
   max-width: 500px;
   min-height: 500px;
   max-height: 500px;
@@ -28,7 +29,7 @@
   100%{border-radius:50%}
 }
 .imageContainer:hover{
-  background-position-x: -700px;
+  // background-position-x: -700px;
   background-position-y: -450px;
 }
 .homeContainer{
