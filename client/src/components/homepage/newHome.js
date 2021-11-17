@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../layout/newNavbar'
 import Hold from '../../images/Icon/circle_1.svg'
 import './css/newHome.scss'
-import './css/homeButton.scss'
+// import './css/homeButton.scss'
 
 function NewHome() {
     return (

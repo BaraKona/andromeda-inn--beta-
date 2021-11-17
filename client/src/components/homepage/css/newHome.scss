@@ -97,3 +97,102 @@
   100%{background-position: right;}
 }
 
+
+.content__item {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+}
+.button--surtur {
+  display: block;
+  margin: 0 auto;
+	padding: 0;
+	background: none;
+	-webkit-clip-path: circle(40% at 50% 50%);
+	clip-path: circle(40% at 50% 50%);
+	cursor:pointer;
+}
+
+.button--surtur:focus-visible {
+	background: #443ffc;
+}
+
+.textcircle {
+	position: relative;
+	display: block;
+	width: 150px;
+}
+
+.textcircle text {
+	font-size: 32px;
+	text-transform: uppercase;
+	fill: #000;
+}
+
+.textcircle textPath {
+	letter-spacing: 17px; /* Firefox needs this */
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+// .button--surtur:hover .textcircle {
+// 	animation: rotateIt 7s linear infinite;
+// }
+.button--surtur .textcircle{
+	animation: rotateIt 7s linear infinite;
+}
+.eye {
+	position: absolute;
+	z-index: 2;
+	width: 60px;
+	height: 60px;
+	top: calc(50% - 30px);
+	left: calc(50% - 30px);
+}
+
+.eye__outer,
+.eye__inner,
+.eye__lashes-up,
+.eye__lashes-down {
+	stroke: rgb(0, 183, 255);
+	fill: none;
+	stroke-width: 1.5px;
+}
+.eye__inner,
+.eye__lashes-up,
+.eye__iris{
+	opacity: 0;
+}
+.eye__lashes-down {
+	opacity: 1;
+}
+
+.button--surtur:hover .eye__lashes-up,
+.button--surtur:hover .eye__inner,
+.button--surtur:hover .eye__iris {
+	opacity: 1;
+}
+
+.button--surtur:hover .eye__lashes-down {
+	opacity: 0;
+}
+
+// @keyframes blinkHide {
+// 	0% {opacity: 0;}
+// 	10% {opacity: 1;}
+// }
+
+// @keyframes blinkShow {
+// 	0% {opacity: 1;}
+// 	10% {opacity: 0;}
+// }
+@keyframes rotateIt {
+  to {
+	transform: rotate(360deg);
+  }
+}
