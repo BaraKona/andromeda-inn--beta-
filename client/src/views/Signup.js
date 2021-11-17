@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 import Navbar from '../components/layout/newNavbar'
-import './css/login.css'
+import './css/login.scss'
 
 export default function Signup() {
   const emailRef = useRef()
