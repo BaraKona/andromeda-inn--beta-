@@ -16,18 +16,19 @@
   max-height: 500px;
   box-shadow: rgb(3, 116, 116) 0px 50px 50px -20px;
   border: solid rgb(114, 114, 114) .5px;
+  border-radius:50%;
   transition: all 2s ease-in-out;
   animation-name: circle;
   animation-duration: 6s;
-  animation-fill-mode: forwards;
+  // animation-fill-mode: forwards;
 }
 @keyframes circle{
   0% {border-radius: 100px;}
   25% {border-radius:50%}
   50% {border-radius:0}
-  100%{border-radius:50%}
 }
 .imageContainer:hover{
+  border-radius: 0%;
   background-position-x: -685px;
   background-position-y: -450px;
 }
