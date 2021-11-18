@@ -1,6 +1,6 @@
 .postForm{
     min-height: 100vh;
-    background: linear-gradient(65deg, rgb(158, 161, 190) 55%, rgb(49, 47, 47) 55%);
+    background:  rgb(49, 47, 47);
 }
 .postFormContainer{
     max-width: 99%;
