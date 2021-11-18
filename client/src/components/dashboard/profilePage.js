@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import Dashboard from './dashboardFrame'
+import Navbar from '../layout/newNavbar'
 import {useAuth} from '../../contexts/AuthContext'
 import './css/profile.css'
 
@@ -50,8 +50,8 @@ const [displayed, setDisplayed] = useState(<p>{displayName()}</p>);
 
     return(
         <>
-        <Dashboard/>
         <section className = "profile Home">
+            <Navbar/>
             <div className = "profileContainer">
                 <div className = "profileItems">
                     <div className = "profileImgContainer"><img src={displayImg()} className = "profileImg"></img></div>

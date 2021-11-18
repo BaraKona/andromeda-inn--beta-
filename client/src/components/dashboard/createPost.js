@@ -1,7 +1,7 @@
 import React, {useState, useEffect}from 'react'
 import card from '../../images/icons/cards.svg'
 import FileBase from 'react-file-base64'
-import Dashboard from './dashboardFrame'
+import Navbar from '../layout/newNavbar'
 import Post from '../post/post'
 import { useDispatch, useSelector } from 'react-redux'
 import { useAuth } from '../../contexts/AuthContext'
@@ -58,8 +58,8 @@ function PostForm() {
     console.log('print ' + posts)
     return (
     <>
-        <Dashboard/>
         <section className="postForm Home">
+    <Navbar/>
             <div className = "postFormContainer">
                 <div className = "postFlexContainer">
                     <div className = "postFlexPostForm">

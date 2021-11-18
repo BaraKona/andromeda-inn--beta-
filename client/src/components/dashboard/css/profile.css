@@ -1,7 +1,6 @@
 .profile{
-    background-color: rgb(30, 28, 36);
-    height: 120vh;
-    margin-left: 50px;
+    min-height: 100vh;
+    background: linear-gradient(115deg, rgb(72, 44, 61) 55%, rgb(158, 161, 190) 55%);
 }
 .profileContainer{
     max-width: 85%;

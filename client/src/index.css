@@ -4,7 +4,7 @@ html, body {
   font-family: Palatino serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--lightmodecolour);
+  background-color: rgb(249,218,196);
   --darkmodecolour: rgb(30, 26, 31);
   --lightmodecolour: rgb(255, 242, 224);
   --purple: rgb(9, 40, 211);
@@ -50,7 +50,7 @@ hr{
   height: 50px;
 }
 .Home{
-  background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
+  background: radial-gradient(rgb(249,218,196),rgb(249,218,196));
 }
 
 
