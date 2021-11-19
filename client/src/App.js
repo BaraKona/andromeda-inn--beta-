@@ -1,7 +1,6 @@
 import React, {useEffect} from "react"
 import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage} from './views'
 import ProfilePage from './components/dashboard/profilePage'
-import NewAbout from './components/about/newAbout'
 import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
 import Dashboard from './components/dashboard/dashboard'
@@ -31,7 +30,6 @@ export default function App() {
             <Route path="/forgot-password" component={ForgotPasswordPage} />
             <Route exact path="/" component={ HomePage }/>
             <Route path="/about" component={ AboutPage }/>
-            <Route path="/new-about" component={NewAbout}/>
             {/* <Route path="/explore" component={ ExplorePage }/> */}
             <PrivateRoute exact path="/inn" component={Dashboard}/>
             <PrivateRoute exact path="/inn/chat" component={Chat}/>

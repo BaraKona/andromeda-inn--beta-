@@ -48,7 +48,7 @@ export function AuthProvider({ children }) {
   }
   function displayImg() {
     if (currentUser.photoURL === null){
-      const photoURL = 'https://res.cloudinary.com/andromeda-inn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1635003692/images/marin-tulard-QdD8NwVjlGU-unsplash_ehbg4w.jpg'
+      const photoURL = 'https://res.cloudinary.com/andromeda-inn/image/upload/v1635003692/images/marin-tulard-QdD8NwVjlGU-unsplash_ehbg4w.jpg'
       return photoURL}
     else {return currentUser.photoURL}
   }
