@@ -41,14 +41,15 @@ const Navbar = () => {
     else{return <> <img src={book1} className="svgIcon"/><h2 id="title"> AI </h2></>}
   }
   function isDashboard () {
-    if (splitLocation[1] === 'dashboard'){
+    if (splitLocation[1] === 'inn'){
       return <>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/" style={{marginLeft: '20px'}}>Home</NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/new-about" >About</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/dashboard" style={{marginLeft:'auto'}}> Hub </NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/dashboard/profile"> Profile </NavLink>
-        {/* <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/"> Friends</NavLink> */}
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/dashboard/create-post"> Your Posts</NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn" style={{marginLeft:'auto'}}> Hub </NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/discover"> Discover </NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/chat"> Chat </NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/create-post"> Posts </NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/profile"> Profile </NavLink>
 
       </>
     }
@@ -56,7 +57,7 @@ const Navbar = () => {
       return <>
         <NavLink style={{marginLeft:'auto'}} activeClassName="navActive" className={`nav-items ${mobileMenu}`} to="/new-about">About</NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`} exact to="/">Home</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`}  to="/dashboard"> Dashboard </NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`}  to="/inn"> Dashboard </NavLink>
       </>
     }
   }

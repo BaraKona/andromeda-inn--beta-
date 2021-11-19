@@ -12,13 +12,19 @@ function Dashboard() {
     <section className="mainDashboard Home">
         <Navbar/>
             <div className="dashboardFlex">
+                <div className="dashboardNarrow">
+                    <div className="dashboardFriends">
+                    </div>
+                    <div className="dashboardUsers">
+                    </div>
+                </div>
                 <div className="dashboardWide">
-                    <div className="dashboardBanner">
-                        <h1> Explore the Hub and all it has to offer!</h1>
-                        <button> Join Groups </button>
+                    <div className="dashboardChat">
+
                     </div>
                     <div className="dashboardPosts">
-                        <div className ="recentPosts">
+                    <h2> Recent Posts</h2>
+                    <div className ="recentPosts">
                             {!posts.length ? <div> Loading... </div> : (
                                 <div className="postMap"> {posts.slice(0, 3).map((post) => (
                                     <div className = "postItem" key={post._id}>
@@ -28,14 +34,6 @@ function Dashboard() {
                                 </div>
                             )}
                         </div>
-                    </div>
-                </div>
-                <div className="dashboardNarrow">
-                    <div className="dashboardChat">
-
-                    </div>
-                    <div className="topTags">
-
                     </div>
                 </div>
             </div>

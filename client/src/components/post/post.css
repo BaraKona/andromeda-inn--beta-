@@ -1,21 +1,41 @@
 .postItem{
-    max-width: 350px;
-    background:-webkit-linear-gradient(45deg,
-    rgb(75, 37, 11), rgb(66, 38, 60), rgb(56, 25, 95))no-repeat  fixed;
+    max-width: 460px;
+    background: rgb(235, 207, 178);
 }
-.smallPostItem{
-    max-height: 300px;
-}
+
 .postCard{
     color: var(--text);
-    margin: 10px;
+    max-width: 450px;
+}
+.postTitle{
+    font-size: 1.4em;
 }
 .postImg{
-    height: 200px;
-    width: 100%;
+    min-height: 200px;
+    width: 460px;
+}
+.postMap{
+    display:flex;
+    flex-wrap: wrap;
+}
+.postMap > *{
+    flex: 1 1 400px;
+    min-height: 450px;
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.smallPostItem{
+    min-height: 500px;
+}
+.smallPostCard{
+    max-width: 450px;
+    max-height: 300px;
+    margin: 10px;
 }
 .smallPostImg{
-    max-height: 150px;
+    min-height: 260px;
     width: 100%;
 }
 .postTitle{

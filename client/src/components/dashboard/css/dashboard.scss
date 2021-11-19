@@ -1,49 +1,63 @@
 .mainDashboard{
     min-height: 100vh;
-    background: linear-gradient(115deg, rgb(249,218,196) 55%, rgb(146, 129, 122) 55%);
+    background: rgb(66, 75, 84)
 }
 .dashboardFlex{
-    padding: 50px;
+    padding: 15px;
     display: flex;
     flex-wrap: wrap;
 }
 .dashboardFlex > *:nth-child(1){
-    flex: 1 1 65%;
-    min-width: 400px;
+    flex: 1 1 20%;
+    min-width: 300px;
 }
 .dashboardFlex > *:nth-child(2){
-    flex: 1 1 35%;
+    flex: 1 1 80%;
     min-width: 400px;
 }
-.dashboardBanner{
-    border-radius: 10px;
-    width: 100%;
-    height: 350px;
-    // background-image: url(../../../images/andrew-seaman.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%
+.dashboardFriends, .dashboardUsers{
+    margin: 20px 0 20px 0;
+    max-width: 100%;
+    min-height: 350px;
+    background: rgb(235, 207, 178);
 }
-.dashboardBanner button{
+.dashboardUsers{
+    height: 570px;
+}
+.dashboardFriends button{
     margin-left: 30px;
     height: 80px;
     width: 200px;
 }
-.dashboardBanner h1{
+.dashboardFriends h1{
     color: white;
     padding-left: 30px;
     padding-top: 50px;
 }
+.dashboardPosts{
+
+    h2{
+        margin: 10px 20px 0 20px;
+    }
+}
 .dashboardChat{
-    border-radius: 10px;
-    margin: 20px;
-    background:-webkit-linear-gradient(45deg,
-    rgb(56, 29, 11), rgb(66, 38, 60), rgb(56, 25, 95))no-repeat;
-    min-height: 500px;
+    margin: 20px 20px 0 20px;
+    background: rgb(235, 207, 178);
+    min-height: 400px;
 }
 .topTags{
-    border-radius: 10px;
-    margin: 20px;
-    background:-webkit-linear-gradient(45deg,
-    rgb(56, 29, 11), rgb(66, 38, 60), rgb(56, 25, 95))no-repeat;
-    min-height: 300px;
+    background: transparent;
+    min-height: 400px;
+}
+@media only screen and (max-width: 1530px){
+    .dashboardNarrow{
+        display: flex;
+        flex-direction: row;
+    }
+    .dashboardFriends, .dashboardUsers{
+        flex-direction: row;
+        margin: 0 auto;
+        min-width: 500px;
+        min-height: 200px;
+    }
 }

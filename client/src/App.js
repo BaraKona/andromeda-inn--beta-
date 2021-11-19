@@ -2,8 +2,10 @@ import React, {useEffect} from "react"
 import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage} from './views'
 import ProfilePage from './components/dashboard/profilePage'
 import NewAbout from './components/about/newAbout'
+import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
 import Dashboard from './components/dashboard/dashboard'
+import Chat from './components/dashboard/chat'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from './contexts/AuthContext.js';
 import {useDispatch} from 'react-redux';
@@ -31,9 +33,11 @@ export default function App() {
             <Route path="/about" component={ AboutPage }/>
             <Route path="/new-about" component={NewAbout}/>
             {/* <Route path="/explore" component={ ExplorePage }/> */}
-            <PrivateRoute exact path="/dashboard" component={Dashboard}/>
-            <PrivateRoute exact path="/dashboard/profile" component={ProfilePage}/>
-            <PrivateRoute exact path="/dashboard/create-post" component={CreatePostPage}/>
+            <PrivateRoute exact path="/inn" component={Dashboard}/>
+            <PrivateRoute exact path="/inn/chat" component={Chat}/>
+            <PrivateRoute exact path="/inn/discover" component={Discover}/>
+            <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>
+            <PrivateRoute exact path="/inn/create-post" component={CreatePostPage}/>
             {/* <PrivateRoute exact path="/connect" component={ ConnectPage }/> */}
           </Switch>
         </div>
