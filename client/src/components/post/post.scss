@@ -41,3 +41,32 @@
 .postTitle{
     position: relative;
 }
+
+
+.profilePostImg{
+    min-height: 200px;
+    max-width: 100%;
+}
+.profilePostItem {
+    min-height: 800px;
+    max-width: 550px;
+    background: rgb(54, 59, 70);
+    margin: 0 auto auto auto;
+
+    span{
+    background-image: -webkit-linear-gradient(40deg, var(--pink), var(--neonBlue), var(--green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 250%;
+    animation: text-animation 5s infinite alternate;
+  }
+}
+.profilePostBody{
+    margin: 15px;
+}
+@media only screen and (max-width: 800px){
+    .profilePostItem {
+        margin: 10px 10px;
+    }
+}

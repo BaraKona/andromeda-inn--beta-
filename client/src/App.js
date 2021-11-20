@@ -35,7 +35,7 @@ export default function App() {
             <PrivateRoute exact path="/inn/chat" component={Chat}/>
             <PrivateRoute exact path="/inn/discover" component={Discover}/>
             <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>
-            <PrivateRoute exact path="/inn/create-post" component={CreatePostPage}/>
+            <PrivateRoute exact path="/inn/profile/create-post" component={CreatePostPage}/>
             {/* <PrivateRoute exact path="/connect" component={ ConnectPage }/> */}
           </Switch>
         </div>

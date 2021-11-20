@@ -43,7 +43,6 @@ const splitLocation = pathname.split("/");//Javascript split method to get the n
         // setSelected(selected === "not" ? "selected" : "not" )
         if (tag.current.classList == 'selected'){
             tag.current.classList.remove('selected')
-            console.log(currentUser)
         }
         else if (tag.current.classList == ''){
             tag.current.classList.add('selected')
@@ -82,7 +81,7 @@ const splitLocation = pathname.split("/");//Javascript split method to get the n
                 <div className="profileSettings">
                     <ul>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/profile"><li> Profile</li></NavLink>
-                        <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/create-post"> <li>Create Post</li></NavLink>
+                        <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/profile/create-post"> <li>Create Post</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>

@@ -1,0 +1,92 @@
+.postSubContainer{
+    border: 0.5px solid rgb(100, 100, 100);
+}
+.postSubContainer >* input, .postSubContainer >* textarea{
+  width: 98%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  padding: 10px 0 10px 2% ;
+  background: transparent;
+  color: rgb(241, 218, 196);
+  border: 0.5px solid rgb(100, 100, 100);
+}
+#postContent textarea, #postReContent textarea{
+    max-width: 98%;
+    min-width: 98%;
+}
+.postFormForm >* textarea{
+    min-height: 70px;
+}
+.postSubContainer label{
+    color: rgb(241, 218, 196);
+}
+.postFormForm >* {
+    padding: 15px 5%;
+}
+.postSubContainer{
+    min-height: 700px;
+    max-width: 800px;
+    background: rgb(42,47,57);
+    margin:auto;
+    border-radius: 15px;
+}
+.postHeader{
+    padding: 15px;
+    border-bottom: 0.5px solid rgb(100, 100, 100);
+    background-color: rgb(54, 59, 70);
+    h3, p{
+        margin:0;
+    }
+}
+.cardIcon{
+    max-width:150px;
+    max-height:150px;
+    margin-top: 50px;
+}
+.postClear{
+    background-color:red;
+}
+.postSubContainer .errorMsg{
+    margin: 0;
+    color: green;
+}
+.yourPostContainer{
+    max-width: 100%;
+    margin: 0 50px;
+}
+
+.postButtons{
+    display: flex;
+    flex-direction: row;
+}
+.deletePostButton,.updatePostButton{
+    border: 0.5px solid rgb(100, 100, 100);
+    background-color: rgb(54, 59, 70);
+    color: rgb(197, 186, 175);
+    padding: 10px 5px;
+}
+.deletePostButton:hover,.updatePostButton:hover{
+    color: rgb(54, 59, 70);
+    background-color: rgb(197, 186, 175);
+}
+.updatePostButton{
+    margin-left: auto;
+}
+.formButtons{
+    display: flex;
+}
+.formButtons > *:nth-child(1){
+    margin-left: auto;
+}
+.postSubmit, .postClear{
+    display:block;
+    width: auto;
+    padding:10px;
+    border: none;
+    margin: 0 5px;
+}
+
+@media only screen and (max-width: 490px) {
+    .postForm{margin-left: 0}
+}
