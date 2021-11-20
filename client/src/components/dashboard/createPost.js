@@ -164,7 +164,7 @@ const Profile = () => {
             </div>
             <div className = "yourPosts">
                 <div className = "yourPostContainer">
-                    <h1> Your Posts: </h1>
+                    <h3> Your Posts: </h3>
                     <div className ="">
                     <p><span> You have {3 - posts.length} / 3 Posts left </span></p>
                         {!posts.length ? <div> Loading... </div> : (
