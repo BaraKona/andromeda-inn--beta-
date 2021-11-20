@@ -151,7 +151,7 @@ const Profile = () => {
                             {/* <input type="text" value={postData.postGenre} onChange={(e) => setPostData({ ...postData, postGenre: e.target.value })} required /> */}
                         </div>
                         <div className="fileInput">
-                            <label> Choose a cover image </label>
+                            <label> Choose a cover image &#40;Jpeg only&#41;</label>
                             <FileBase type="file" multiple={false} onDone = {({base64}) => setPostData({ ...postData, selectedFile: base64})} required/>
                         </div>
                         <div className = "formButtons">
