@@ -10,7 +10,7 @@ function ProfilePost ({post}) {
             <div className = "profilePostCard">
                 <div className = "profilePostBody">
                     <p style={{textAlign: "right", textDecoration: "underline"}}><span>Posted: </span>{moment(post.createdAt).calendar()}</p>
-                    <h1 className = "postTitle">{post.postTitle}</h1>
+                    <h1 className = "profilePostTitle">{post.postTitle}</h1>
                     <p style={{textAlign: "justify", minHeight:"150px", maxHeight:"150px", overflowY: 'auto'}}> {post.postContent}</p>
                     <p style={{textAlign: "justify", minHeight:"150px", maxHeight:"150px", overflowY: 'auto'}}> {post.postReContent}</p>
                     <hr style={{width: "80%"}}/>

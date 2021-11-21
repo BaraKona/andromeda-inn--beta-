@@ -1,4 +1,58 @@
 .discover{
     min-height: 100vh;
-    background: rgb(254, 240, 240);
+    background: rgb(61, 58, 75);
+}
+.discoverContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.discoverContainer > *:nth-child(1) {
+    flex: 1 1 17.5%;
+    min-width: 200px;
+    margin: 10px;
+    background: rgb(61, 58, 75);
+}
+.discoverContainer > *:nth-child(2) {
+    flex: 1 1 77.5%;
+    min-width: 500px;
+    margin: 10px;
+    background: rgb(61, 58, 75);
+    border: 1px solid rgba(211, 192, 205, 0.603);
+    border-radius: 10px;
+}
+.categoryMenu, .typeMenu, .colMenu{
+    display: none;
+    background: transparent;
+    min-width: 160px;
+    z-index: 1;
+      a {
+      margin-left: 35px;
+      font-size: 15px;
+      color: rgb(201, 200, 200);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      background: transparent
+      }
+      a:hover{
+          font-weight: 500;
+          color: #5FBDC1;
+
+      }
+}
+.discoverCategory .categoryMenu.active, .discoverType .typeMenu.active, .discoverCol .colMenu.active{
+    display: block;
+}
+.categoryButton{
+    border: none;
+    border-bottom: 1px solid rgba(211, 192, 205, 0.603);
+    background: none;
+    padding: 10px 20px;
+    color: rgb(201, 200, 200);
+    width: 100%;
+    text-align: left;
+}
+.categoryButton:hover{
+    font-weight: bolder;
 }
