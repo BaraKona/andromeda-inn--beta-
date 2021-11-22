@@ -9,12 +9,14 @@ import {createPost, updatePost, deletePost} from '../../actions/posts'
 import './css/postForm.scss'
 
 const Profile = () => {
-    const [postData, setPostData] = useState({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: ''})
+    const [postData, setPostData] = useState({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: '', postType: '', postCollab: ''})
     const {currentUser, currentPostId, setCurrentPostId} = useAuth()
     const posts = useSelector((state) => currentUser ? state.posts.filter((posts) => posts.postCreator === currentUser.uid): null);
     const editPost = useSelector((state) => currentPostId ? state.posts.find((post) => post._id === currentPostId && post.postCreator === currentUser.uid): null);
     const [error, setError] = useState("")
     const [genres, setGenres] = useState([])
+    const [collab, setCollab] = useState([])
+    const [types, setTypes] = useState([])
     const dispatch = useDispatch();
     const fantasyRef = useRef()
     const sciFiRef = useRef()
@@ -34,6 +36,14 @@ const Profile = () => {
     const poetryRef = useRef()
     const crimeRef = useRef()
     const psychoRef = useRef()
+    const lFMRef = useRef()
+    const sStoryRef = useRef()
+    const mComicRef = useRef()
+    const webNovelRef = useRef()
+    const cYOAdventureRef = useRef()
+    const fFictionRef = useRef()
+    const collaborationRef = useRef()
+    const accountabilityRef = useRef()
 
     useEffect(() => {
         if(editPost) setPostData(editPost)
@@ -75,9 +85,31 @@ const Profile = () => {
             setGenres(genres => [...genres, tag.current.outerText])
         }
     }
+    function isType (e, tag){
+        e.preventDefault()
+        if (tag.current.classList == 'selected'){
+            tag.current.classList.remove('selected')
+            setTypes(types.filter(item => item !== tag.current.outerText))
+        }
+        else if (tag.current.classList == ''){
+            tag.current.classList.add('selected')
+            setTypes(types => [...types, tag.current.outerText])
+        }
+    }
+    function isCollab (e, tag){
+        e.preventDefault()
+        if (tag.current.classList == 'selected'){
+            tag.current.classList.remove('selected')
+            setCollab(collab.filter(item => item !== tag.current.outerText))
+        }
+        else if (tag.current.classList == ''){
+            tag.current.classList.add('selected')
+            setCollab(collab => [...collab, tag.current.outerText])
+        }
+    }
     const clear = () => {
         setCurrentPostId(null);
-        setPostData({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: ''})
+        setPostData({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: '', postType: ''})
         // setError("")
     }
     const updatePostClick = (postId) => {
@@ -150,12 +182,34 @@ const Profile = () => {
                             <hr/>
                             {/* <input type="text" value={postData.postGenre} onChange={(e) => setPostData({ ...postData, postGenre: e.target.value })} required /> */}
                         </div>
+                        <div id="postType">
+                            <label> Post Type &#40;select one&#41;</label>
+                            <div className = "profileTags">
+                                <button onClick={(e) => isType(e, lFMRef)} ref={lFMRef}> Long-form Novel </button>
+                                <button onClick={(e) => isType(e, sStoryRef)} ref={sStoryRef}> Short Story </button>
+                                <button onClick={(e) => isType(e, mComicRef)} ref={mComicRef}> Manga / Comic </button>
+                                <button onClick={(e) => isType(e, webNovelRef)} ref={webNovelRef}> Web Novel </button>
+                                <button onClick={(e) => isType(e, cYOAdventureRef)} ref={cYOAdventureRef}> Choose Your Own Adventure </button>
+                                <button onClick={(e) => isType(e, fFictionRef)} ref={fFictionRef}> Fan Fiction </button>
+                            </div>
+                            <p onChange={(e) => setPostData({ ...postData, postGenre: e.target.value })}>{types.join(' ')}</p>
+                            <hr/>
+                        </div>
+                        <div id="postCollaboration">
+                            <label> Collaboration Type &#40;select one&#41;</label>
+                            <div className = "profileTags collaboration">
+                                <button onClick={(e) => isCollab(e, collaborationRef)} ref={collaborationRef}> Collaboration </button>
+                                <button onClick={(e) => isCollab(e, accountabilityRef)} ref={accountabilityRef}> Accountability </button>
+                            </div>
+                            <p onChange={(e) => setPostData({ ...postData, postGenre: e.target.value })}>{collab.join(' ')}</p>
+                            <hr/>
+                        </div>
                         <div className="fileInput">
                             <label> Choose a cover image &#40;Jpeg only&#41;</label>
                             <FileBase type="file" multiple={false} onDone = {({base64}) => setPostData({ ...postData, selectedFile: base64})} required/>
                         </div>
                         <div className = "formButtons">
-                            <button className="postSubmit" type="submit" onClick={(e) => setPostData({ ...postData, postCreator: currentUser.uid, postGenre: genres.join(' ')})}>Submit</button>
+                            <button className="postSubmit" type="submit" onClick={(e) => setPostData({ ...postData, postCreator: currentUser.uid, postGenre: genres.join(' '), postType: types.join(' '), postCollab: collab.join(' ')})}>Submit</button>
                             <button className="postClear" onClick={clear}>Clear</button>
                         </div>
                             <p className = "errorMsg">{error}</p>

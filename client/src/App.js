@@ -4,7 +4,7 @@ import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
 import Dashboard from './components/dashboard/dashboard'
-import Chat from './components/dashboard/chat'
+import Projects from './components/dashboard/projects'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from './contexts/AuthContext.js';
 import {useDispatch} from 'react-redux';
@@ -16,7 +16,7 @@ import './index.css'
 export default function App() {
   const dispatch = useDispatch();
 
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(getPosts());
   }, [dispatch])
 
@@ -32,7 +32,7 @@ export default function App() {
             <Route path="/about" component={ AboutPage }/>
             {/* <Route path="/explore" component={ ExplorePage }/> */}
             <PrivateRoute exact path="/inn" component={Dashboard}/>
-            <PrivateRoute exact path="/inn/chat" component={Chat}/>
+            <PrivateRoute exact path="/inn/projects" component={Projects}/>
             <PrivateRoute exact path="/inn/discover" component={Discover}/>
             <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>
             <PrivateRoute exact path="/inn/profile/create-post" component={CreatePostPage}/>

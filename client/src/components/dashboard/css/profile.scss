@@ -88,7 +88,7 @@
 .profileTags{display: flex; flex-wrap:wrap;}
 .profileTags {
     button{
-        margin: 5px auto;
+        margin: 5px 3px;
         padding: 5px;
         background: transparent;
         border: 0.5px solid rgb(100, 100, 100);
@@ -108,7 +108,11 @@
         background: rgb(42,47,57);
     }
 }
-// .profileName{
+.collaboration{
+    button{
+        margin: 5px 3px;
+    }
+}
 //     color: rgb(230, 230, 230);
 //     font-size: 40px;
 //     margin: 0;

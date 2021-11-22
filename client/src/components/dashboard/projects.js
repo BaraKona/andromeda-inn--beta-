@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from '../layout/newNavbar'
-import './css/chat.scss'
-function Chat() {
+import './css/projects.scss'
+
+function Projects() {
     return (
         <section className="chat">
             <Navbar/>
@@ -9,4 +10,4 @@ function Chat() {
     )
 }
 
-export default Chat
+export default Projects

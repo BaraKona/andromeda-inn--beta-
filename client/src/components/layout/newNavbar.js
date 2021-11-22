@@ -43,7 +43,7 @@ const Navbar = () => {
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/about" >About</NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn" style={{marginLeft:'auto'}}> Hub </NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/discover"> Discover </NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/chat"> Chat </NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/projects"> Projects </NavLink>
         {/* <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/create-post"> Posts </NavLink> */}
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} to="/inn/profile"> Profile </NavLink>
       </>
