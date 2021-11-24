@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect, Suspense} from "react"
 import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage} from './views'
 import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
@@ -10,6 +10,7 @@ import { AuthProvider } from './contexts/AuthContext.js';
 import {useDispatch} from 'react-redux';
 import {getPosts} from './actions/posts'
 import PrivateRoute from "./route/PrivateRoute.js";
+import loading from './images/Ripple.gif'
 import './index.css'
 
 
@@ -22,6 +23,7 @@ export default function App() {
 
   return (
     <Router>
+      <Suspense fallback={<img src={loading}></img>}>
       <AuthProvider>
         <div className="App">
           <Switch>
@@ -40,6 +42,7 @@ export default function App() {
           </Switch>
         </div>
       </AuthProvider>
+      </Suspense>
     </Router>
   );
 }

@@ -22,6 +22,7 @@ function Discover() {
     const rPRef = useRef()
     const adventureRef = useRef()
     const warRef = useRef()
+    const mentorRef = useRef()
     const lGBTQRef = useRef()
     const mysteryRef = useRef()
     const actionRef = useRef()
@@ -107,6 +108,7 @@ function Discover() {
                     <div className={`colMenu ${showCol}`}>
                         <a href="#" onClick={(e) => filterCollabPosts(e, collaborationRef)} ref={collaborationRef}> Collaboration </a>
                         <a href="#" onClick={(e) => filterCollabPosts(e, accountabilityRef)} ref={accountabilityRef}> Accountability </a>
+                        <a href="#" onClick={(e) => filterCollabPosts(e, mentorRef)} ref={mentorRef}> Mentorship </a>
                     </div>
                 </div>
                 <div className="discoverType">

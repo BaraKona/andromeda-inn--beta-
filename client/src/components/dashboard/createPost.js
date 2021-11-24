@@ -17,6 +17,8 @@ const Profile = () => {
     const [genres, setGenres] = useState([])
     const [collab, setCollab] = useState([])
     const [types, setTypes] = useState([])
+    const [typeCounter, setTypeCounter] = useState(0)
+    const [collabCounter, setCollabCounter] = useState(0)
     const dispatch = useDispatch();
     const fantasyRef = useRef()
     const sciFiRef = useRef()
@@ -36,6 +38,7 @@ const Profile = () => {
     const poetryRef = useRef()
     const crimeRef = useRef()
     const psychoRef = useRef()
+    const mentorRef = useRef()
     const lFMRef = useRef()
     const sStoryRef = useRef()
     const mComicRef = useRef()
@@ -45,6 +48,7 @@ const Profile = () => {
     const collaborationRef = useRef()
     const accountabilityRef = useRef()
 
+    console.log(currentUser)
     useEffect(() => {
         if(editPost) setPostData(editPost)
     }, [editPost, dispatch])
@@ -87,24 +91,28 @@ const Profile = () => {
     }
     function isType (e, tag){
         e.preventDefault()
-        if (tag.current.classList == 'selected'){
+        if (tag.current.classList == 'selected' && typeCounter == 1){
             tag.current.classList.remove('selected')
             setTypes(types.filter(item => item !== tag.current.outerText))
+            setTypeCounter(0)
         }
-        else if (tag.current.classList == ''){
+        else if (tag.current.classList == '' && typeCounter == 0){
             tag.current.classList.add('selected')
             setTypes(types => [...types, tag.current.outerText])
+            setTypeCounter(1)
         }
     }
     function isCollab (e, tag){
         e.preventDefault()
-        if (tag.current.classList == 'selected'){
+        if (tag.current.classList == 'selected' && collabCounter == 1){
             tag.current.classList.remove('selected')
             setCollab(collab.filter(item => item !== tag.current.outerText))
+            setCollabCounter(0)
         }
-        else if (tag.current.classList == ''){
+        else if (tag.current.classList == '' && collabCounter == 0){
             tag.current.classList.add('selected')
             setCollab(collab => [...collab, tag.current.outerText])
+            setCollabCounter(1)
         }
     }
     const clear = () => {
@@ -200,6 +208,7 @@ const Profile = () => {
                             <div className = "profileTags collaboration">
                                 <button onClick={(e) => isCollab(e, collaborationRef)} ref={collaborationRef}> Collaboration </button>
                                 <button onClick={(e) => isCollab(e, accountabilityRef)} ref={accountabilityRef}> Accountability </button>
+                                <button onClick={(e) => isCollab(e, mentorRef)} ref={mentorRef}> Mentorship </button>
                             </div>
                             <p onChange={(e) => setPostData({ ...postData, postGenre: e.target.value })}>{collab.join(' ')}</p>
                             <hr/>
