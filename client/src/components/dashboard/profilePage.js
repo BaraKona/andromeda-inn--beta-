@@ -5,7 +5,7 @@ import {NavLink, useLocation} from 'react-router-dom'
 import './css/profile.scss'
 
 const Profile = () => {
-const { currentUser, logout, displayImg, displayName, updateProfile } = useAuth()
+const { currentUser, logout, displayImg, displayName, updateName, updatePhoto } = useAuth()
 const displayRef = useRef()
 const writerRef = useRef()
 const worldRef = useRef()
@@ -15,7 +15,8 @@ const editRef = useRef()
 const proofRef = useRef()
 const rPRef = useRef()
 const mapRef = useRef()
-
+const nameRef = useRef()
+const [message, setMessage] = useState("")
 const [error, setError] = useState("")
 const [loading, setLoading] = useState(false)
 const [input, setInput] = useState(false);
@@ -24,21 +25,24 @@ const [displayed, setDisplayed] = useState(<p>{displayName()}</p>);
 const location = useLocation();//assigning location variable
 const { pathname } = location;//destructuring pathname from location
 const splitLocation = pathname.split("/");//Javascript split method to get the name of the path in array
-
+console.log(currentUser)
     async function handleSubmit(e) {
-        e.preventDefault()
+    e.preventDefault()
 
-        try {
-        setError("")
-        setLoading(true)
-        await updateProfile(displayRef.current.value)
-        } catch {
-        setError("failed to update Profile")
-        console.log(error)
-        }
-
-        setLoading(false)
+    try {
+      setMessage("")
+      setError("")
+      setLoading(true)
+      await updateName(nameRef.current.value)
+      setMessage("Check your inbox for further instructions")
+      console.log(message)
+    } catch {
+      setError("Failed to update Name")
+      console.log(error)
     }
+
+    setLoading(false)
+  }
     function isTag (e, tag){
         // setSelected(selected === "not" ? "selected" : "not" )
         if (tag.current.classList == 'selected'){
@@ -62,7 +66,6 @@ const splitLocation = pathname.split("/");//Javascript split method to get the n
             setInput(!input)
             console.log(input)
         }
-        // setInput (input == <p>{displayName()}</p> ? <input type="email" placeholder={displayName()}/> : <p>{displayName()}</p>)
     }
     function buttonText(){
         if (input === true){
@@ -74,7 +77,7 @@ const splitLocation = pathname.split("/");//Javascript split method to get the n
     }
 
     return(
-        <>
+    <>
         <section className = "profile">
             <Navbar/>
             <div className = "profileContainer">
@@ -101,6 +104,9 @@ const splitLocation = pathname.split("/");//Javascript split method to get the n
                     <hr/>
                     <div className = "profileInfo">
                         <p>Name: {currentUser.displayName}</p>
+                        <input type="text" ref={nameRef}/>
+                        <button onClick={edit}> {buttonText()} </button>
+                        <button onClick={handleSubmit}> Submit  </button>
                         <p>Email: {currentUser.email}</p>
                         <p>Tags: <span>Writer</span>{' '}-{' '}<span>Consumer</span>{' '}-{' '}<span>World Builder</span></p>
                         <p>Member Since: {currentUser.metadata.creationTime}</p>
@@ -142,7 +148,7 @@ const splitLocation = pathname.split("/");//Javascript split method to get the n
                 </div> */}
 
         </section>
-        </>
+    </>
     );
 };
 

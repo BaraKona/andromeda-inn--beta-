@@ -36,9 +36,22 @@ export function AuthProvider({ children }) {
   function updatePassword(password) {
     return currentUser.updatePassword(password)
   }
-  function updateProfile(displayName){
-    currentUser.displayName = displayName
-    return currentUser.displayName
+  function updateName(name){
+    currentUser.updateProfile({
+      displayName: name
+    }).then(() => {
+      console.log("success")
+      // Update successful
+      // ...
+    }).catch((error) => {
+      console.log(error)
+      // An error occurred
+      // ...
+    });
+  }
+  function updatePhoto(photo){
+    currentUser.photoURL = photo
+    return currentUser.photoURL
   }
   function displayName() {
     if (currentUser.displayName === null){
@@ -72,7 +85,8 @@ export function AuthProvider({ children }) {
     updatePassword,
     displayName,
     displayImg,
-    updateProfile,
+    updateName,
+    updatePhoto,
     currentPostId,
     setCurrentPostId
   }
