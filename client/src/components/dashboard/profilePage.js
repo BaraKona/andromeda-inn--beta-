@@ -5,7 +5,14 @@ import {NavLink, useLocation} from 'react-router-dom'
 import './css/profile.scss'
 
 const Profile = () => {
-const { currentUser, logout, displayImg, displayName, updateName, updatePhoto } = useAuth()
+const { currentUser, logout, displayImg, displayName, updateName, uploadImg, deleteImg } = useAuth()
+const [modal, showModal] = useState('')
+const [imageSelected, setImageSelected] = useState("")
+const [loading, setLoading] = useState(false)
+const [input, setInput] = useState(false);
+const [displayed, setDisplayed] = useState(<p>{displayName()}</p>);
+const [message, setMessage] = useState("")
+const [error, setError] = useState("")
 const displayRef = useRef()
 const writerRef = useRef()
 const worldRef = useRef()
@@ -16,42 +23,78 @@ const proofRef = useRef()
 const rPRef = useRef()
 const mapRef = useRef()
 const nameRef = useRef()
-const [message, setMessage] = useState("")
-const [error, setError] = useState("")
-const [loading, setLoading] = useState(false)
-const [input, setInput] = useState(false);
-const [displayed, setDisplayed] = useState(<p>{displayName()}</p>);
+const imageRef = useRef()
 
-const location = useLocation();//assigning location variable
-const { pathname } = location;//destructuring pathname from location
-const splitLocation = pathname.split("/");//Javascript split method to get the name of the path in array
+const location = useLocation();  //assigning location variable
+const { pathname } = location;  //destructuring pathname from location
+const splitLocation = pathname.split("/");  //Javascript split method to get the name of the path in array
 console.log(currentUser)
-    async function handleSubmit(e) {
+
+  async function handleNameSubmit(e) {
     e.preventDefault()
-
     try {
-      setMessage("")
-      setError("")
-      setLoading(true)
-      await updateName(nameRef.current.value)
-      setMessage("Check your inbox for further instructions")
-      console.log(message)
+        setMessage("")
+        setError("")
+        setLoading(true)
+        await updateName(nameRef.current.value)
+        setMessage("Check your inbox for further instructions")
+        console.log(message)
     } catch {
-      setError("Failed to update Name")
-      console.log(error)
+        setError("Failed to update Name")
+        console.log(error)
+    }
+        setLoading(false)
+  }
+  async function uploadImage (e) {
+    e.preventDefault()
+    if(currentUser.photoURL === null){
+        const formData = new FormData();
+        formData.append("file", imageSelected);
+        formData.append("upload_preset", "mcv9vtvq")
+        try {
+            await uploadImg(formData)
+            setError("nice")
+            console.log(error)
+        } catch (error) {
+            setError(error)
+            console.log(error)
+        }
+    }
+    else{
+        const formData = new FormData();
+        const formDeleteData = new FormData();
+        formData.append("file", imageSelected);
+        formData.append("upload_preset", "khig7cgl")
+        formDeleteData.append("file", currentUser.photoUrl);
+        formDeleteData.append("upload_preset", "khig7cgl")
+        try {
+            await deleteImg(formData)
+            setError("nice")
+            console.log(error)
+        } catch (error) {
+            setError(error)
+            console.log(error)
+        }
     }
 
-    setLoading(false)
   }
-    function isTag (e, tag){
-        // setSelected(selected === "not" ? "selected" : "not" )
-        if (tag.current.classList == 'selected'){
-            tag.current.classList.remove('selected')
-        }
-        else if (tag.current.classList == ''){
-            tag.current.classList.add('selected')
-        }
+
+  function openImageEdit(){
+    showModal(modal === '' ? 'show' : '')
+  }
+  function closeModal (){
+    showModal('')
+  }
+
+  function isTag (e, tag){
+    // setSelected(selected === "not" ? "selected" : "not" )
+    if (tag.current.classList == 'selected'){
+        tag.current.classList.remove('selected')
     }
+    else if (tag.current.classList == ''){
+        tag.current.classList.add('selected')
+    }
+  }
 
     const edit = () => {
         console.log('pressed edit')
@@ -59,7 +102,6 @@ console.log(currentUser)
             setDisplayed(<p>{displayName()}</p>)
             setInput(!input)
             console.log(input)
-
         }
         else {
             setDisplayed(<input type="text" className ="profileInput" placeholder={displayName()} ref={displayRef}/>)
@@ -80,6 +122,17 @@ console.log(currentUser)
     <>
         <section className = "profile">
             <Navbar/>
+            <div id="myModal" class={`modal ${modal}`}>
+                <div class="modal-content">
+                    <span class="close" onClick={closeModal}>&times;</span>
+                    <p for="avatar">Choose a profile picture:</p>
+                    <img src={displayImg()} className="profileImg"></img>
+                    <br/>
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" className="fileInput"
+                    onChange={(e) => {setImageSelected(e.target.files[0])}}/>
+                    <button class="profileButton" onClick={uploadImage}> Submit </button>
+                </div>
+            </div>
             <div className = "profileContainer">
                 <div className="profileSettings">
                     <ul>
@@ -96,17 +149,18 @@ console.log(currentUser)
                 </div>
                 <div className = "profileItems">
                     <div className = "profileName">
-                        <h3>{displayName()}</h3>
+                        <h3>{currentUser.displayName}</h3>
                     </div>
                     <div className = "profileImgContainer">
                         <img src={displayImg()} className = "profileImg"></img>
+                        <button className="profileButton" onClick={openImageEdit}> Edit </button>
                     </div>
                     <hr/>
                     <div className = "profileInfo">
-                        <p>Name: {currentUser.displayName}</p>
-                        <input type="text" ref={nameRef}/>
-                        <button onClick={edit}> {buttonText()} </button>
-                        <button onClick={handleSubmit}> Submit  </button>
+                        <label>Name: </label>
+                        <input type="text" ref={nameRef} placeholder={currentUser.displayName}/>
+                        <button class="profileButton" onClick={handleNameSubmit}> Submit </button>
+
                         <p>Email: {currentUser.email}</p>
                         <p>Tags: <span>Writer</span>{' '}-{' '}<span>Consumer</span>{' '}-{' '}<span>World Builder</span></p>
                         <p>Member Since: {currentUser.metadata.creationTime}</p>

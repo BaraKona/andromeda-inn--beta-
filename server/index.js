@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import postRoutes from './routes/posts.js'
+import userRoutes from './routes/users.js'
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(cors());
 
 //Routes for different data routes
 app.use('/posts', postRoutes);
+app.use('/users', userRoutes);
 
 const CONNECTION_URL = 'mongodb+srv://andromedainn:andromedainn123@cluster0.ubezw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;

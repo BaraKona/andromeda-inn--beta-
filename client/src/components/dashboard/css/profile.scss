@@ -33,6 +33,7 @@
         height: 0.5px;
         width: 90%;
         background: rgb(100, 100, 100);
+        margin-top: 25px;
     }
 }
 .profileContainer >*:nth-child(1){
@@ -69,12 +70,55 @@
 .profileInfo{
     margin: 10px 5%;
 }
-.profileImg{
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
+.profileImgContainer{
+    img{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        display: block;
+        margin: 10px auto;
+    }
+    button{
+        display: block;
+        margin: auto;
+    }
+}
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  .modal-content {
+    background-color: rgb(54, 59, 70);
+    margin: 150px auto auto auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: min(300px, 80%);
+    input{
+        padding:0;
+    }
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+.modal.show{
     display: block;
-    margin: 10px auto;
 }
 .aboutMe{
     textarea{
@@ -108,37 +152,21 @@
         background: rgb(42,47,57);
     }
 }
-.collaboration{
+.profileInfo{
     button{
-        margin: 5px 3px;
+        float: right;
     }
 }
-//     color: rgb(230, 230, 230);
-//     font-size: 40px;
-//     margin: 0;
-//     padding: 0;
-// }
-// .profileName p {
-//     font-size: 20px;
-//     margin-top: -40px;
-// }
-// .profileName p:nth-last-child(1){
-//     font-size: 20px;
-//     font-weight: bolder;
-//     margin-top: -10px;
-// }
-.editProfile{
-    background-color: rgb(45, 45, 56);
-    min-height: 35vh;
-    max-width: 1000px;
-    margin: 50px auto 0 auto;
-    border-radius: 15px;
+.profileButton{
+    background: transparent;
+    border: 0.5px solid rgb(100, 100, 100);
+    color: rgb(100, 100, 100);
 }
-.editProfile >*{
-    padding: 20px;
-    display: flex;
-    height: 70px;
+.profileButton:hover{
+    color: rgb(42,47,57);
+    background: rgb(100, 100, 100);
 }
+
 .profileText p:nth-child(1){
     margin: 0;
     color: rgb(202, 202, 202);
@@ -149,29 +177,14 @@
     font-weight: bold;
     font-size: 1.2rem;
 }
-.profileInfo button{
-    height: auto;
-    width: auto;
-    margin: auto 0 auto auto;
-    background-color: rgb(86, 86, 107);
-    border-radius: 10px;
-    padding: 15px 20px;
-}
-.profile hr{
-    margin-top: 25px;
-    max-width: 1000px;
-    border-color: rgb(125, 125, 153);
-}
 .profileInfo input{
-    padding: 0;
-    border: none;
+    padding: 0 5px;
+    border: 0.5px solid rgb(100, 100, 100);
     outline: none;
-    font-size: 19px;
-    margin-top: 15px;
+    font-size: 1em;
     max-width: 250px;
-    height: 1.5em;
-    color: red;
-    background-color: rgb(63, 63, 78);
+    color:rgb(241, 218, 196);
+    background-color: transparent;
 }
 @media only screen and (max-width: 600px) {
     .profileItems{

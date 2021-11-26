@@ -52,7 +52,10 @@ html, body {
 .Home{
   background: radial-gradient(rgb(249,218,196),rgb(249,218,196));
 }
-
+.button{
+  padding: 5px 10px;
+  border: 0;
+}
 
 
 

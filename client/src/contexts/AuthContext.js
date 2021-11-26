@@ -1,7 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
 import {auth} from '../api/firebase'
+import axios from 'axios'
 // This file allows use to have access our props/states anywhere in our app
 const AuthContext = React.createContext()
+// const cloudinary = require('cloudinary').v2
 
 //Exports context
 export function useAuth() {
@@ -49,9 +51,35 @@ export function AuthProvider({ children }) {
       // ...
     });
   }
+  function uploadImg(data){
+    axios.post("https://api.cloudinary.com/v1_1/andromeda-inn/image/upload", data)
+    .then((response) => {
+      updatePhoto(response.data.url)
+      console.log(response)
+    })
+  }
+  function deleteImg(deleteData, data){
+    axios.post("https://api.cloudinary.com/v1_1/andromeda-inn/image/destroy", data)
+    .then((response) =>{
+      uploadImg(data)
+      console.log(response)
+    }).catch((error) =>{
+      console.log(error)
+    })
+  }
   function updatePhoto(photo){
-    currentUser.photoURL = photo
-    return currentUser.photoURL
+    currentUser.updateProfile({
+      photoURL: photo
+    }).then((response) => {
+      console.log("success")
+      return(response)
+      // Update successful
+      // ...
+    }).catch((error) => {
+      console.log(error)
+      // An error occurred
+      // ...
+    });
   }
   function displayName() {
     if (currentUser.displayName === null){
@@ -88,6 +116,8 @@ export function AuthProvider({ children }) {
     updateName,
     updatePhoto,
     currentPostId,
+    uploadImg,
+    deleteImg,
     setCurrentPostId
   }
 

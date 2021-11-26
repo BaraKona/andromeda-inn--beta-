@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from './contexts/AuthContext.js';
 import {useDispatch} from 'react-redux';
 import {getPosts} from './actions/posts'
+import {getUsers} from './actions/users'
 import PrivateRoute from "./route/PrivateRoute.js";
 import loading from './images/Ripple.gif'
 import './index.css'
@@ -18,7 +19,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPosts());
+    dispatch(getPosts(), getUsers());
   }, [dispatch])
 
   return (
