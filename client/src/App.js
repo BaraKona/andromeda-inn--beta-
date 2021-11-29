@@ -1,5 +1,5 @@
 import React, {useEffect, Suspense} from "react"
-import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage} from './views'
+import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage, signupDetailsPage, SignupDetailsPage} from './views'
 import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
@@ -19,7 +19,8 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPosts(), getUsers());
+    dispatch(getPosts());
+    dispatch(getUsers())
   }, [dispatch])
 
   return (
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="/about" component={ AboutPage }/>
             {/* <Route path="/explore" component={ ExplorePage }/> */}
             <PrivateRoute exact path="/inn" component={Dashboard}/>
+            <PrivateRoute exact path="/details" component={SignupDetailsPage}/>
             <PrivateRoute exact path="/inn/projects" component={Projects}/>
             <PrivateRoute exact path="/inn/discover" component={Discover}/>
             <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>

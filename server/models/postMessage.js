@@ -5,9 +5,9 @@ const postSchema = mongoose.Schema({
     postTitle: String,
     postContent: String,
     postReContent: String,
-    postGenre: String,
-    postType: String,
-    postCollab: String,
+    postGenre: [String],
+    postType: [String],
+    postCollab: [String],
     tags: [String],
     selectedFile: String,
     postInterest: {

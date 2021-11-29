@@ -7,6 +7,9 @@ import './css/discover.scss'
 
 function Discover() {
     const posts = useSelector((state) => state.posts); // Get all posts
+    const users = useSelector((state) => state.users);
+    console.log(users)
+    console.log(posts)
     const [showCat, setShowCat] = useState('')
     const [showTyp, setShowTyp] = useState('')
     const [showCol, setShowCol] = useState('')

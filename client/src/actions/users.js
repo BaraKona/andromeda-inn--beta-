@@ -3,8 +3,8 @@ import * as api  from '../api';
 export const getUsers = () => async (dispatch) => {
     try {
         const { data } = await api.fetchUsers();
-        data.reverse()
         console.log(data)
+        console.log("data above")
         dispatch({type: 'FETCH_ALL', payload: data})
     } catch (error) {
         console.log(error.message)

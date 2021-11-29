@@ -93,7 +93,16 @@ export function AuthProvider({ children }) {
       return photoURL}
     else {return currentUser.photoURL}
   }
+  function getAllUsers(){
+    auth.getUsers()
+    .then((response) =>{
+      console.log(response)
+    })
+    .catch((error) =>{
+      console.log(error)
+    })
 
+  }
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
@@ -118,7 +127,8 @@ export function AuthProvider({ children }) {
     currentPostId,
     uploadImg,
     deleteImg,
-    setCurrentPostId
+    setCurrentPostId,
+    getAllUsers
   }
 
   return (

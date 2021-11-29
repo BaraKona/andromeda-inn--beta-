@@ -1,19 +1,18 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import Navbar from '../layout/newNavbar'
 import {useAuth} from '../../contexts/AuthContext'
 import {NavLink, useLocation} from 'react-router-dom'
 import './css/profile.scss'
 
 const Profile = () => {
-const { currentUser, logout, displayImg, displayName, updateName, uploadImg, deleteImg } = useAuth()
+const { currentUser, displayImg, displayName, updateName, uploadImg, deleteImg, getAllUsers } = useAuth()
 const [modal, showModal] = useState('')
 const [imageSelected, setImageSelected] = useState("")
 const [loading, setLoading] = useState(false)
-const [input, setInput] = useState(false);
 const [displayed, setDisplayed] = useState(<p>{displayName()}</p>);
 const [message, setMessage] = useState("")
 const [error, setError] = useState("")
-const displayRef = useRef()
+const [profileTag, setProfileTag] = useState([])
 const writerRef = useRef()
 const worldRef = useRef()
 const readerRef = useRef()
@@ -29,6 +28,10 @@ const location = useLocation();  //assigning location variable
 const { pathname } = location;  //destructuring pathname from location
 const splitLocation = pathname.split("/");  //Javascript split method to get the name of the path in array
 console.log(currentUser)
+
+  useEffect(() =>{
+  },[currentUser.displayName])
+
 
   async function handleNameSubmit(e) {
     e.preventDefault()
@@ -76,7 +79,6 @@ console.log(currentUser)
             console.log(error)
         }
     }
-
   }
 
   function openImageEdit(){
@@ -90,34 +92,13 @@ console.log(currentUser)
     // setSelected(selected === "not" ? "selected" : "not" )
     if (tag.current.classList == 'selected'){
         tag.current.classList.remove('selected')
+        setProfileTag(profileTag.filter(item => item !== tag.current.outerText))
     }
     else if (tag.current.classList == ''){
         tag.current.classList.add('selected')
+        setProfileTag(profileTag => [...profileTag, tag.current.outerText])
     }
   }
-
-    const edit = () => {
-        console.log('pressed edit')
-        if (input === true){
-            setDisplayed(<p>{displayName()}</p>)
-            setInput(!input)
-            console.log(input)
-        }
-        else {
-            setDisplayed(<input type="text" className ="profileInput" placeholder={displayName()} ref={displayRef}/>)
-            setInput(!input)
-            console.log(input)
-        }
-    }
-    function buttonText(){
-        if (input === true){
-            return('Save')
-        }
-        else {
-            return('edit')
-        }
-    }
-
     return(
     <>
         <section className = "profile">
@@ -138,7 +119,7 @@ console.log(currentUser)
                     <ul>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/profile"><li> Profile</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/profile/create-post"> <li>Create Post</li></NavLink>
-                        <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>
+                        <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/Projects"><li>Projects</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>
                     </ul>
@@ -162,8 +143,12 @@ console.log(currentUser)
                         <button class="profileButton" onClick={handleNameSubmit}> Submit </button>
 
                         <p>Email: {currentUser.email}</p>
-                        <p>Tags: <span>Writer</span>{' '}-{' '}<span>Consumer</span>{' '}-{' '}<span>World Builder</span></p>
+                        <p>Tag&#40;s&#41;: <span>Writer</span>{' '}-{' '}<span>Consumer</span>{' '}-{' '}<span>World Builder</span></p>
                         <p>Member Since: {currentUser.metadata.creationTime}</p>
+                        <p>Location: </p>
+                        <p>Sex: </p>
+                        <p>D.O.B: </p>
+                        <p>Language&#40;s&#41;: </p>
                     </div>
                     <hr/>
                     <div className = "profileTags">
@@ -176,31 +161,17 @@ console.log(currentUser)
                         <button onClick={(e) => isTag(e, rPRef)} ref={rPRef}> RP-er </button>
                         <button onClick={(e) => isTag(e, mapRef)} ref={mapRef}> Map Maker </button>
                     </div>
+                    <p>{profileTag.join(' ')}</p>
                     <hr/>
                     <div className="aboutMe">
                         <label>About Me</label>
                         <textarea/>
                     </div>
                     <div className="bottomInfo">
-                      <p>Last seen: {currentUser.metadata.lastSignInTime}</p>
+                      <p>Last seen: {Date(currentUser.metadata.createdAt)}</p>
                     </div>
                 </div>
                 </div>
-                {/* <div className = "editProfile">
-                    <form className = "profileInfo" onSubmit={handleSubmit}>
-                        <div className = "profileText"><p> Display Name </p>{displayed}</div>
-                        <button onClick={edit}> {buttonText()}  </button>
-                    </form>
-                    <form className = "profileInfo">
-                        <div className = "profileText"><p> Email </p><p>{currentUser.email}</p></div>
-                        <button> {buttonText()}  </button>
-                    </form>
-                    <form className = "profileInfo">
-                        <div className = "profileText"><p> Password </p> <p>*************</p></div>
-                        <button> {buttonText()} </button>
-                    </form>
-                </div> */}
-
         </section>
     </>
     );

@@ -1,0 +1,65 @@
+.signupDetails{
+    background:rgb(32,47,51);
+    width: 100%;
+    min-height: 100vh;
+    color:white;
+}
+.signupDetailsContainer{
+    padding: 100px 0;
+}
+.signupDetailContent{
+    width: min(80%, 750px);
+    min-height: 450px;
+    display: block;
+    margin: auto;
+    padding: 20px min(5%, 50px);
+    background: radial-gradient(
+      ellipse at left bottom,
+      rgb(32,47,51) 0%,
+      rgba(20, 56, 80, 0.9) 59%,
+      rgb(32,47,51)
+    );
+    border-radius: 10px;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.6);
+    input{
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 19px;
+        padding: 5px 0 ;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+    label{
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+    button{
+        float: right;
+    }
+}
+.typewriter {
+    h1{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 30px auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    }
+    form > *{
+        margin-top: 10px;
+    }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}

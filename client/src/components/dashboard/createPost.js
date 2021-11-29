@@ -9,7 +9,8 @@ import {createPost, updatePost, deletePost} from '../../actions/posts'
 import './css/postForm.scss'
 
 const Profile = () => {
-    const [postData, setPostData] = useState({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: '', selectedFile: '', postType: '', postCollab: ''})
+    const dispatch = useDispatch();
+    const [postData, setPostData] = useState({ postCreator: '', postTitle: '', postContent: '', postReContent: '', postGenre: [], selectedFile: '', postType: [], postCollab: []})
     const {currentUser, currentPostId, setCurrentPostId} = useAuth()
     const posts = useSelector((state) => currentUser ? state.posts.filter((posts) => posts.postCreator === currentUser.uid): null);
     const editPost = useSelector((state) => currentPostId ? state.posts.find((post) => post._id === currentPostId && post.postCreator === currentUser.uid): null);
@@ -19,7 +20,6 @@ const Profile = () => {
     const [types, setTypes] = useState([])
     const [typeCounter, setTypeCounter] = useState(0)
     const [collabCounter, setCollabCounter] = useState(0)
-    const dispatch = useDispatch();
     const fantasyRef = useRef()
     const sciFiRef = useRef()
     const horrorRef = useRef()
@@ -58,7 +58,7 @@ const Profile = () => {
 
         if (currentPostId) {
             try {
-                setPostData({...postData, postGenre: genres.join(' ')})
+                setPostData({...postData, postGenre: genres})
                 dispatch(updatePost(currentPostId, postData))
                 setError("Your post has been edited")
             } catch (error) {
@@ -67,7 +67,7 @@ const Profile = () => {
         }
         else{
             try {
-                if(posts.length == 3){
+                if(posts.length === 3){
                     setError("You have reached your maximum number of posts. Please delete a post to make another. Alternatively, you could edit a post :P")
                 }else {
                     dispatch(createPost(postData));
@@ -80,7 +80,7 @@ const Profile = () => {
     }
     function isTag (e, tag){
         e.preventDefault()
-        if (tag.current.classList == 'selected'){
+        if (tag.current.classList == 'selected') {
             tag.current.classList.remove('selected')
             setGenres(genres.filter(item => item !== tag.current.outerText))
         }
@@ -137,7 +137,7 @@ const Profile = () => {
                     <ul>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/profile"><li> Profile</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/profile/create-post"> <li>Create Post</li></NavLink>
-                        <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>
+                        <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/Projects"><li>Projects</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>
                         <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn"><li>item</li></NavLink>
                     </ul>
@@ -218,7 +218,7 @@ const Profile = () => {
                             <FileBase type="file" multiple={false} onDone = {({base64}) => setPostData({ ...postData, selectedFile: base64})} required/>
                         </div>
                         <div className = "formButtons">
-                            <button className="postSubmit" type="submit" onClick={(e) => setPostData({ ...postData, postCreator: currentUser.uid, postGenre: genres.join(' '), postType: types.join(' '), postCollab: collab.join(' ')})}>Submit</button>
+                            <button className="postSubmit" type="submit" onClick={(e) => setPostData({ ...postData, postCreator: currentUser.uid, postGenre: genres, postType: types, postCollab: collab})}>Submit</button>
                             <button className="postClear" onClick={clear}>Clear</button>
                         </div>
                             <p className = "errorMsg">{error}</p>
