@@ -56,7 +56,12 @@ html, body {
   padding: 5px 10px;
   border: 0;
 }
-
+.errorPage{
+  background:rgb(32,47,51);
+  display: block;
+  max-width: 500px;
+  margin: auto;
+}
 
 
 

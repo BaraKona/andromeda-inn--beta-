@@ -1,5 +1,5 @@
 import React, {logErrorToMyService}from "react";
-
+import {Link} from 'react-router-dom'
 class ErrorBoundary extends React.Component {
     constructor(props) {
       super(props);
@@ -13,13 +13,17 @@ class ErrorBoundary extends React.Component {
 
     componentDidCatch(error, errorInfo) {
       // You can also log the error to an error reporting service
-      // logErrorToMyService(error, errorInfo);
+      logErrorToMyService(error, errorInfo);
     }
 
     render() {
       if (this.state.hasError) {
         // You can render any custom fallback UI
-        return <h1>Something went wrong.</h1>;
+        return <div className="errorPage">
+            <h1>Something went wrong.</h1>
+            <p> Try Reseting your details here </p>
+            <Link exact to="./details"> reset </Link>
+        </div>;
       }
 
       return this.props.children;
