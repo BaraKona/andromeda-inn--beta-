@@ -2,7 +2,7 @@ import React from 'react'
 
 function Countries(props) {
     return (
-        <select id="country" name="country" class="form-control" onChange={(e)=> props.location.setLocation(e.target.value)}>
+        <select id="country" name="country" className="form-control" onChange={(e)=> props.location.setLocation(e.target.value)}>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>

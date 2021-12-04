@@ -1,15 +1,12 @@
 import React from 'react'
 import Navbar from '../layout/newNavbar'
-import witch from '../../images/icons/witch2.svg'
-import globe from '../../images/icons/globe.svg'
-import cauldron from '../../images/icons/cauldron.svg'
 import './css/newAbout.scss'
 
 export default function NewAbout() {
     return (
         <section className ="newAbout">
             <Navbar/>
-            <div class="aboutTitle">
+            <div className="aboutTitle">
                 <h1> What is Andromeda Inn? </h1>
             </div>
             <div className="aboutContainer">

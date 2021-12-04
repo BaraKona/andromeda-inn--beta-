@@ -153,9 +153,22 @@
     }
 }
 .profileInfo{
-    button{
-        float: right;
+
+    div{
+        p{
+            margin: 0;
+        }
+        padding-top: 10px;
+        height: auto;
+        display: flex;
+        justify-content: space-between
     }
+    button{
+        min-width: 50px;
+        max-height: 25px;
+        margin: auto 0
+    }
+
 }
 .profileButton{
     background: transparent;
@@ -185,6 +198,31 @@
     max-width: 250px;
     color:rgb(241, 218, 196);
     background-color: transparent;
+}
+.bottomInfo{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    p{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+    }
+}
+.saveUserButton{
+    margin: auto 0;
+    padding: 5px;
+    background: transparent;
+    border: 0.5px solid rgb(100, 100, 100);
+    color: rgb(100, 100, 100);
+    min-width: 50px;
+    max-height: 25px;
+    float: right;
+}
+.saveUserButton:hover{
+    color: rgb(42,47,57);
+    background: rgb(100, 100, 100);
 }
 @media only screen and (max-width: 600px) {
     .profileItems{

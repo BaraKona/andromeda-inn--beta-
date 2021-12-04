@@ -55,7 +55,6 @@ const Profile = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         if (currentPostId) {
             try {
                 setPostData({...postData, postGenre: genres})
@@ -64,8 +63,7 @@ const Profile = () => {
             } catch (error) {
                 setError('failed to edit. Try again later or contact support')
             }
-        }
-        else{
+        } else{
             try {
                 if(posts.length === 3){
                     setError("You have reached your maximum number of posts. Please delete a post to make another. Alternatively, you could edit a post :P")
@@ -127,7 +125,6 @@ const Profile = () => {
             behavior:  'smooth'
         })
     }
-
     return(
         <>
         <section className = "profile">

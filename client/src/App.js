@@ -1,5 +1,5 @@
 import React, {useEffect, Suspense} from "react"
-import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage, signupDetailsPage, SignupDetailsPage} from './views'
+import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage, SignupDetailsPage} from './views'
 import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <Router>
-      <Suspense fallback={<img src={loading}></img>}>
+      <Suspense fallback={<img src={loading} alt="loading"></img>}>
       <AuthProvider>
         <div className="App">
           <Switch>

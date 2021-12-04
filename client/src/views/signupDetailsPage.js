@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react'
 import Countries from '../components/componentSnippets/countries'
-import { useDispatch, useSelector } from 'react-redux'
-import {Link, useHistory} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import {createUser} from '../actions/users'
 import './css/signupDetails.scss'
@@ -11,7 +11,6 @@ function SignupDetailsPage() {
     const history = useHistory()
     const nameRef = useRef()
     const dateRef = useRef()
-    const countryRef = useRef()
     const { currentUser } = useAuth()
     const [error, setError] = useState()
     const [ageText, setAgeText] = useState("")
@@ -80,7 +79,7 @@ function SignupDetailsPage() {
                         onClick={(e)=> setUserData({...userData,
                         userID: currentUser.uid,
                         userDateOfBirth: age,
-                        userLocation: location,
+                        userLocation: props.location,
                         userEmail: currentUser.email})}> Enter Inn </button>
                     </form>
                 </div>

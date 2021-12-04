@@ -15,7 +15,7 @@ function NewHome() {
                         <p> A collaboration place for creatives. <br></br> Join writers from all corners of the literary world and collaborate together
                         inside the inn.
                         </p>
-                        <li class="content__item">
+                        <li className="content__item">
                             <button className="button button--surtur">
                                 <svg className="textcircle" viewBox="0 0 500 500">
                                     <title>Explore Andromeda Inn</title>
@@ -37,7 +37,7 @@ function NewHome() {
                 <div className="homeItemRight">
                     <div className="homeSubItem">
                         <p>Anim anim irure non incididunt quis. Incididunt irure in id sunt cillum irure mollit.  Incididunt irure in id sunt cillum irure mollit. Amet Amet quis eiusmod esse elit esse. Fugiat sint non consequat in eu deserunt fugiat veniam pariatur irure non velit.Amet Amet quis eiusmod esse elit esse. Fugiat sint non consequat in eu deserunt fugiat veniam pariatur irure non velit.</p>
-                        <img class="hold" src={Hold}/>
+                        <img className="hold" src={Hold}/>
                     </div>
                     <div className="homeSubItem"><p>Qui fugiat est reprehenderit Lorem duis non enim. Eiusmod minim deserunt fugiat do consequat dolore id excepteur aliqua nisi commodo. Incididunt consectetur dolore aliqua id commodo nulla duis reprehenderit. Aute occaecat eu occaecat minim amet. Amet laborum dolor amet voluptate magna. Quis anim aliquip exercitation esse nulla.</p></div>
                 </div>
