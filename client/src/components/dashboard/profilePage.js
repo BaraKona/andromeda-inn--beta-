@@ -1,13 +1,14 @@
 import React, {useState, useRef, useEffect} from 'react';
 import Navbar from '../layout/newNavbar'
 import {useAuth} from '../../contexts/AuthContext'
-import {NavLink, useLocation, Link} from 'react-router-dom'
+import {NavLink, useLocation, useHistory } from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {updateUser} from '../../actions/users'
 import './css/profile.scss'
 
 const Profile = () => {
     const dispatch = useDispatch();
+    const history = useHistory()
     const { currentUser, displayImg, displayName, updateName, uploadImg, deleteImg, getAllUsers } = useAuth()
     const user = useSelector((state) => currentUser ? state.users.filter((user) => user.userID === currentUser.uid): null);
     const [userData, setUserData] = useState({ userEmail: '', userName: currentUser.displayName, userAbout: user[0].userAbout, userTags: user[0].userTags })
@@ -38,7 +39,7 @@ const Profile = () => {
         name: currentUser.displayName,
         email: currentUser.email,
         location: user[0].userLocation,
-        languages: user[0].userLanguages.shift(),
+        languages: user[0].userLanguages.join(),
         dateOfBirth: user[0].userDateOfBirth,
         memberSince: currentUser.metadata.creationTime,
         sex: user[0].userSex
@@ -55,10 +56,6 @@ const Profile = () => {
         }
         console.log('error = ' + error)
     }
-
-
-  useEffect(() =>{
-  },[currentUser.displayName])
 
   async function handleSubmit(e) {
     e.preventDefault()

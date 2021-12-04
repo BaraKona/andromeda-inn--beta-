@@ -5,6 +5,7 @@ import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
 import Dashboard from './components/dashboard/dashboard'
 import Projects from './components/dashboard/projects'
+import ErrorBoundary from "./components/componentSnippets/errorBoundary"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from './contexts/AuthContext.js';
 import {useDispatch} from 'react-redux';
@@ -29,6 +30,7 @@ export default function App() {
       <AuthProvider>
         <div className="App">
           <Switch>
+            <ErrorBoundary>
             <Route path="/login" component={LoginPage} />
             <Route path="/signup" component={SignupPage} />
             <Route path="/forgot-password" component={ForgotPasswordPage} />
@@ -41,7 +43,7 @@ export default function App() {
             <PrivateRoute exact path="/inn/discover" component={Discover}/>
             <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>
             <PrivateRoute exact path="/inn/profile/create-post" component={CreatePostPage}/>
-            {/* <PrivateRoute exact path="/connect" component={ ConnectPage }/> */}
+            {/* <PrivateRoute exact path="/connect" component={ ConnectPage }/> */}</ErrorBoundary>
           </Switch>
         </div>
       </AuthProvider>

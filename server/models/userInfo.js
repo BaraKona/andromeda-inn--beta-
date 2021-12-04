@@ -9,10 +9,7 @@ const userSchema = mongoose.Schema({
     userTags: [String],
     userLocation: String,
     userSex: String,
-    userDateOfBirth: {
-        type: Date,
-        default: "01.01.200"
-    },
+    userDateOfBirth: Date,
     userLanguages: [String],
     userFriends: [{}]
 });

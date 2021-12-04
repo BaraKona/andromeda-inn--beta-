@@ -22,11 +22,11 @@ function SignupDetailsPage() {
         userEmail: '',
         userLocation: '',
         userSex: '',
-        userDateOfBirth: {
-            type: Date,
-            default: "01.01.200"
-        },
-        userLanguages: [],})
+        userDateOfBirth: Date,
+        userLanguages: [],
+        userTags: [],
+        userAbout: ''
+    })
     const daytoday = Date.now()
 
     const handleSubmit = (e) => {
@@ -47,10 +47,6 @@ function SignupDetailsPage() {
         setAge(Math.abs(age_dt.getUTCFullYear() - 1970))
         setAgeText("Oh how very young. Still plenty left to do being only ")
     }
-    const props= {
-        location,
-        setLocation
-    }
     return (
         <section className="signupDetails">
             <div className="signupDetailsContainer">
@@ -64,23 +60,25 @@ function SignupDetailsPage() {
                         </div>
                         <div>
                             <label>When did you spawn ? <br/></label>
-                            <input type="date" ref={dateRef} onChange={(e)=> calculate_age(e.currentTarget.value)} max="2010-01-02" required />
+                            <input type="date" ref={dateRef} onChange={(e)=> calculate_age(e.currentTarget.value), (e)=> setUserData({...userData, userDateOfBirth: e.currentTarget.value})} max="2010-01-02" required />
                             <p> {ageText} {age}</p>
                         </div>
                         <div>
                             <label> In what part of the world do you reside ? <br/></label>
-                            <Countries location={props}/>
+                            <Countries userData={userData} setUserData={setUserData}/>
                         </div>
                         <div>
-                            <label> What languages do you speak ? </label>
-                            <input type="text" required />
+                            <label> How would you best describe yourself ? <br/></label>
+                            <input type="text" required placeholder="Male, Female..."
+                            onChange={(e) => setUserData({...userData, userSex: e.currentTarget.value})}/>
                         </div>
                         <button type="submit"
                         onClick={(e)=> setUserData({...userData,
                         userID: currentUser.uid,
-                        userDateOfBirth: age,
-                        userLocation: props.location,
-                        userEmail: currentUser.email})}> Enter Inn </button>
+                        userEmail: currentUser.email,
+                        userAbout: 'N/A',
+                        userLanguages: 'English',
+                        userTags: ['fantasy']})}> Enter Inn </button>
                     </form>
                 </div>
             </div>
