@@ -57,7 +57,7 @@ const Profile = () => {
         e.preventDefault();
         if (currentPostId) {
             try {
-                setPostData({...postData, postGenre: genres})
+                // setPostData({...postData, postGenre: genres})
                 dispatch(updatePost(currentPostId, postData))
                 setError("Your post has been edited")
             } catch (error) {

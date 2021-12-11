@@ -68,3 +68,11 @@ html, body {
   margin: auto;
 }
 
+.textEffect{
+    background-image: -webkit-linear-gradient(40deg, var(--pink), var(--neonBlue), var(--green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 250%;
+    animation: text-animation 5s infinite alternate;
+}

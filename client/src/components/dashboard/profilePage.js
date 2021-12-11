@@ -32,7 +32,6 @@ const Profile = () => {
     const location = useLocation();  //assigning location variable
     const { pathname } = location;  //destructuring pathname from location
     const splitLocation = pathname.split("/");  //Javascript split method to get the name of the path in array
-
     let userInfo = {}
     try {
     userInfo = {
@@ -42,7 +41,8 @@ const Profile = () => {
         languages: user[0].userLanguages.join(),
         dateOfBirth: user[0].userDateOfBirth,
         memberSince: currentUser.metadata.creationTime,
-        sex: user[0].userSex
+        sex: user[0].userSex,
+        tags: user[0].userTags
     }
     } catch (error) {
         userInfo = {
@@ -53,6 +53,7 @@ const Profile = () => {
             dateOfBirth: 'N/A',
             memberSince: currentUser.metadata.creationTime,
             sex: 'N/A',
+            userTags: 'Fantasy'
         }
         console.log('error = ' + error)
     }
@@ -124,13 +125,16 @@ const Profile = () => {
         setProfileTag(profileTag => [...profileTag, tag.current.outerText])
     }
   }
-    return(
+  console.log(profileTag)
+  console.log(userData.userTags)
+  const birthDate = new Date(userInfo.dateOfBirth).toLocaleDateString("sq-AL",{ year: 'numeric', month: '2-digit', day: '2-digit' })
+  return(
     <section className = "profile">
         <Navbar/>
         <div id="myModal" className={`modal ${modal}`}>
             <div className="modal-content">
                 <span className="close" onClick={closeModal}>&times;</span>
-                <p for="avatar">Choose a profile picture:</p>
+                <p htmlFor="avatar">Choose a profile picture:</p>
                 <img src={displayImg()} className="profileImg"></img>
                 <br/>
                 <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" className="fileInput"
@@ -138,7 +142,7 @@ const Profile = () => {
                 <button className="profileButton" onClick={uploadImage}> Submit </button>
             </div>
         </div>
-        <div className = "profileContainer">
+        <form onSubmit={handleSubmit} className = "profileContainer">
             <div className="profileSettings">
                 <ul>
                     <NavLink activeClassName="settingActive" exact className="settingLink" to="/inn/profile"><li> Profile</li></NavLink>
@@ -165,11 +169,11 @@ const Profile = () => {
                     <label>Name: </label>
                     <input type="text"  value={userData.userName} ref={nameRef} onChange={(e) => setUserData({...userData, userName: nameRef.current.value})} />
                     <div><p>Email: {userInfo.email}</p><button className="profileButton"> Edit </button></div>
-                    <p>Tag&#40;s&#41;: <span>Writer</span>{' '}-{' '}<span>Consumer</span>{' '}-{' '}<span>World Builder</span></p>
+                    <p>Tag&#40;s&#41;: <span className="textEffect">{user[0].userTags.join(' - ')}</span></p>
                     <p>Member Since: {userInfo.memberSince}</p>
                     <p>Location: {userInfo.location}</p>
                     <p>Sex: {userInfo.sex}</p>
-                    <p>D.O.B: {userInfo.dateOfBirth}</p>
+                    <p>Age: {birthDate}</p>
                     <p>Language&#40;s&#41;: {userInfo.languages} </p>
                 </div>
                 <hr/>
@@ -191,12 +195,12 @@ const Profile = () => {
                 </div>
                 <div className="bottomInfo">
                     <p>Last seen: {Date(currentUser.metadata.createdAt)}</p>
-                    <button className="saveUserButton" onClick={(e) => setUserData({...userData, userTags: profileTag}), handleSubmit}> Save User Info</button>
+                    <button type="submit" className="saveUserButton" onClick={(e) => setUserData({...userData, userTags: profileTag, userEmail: currentUser.email})}> Save User Info</button>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
-    );
-};
+  );
+}
 
 export default Profile;
