@@ -7,6 +7,7 @@ import userRoutes from './routes/users.js'
 
 const app = express();
 
+//config dotenv to allow use of env
 dotenv.config()
 //Need to know what this does
 // support parsing of application/json type post data
@@ -20,7 +21,7 @@ app.use('/posts', postRoutes);
 app.use('/users', userRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Hello andromeda Inn')
+    res.send('Hello Andromeda Inn')
 });
 
 // const CONNECTION_URL = 'mongodb+srv://andromedainn:andromedainn123@cluster0.ubezw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
