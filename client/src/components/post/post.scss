@@ -1,8 +1,7 @@
 .postItem{
     max-width: 460px;
-    background: rgb(76, 72, 94);
+    background: rgb(61,58,75);
 }
-
 .postCard{
     color: var(--text);
     max-width: 450px;
@@ -21,26 +20,64 @@
 .postMap > *{
     flex: 1 1 550px;
     min-height: 450px;
-    border: 1px solid rgb(141, 141, 141);
+    border: solid 1px rgb(197, 186, 175);
     border-radius: 5px;
     margin: 20px auto;
-}
-
-.smallPostItem{
-    min-height: 500px;
-}
-.smallPostCard{
-    max-width: 450px;
-    max-height: 300px;
-    margin: 10px;
-}
-.smallPostImg{
-    min-height: 260px;
-    width: 100%;
 }
 .postTitle{
     text-align: center;
     position: relative;
+}
+
+.smallPostImageContainer{
+    display: flex;
+    div{
+        width: 100%;
+        margin: 10px;
+    }
+    h3{
+        font-size: 2em;
+    }
+}
+.smallPostImg{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.smallPostItem{
+    max-width: 470px;
+    background: rgb(136, 133, 133);
+    min-height: 300px;
+}
+.smallPostMap{
+    display:flex;
+    flex-wrap: wrap;
+}
+.smallPostText{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.smallPostMap > *{
+    flex: 1 1 550px;
+    min-height: 350px;
+    border: solid 1px rgb(197, 186, 175);
+    border-radius: 5px;
+    margin: 20px 8px;
+}
+.buttonPost{
+    display: block;
+    color: rgb(197, 186, 175);
+    border-radius: 5px;
+    margin: 10px 10px 0 auto;
+}
+.buttonPost:hover{
+    background: rgb(197, 186, 175);
+    color: grey;
 }
 .profilePostTitle{
     padding: 0 15px;

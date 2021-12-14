@@ -11,7 +11,7 @@ const Profile = () => {
     const history = useHistory()
     const { currentUser, displayImg, displayName, updateName, uploadImg, deleteImg, getAllUsers } = useAuth()
     const user = useSelector((state) => currentUser ? state.users.filter((user) => user.userID === currentUser.uid): null);
-    const [userData, setUserData] = useState({ userEmail: '', userName: currentUser.displayName, userAbout: user[0].userAbout, userTags: user[0].userTags })
+    const [userData, setUserData] = useState({ userEmail: '', userName: user[0].userName, userAbout: user[0].userAbout, userTags: user[0].userTags })
     const [modal, showModal] = useState('')
     const [imageSelected, setImageSelected] = useState("")
     const [loading, setLoading] = useState(false)
@@ -158,7 +158,7 @@ const Profile = () => {
             </div>
             <div className = "profileItems">
                 <div className = "profileName">
-                    <h3>{userInfo.name}</h3>
+                    <h3>{user[0].userName}</h3>
                 </div>
                 <div className = "profileImgContainer">
                     <img src={displayImg()} className = "profileImg"></img>

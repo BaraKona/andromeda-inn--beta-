@@ -3,16 +3,17 @@ import {Link} from  'react-router-dom'
 import './post.scss'
 
 function MiniPost ({post}) {
+    console.log(post)
     return (
         <section className = "smallPostItem">
-            <div className = "postImageContainer"><img alt="postImg" className="smallPostImg" src={post.selectedFile}></img></div>
-            <div className = "smallPostCard">
-                <div className = "smallPostBody">
-                    <h1 className = "postTitle">{post.postTitle}</h1>
-                    <p style={{fontWeight: "bolder",textAlign: "center", height:"20px",}}><span>{post.postGenre}</span></p>
-                    <p style={{textAlign: "right"}}> Interest: {post.postInterest}</p>
+            <div className = "smallPostImageContainer">
+                <img alt="postImg" className="smallPostImg" src={post.selectedFile}></img>
+                <div>
+                    <h3>{post.postTitle}</h3>
                 </div>
-            </div>
+            </div >
+            <div className="smallPostText"> <p>{post.postContent}</p></div>
+            <button className="button buttonPost">Read More</button>
         </section>
     )
 }

@@ -76,9 +76,9 @@ function SignupDetailsPage() {
                         onClick={(e)=> setUserData({...userData,
                         userID: currentUser.uid,
                         userEmail: currentUser.email,
-                        userAbout: 'N/A',
+                        userAbout: 'Something about me...',
                         userLanguages: 'English',
-                        userTags: ['fantasy']})}> Enter Inn </button>
+                        userTags: ['Reader']})}> Enter Inn </button>
                     </form>
                 </div>
             </div>

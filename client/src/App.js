@@ -3,7 +3,7 @@ import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage, SignupD
 import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
-import Dashboard from './components/dashboard/dashboard'
+import Dashboard from './components/dashboard/dashboardFrame'
 import Projects from './components/dashboard/projects'
 import ErrorBoundary from "./components/componentSnippets/errorBoundary"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
