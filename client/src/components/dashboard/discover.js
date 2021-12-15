@@ -80,7 +80,7 @@ function Discover() {
     return (
         <section className="discover">
             <Navbar/>
-            <div className ="discoverContainer">
+            <div className ="discoverContainer container">
                 <div className="discoverMenu">
                 <div className="discoverCategory">
                     <button className="categoryButton" onClick={showCategory}>Categories</button>

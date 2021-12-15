@@ -6,6 +6,7 @@ export default function NewAbout() {
     return (
         <section className ="newAbout">
             <Navbar/>
+            <div className = "container">
             <div className="aboutTitle">
                 <h1> What is Andromeda Inn? </h1>
             </div>
@@ -83,6 +84,7 @@ export default function NewAbout() {
                         {/* <Link to="/"><img className="cardImg" alt="globe"/></Link> */}
                     </div>
                 </div>
+            </div>
             </div>
         </section>
     )

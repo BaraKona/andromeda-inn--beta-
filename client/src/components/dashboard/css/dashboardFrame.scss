@@ -1,5 +1,5 @@
 .mainDashboard{
-    min-height: 100vh;
+    min-height:100vh;
     background: rgb(136, 133, 133);
     color: rgb(197, 186, 175);
 }
@@ -11,9 +11,10 @@
 .dashboardFlex > *:nth-child(1){
     flex: 1 1 20%;
     min-width: 300px;
+    max-width: 400px;
 }
 .dashboardFlex > *:nth-child(2){
-    flex: 1 1 80%;
+    flex: 1 1 70%;
     min-width: 400px;
 }
 .dashboardProjects{
@@ -63,15 +64,15 @@
     background: transparent;
     min-height: 400px;
 }
-@media only screen and (max-width: 1530px){
-    .dashboardNarrow{
-        display: flex;
-        flex-direction: row;
-    }
-    .dashboardFriends, .dashboardUsers{
-        flex-direction: row;
-        margin: 0 auto;
-        min-width: 500px;
-        min-height: 200px;
-    }
-}
+// @media only screen and (max-width: 1530px){
+//     .dashboardNarrow{
+//         display: flex;
+//         flex-direction: row;
+//     }
+//     .dashboardFriends, .dashboardUsers{
+//         flex-direction: row;
+//         margin: 0 auto;
+//         min-width: 500px;
+//         min-height: 200px;
+//     }
+// }

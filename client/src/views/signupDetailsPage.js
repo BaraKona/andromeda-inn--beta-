@@ -69,7 +69,7 @@ function SignupDetailsPage() {
                         </div>
                         <div>
                             <label> How would you best describe yourself ? <br/></label>
-                            <input type="text" required placeholder="Male, Female..."
+                            <input type="text" max="15" required placeholder="Male, Female..."
                             onChange={(e) => setUserData({...userData, userSex: e.currentTarget.value})}/>
                         </div>
                         <button type="submit"

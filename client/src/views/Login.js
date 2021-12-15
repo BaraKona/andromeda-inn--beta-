@@ -30,7 +30,7 @@ export default function Login() {
 
   return (
     <>
-      <section className ="login">
+      <section className ="login home">
       <Navbar />
         <div className = "loginBackground" />
         <div className ="loginContainer" >

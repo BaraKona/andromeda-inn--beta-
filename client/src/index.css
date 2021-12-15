@@ -67,6 +67,9 @@ html, body {
   max-width: 500px;
   margin: auto;
 }
+.center{
+  text-align: center;
+}
 
 .textEffect{
     background-image: -webkit-linear-gradient(40deg, var(--pink), var(--neonBlue), var(--green));
@@ -75,4 +78,8 @@ html, body {
     color: transparent;
     background-size: 250%;
     animation: text-animation 5s infinite alternate;
+}
+.container{
+  max-width: 1900px;
+  margin: 0 auto;
 }

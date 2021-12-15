@@ -37,6 +37,16 @@
     }
     h3{
         font-size: 2em;
+        margin: 0;
+        padding: 0;
+    }
+    P{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1;
+    -webkit-box-orient: vertical;
     }
 }
 .smallPostImg{
@@ -61,9 +71,10 @@
     -webkit-line-clamp: 4; /* number of lines to show */
             line-clamp: 4;
     -webkit-box-orient: vertical;
+    margin: 0 10px;
 }
 .smallPostMap > *{
-    flex: 1 1 550px;
+    flex: 1 1 380px;
     min-height: 350px;
     border: solid 1px rgb(197, 186, 175);
     border-radius: 5px;
@@ -73,7 +84,7 @@
     display: block;
     color: rgb(197, 186, 175);
     border-radius: 5px;
-    margin: 10px 10px 0 auto;
+    margin: 10px 10px 10px auto;
 }
 .buttonPost:hover{
     background: rgb(197, 186, 175);

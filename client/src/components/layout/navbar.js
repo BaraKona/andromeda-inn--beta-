@@ -63,6 +63,7 @@ const Navbar = () => {
   return (
     //  Navigation bar
     <div className = {`navbar ${mobileMenu}`}>
+      <div className="container">
       <ul>
         {loggedIn()}
 
@@ -70,7 +71,7 @@ const Navbar = () => {
       {/* <p>Hi {displayName()}</p>
       <img src = {displayImg()} className="profileIcon"></img> */}
       <div id="centerImg1" onClick={switchMobile}><img className="iconImg" src ={img} alt="centerImg1"></img></div>
-    </div>
+    </div></div>
     )
 }
 export default Navbar

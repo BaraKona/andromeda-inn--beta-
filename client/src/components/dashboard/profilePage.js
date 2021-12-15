@@ -173,10 +173,11 @@ const Profile = () => {
                     <p>Member Since: {userInfo.memberSince}</p>
                     <p>Location: {userInfo.location}</p>
                     <p>Sex: {userInfo.sex}</p>
-                    <p>Age: {birthDate}</p>
+                    <p>D.O.B: {birthDate}</p>
                     <p>Language&#40;s&#41;: {userInfo.languages} </p>
                 </div>
                 <hr/>
+                <p>Tags: </p>
                 <div className = "profileTags">
                     <button onClick={(e) => isTag(e, writerRef)} ref={writerRef}> Writer </button>
                     <button onClick={(e) => isTag(e, worldRef)} ref={worldRef}> World Builder </button>

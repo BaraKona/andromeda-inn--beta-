@@ -8,6 +8,7 @@ function Dashboard() {
     return (
     <>
     <section className="mainDashboard Home">
+      <div className = "container">
       <Navbar/>
         <div className="dashboardFlex">
             <div className="dashboardNarrow">
@@ -28,7 +29,7 @@ function Dashboard() {
             <div className="dashboardWide">
               <DashboardBody/>
             </div>
-        </div>
+        </div></div>
       </section>
     </>
     )
