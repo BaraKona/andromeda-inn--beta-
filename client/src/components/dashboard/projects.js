@@ -4,8 +4,9 @@ import './css/projects.scss'
 
 function Projects() {
     return (
-        <section className="chat">
+        <section className="projects">
             <Navbar/>
+            <div></div>
         </section>
     )
 }

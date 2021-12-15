@@ -1,7 +1,7 @@
 .mainDashboard{
     min-height:100vh;
-    background: rgb(136, 133, 133);
-    color: rgb(197, 186, 175);
+    background-color: var(--lightmodecolour);
+    background-image: var(--backgroundimage);
 }
 .dashboardFlex{
     padding: 15px;
@@ -21,8 +21,9 @@
     margin: 20px 0 20px 0;
     max-width: 100%;
     min-height: 750px;
-    background: rgb(161, 157, 157);
-    border: solid 1px rgb(197, 186, 175);
+    background-image: var(--backgroundimage);
+    background-color: var(--lightmodecolour2);
+    border: solid 1px var(--lightmodetext2);
     border-radius: 5px;
 }
 .hubAddProjects{
@@ -30,20 +31,20 @@
 }
 .plusButton{
     border-radius: 50%;
-    border: solid 1px rgb(197, 186, 175);
+    border: solid 1px #c5baaf;
     background: inherit;
     color: inherit;
 }
 .plusButton:hover{
-    background-color: rgb(197, 186, 175);
-    color: rgb(161, 157, 157);
+    background-color: var(--darkgreen);
+    color: var(--lightmodecolour);
     cursor: pointer;
 }
 .dashboardProjectsContainer{
-    border-bottom: solid 1px rgb(197, 186, 175);
-    background: rgb(136, 133, 133);
+    border-bottom: solid 1px var(--lightmodetext);
+    background: var(--darkgreen);
     padding: 5px 30px;
-    color: rgb(197, 186, 175);
+    color: var(--lightmodecolour);
     font-weight: 800;
 }
 .dashboardProjects h1{
@@ -53,12 +54,6 @@
 }
 .hubProjects{
 
-}
-.dashboardPosts{
-
-    h2{
-        margin: 10px 20px 0 20px;
-    }
 }
 .topTags{
     background: transparent;

@@ -5,8 +5,14 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(249,218,196);
+  --backgroundcolour: rgb(249,218,196);
+  --backgroundimage: url("https://res.cloudinary.com/andromeda-inn/image/upload/v1639585961/images/beige-paper_hgnhff.png");
   --darkmodecolour: rgb(30, 26, 31);
-  --lightmodecolour: rgb(255, 242, 224);
+  --lightmodecolour: rgb(240,234,218);
+  --lightmodecolour2: rgb(233,227,209);
+  --lightmodetext2: rgb(179, 165, 139);
+  --lightmodetext: rgb(59, 45, 31);
+  --orange: rgb(193,130,54);
   --purple: rgb(9, 40, 211);
   --pink: rgb(189, 38, 181);
   --redish: rgb(206, 14, 62);
@@ -18,6 +24,7 @@ html, body {
   --color-link-hover: rgb(61, 19, 44);
   --green: rgb(2, 110, 2);
   --neonBlue: rgb(0, 91, 175);
+  --darkgreen: rgb(32,47,51);
   /* --font: Palatino, URW Palladio L, serif; */
 
   }
@@ -50,7 +57,8 @@ html, body {
   height: 50px;
 }
 .Home{
-  background: radial-gradient(rgb(249,218,196),rgb(249,218,196));
+  background-image: url("https://res.cloudinary.com/andromeda-inn/image/upload/v1639585961/images/beige-paper_hgnhff.png");
+  background-color: rgb(249,218,196);
 }
 .button{
   padding: 5px 10px;
@@ -78,6 +86,7 @@ html, body {
     color: transparent;
     background-size: 250%;
     animation: text-animation 5s infinite alternate;
+    text-align: center;
 }
 .container{
   max-width: 1900px;

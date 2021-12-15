@@ -1,9 +1,10 @@
 .postItem{
     max-width: 460px;
-    background: rgb(61,58,75);
+    background-image: var(--backgroundimage);
+    background-color: var(--lightmodecolour2);
 }
 .postCard{
-    color: var(--text);
+    color: var(--lightmodetext);
     max-width: 450px;
 }
 .postTitle{
@@ -20,7 +21,7 @@
 .postMap > *{
     flex: 1 1 550px;
     min-height: 450px;
-    border: solid 1px rgb(197, 186, 175);
+    border: solid 1px var(--lightmodetext2);
     border-radius: 5px;
     margin: 20px auto;
 }
@@ -57,7 +58,8 @@
 }
 .smallPostItem{
     max-width: 470px;
-    background: rgb(136, 133, 133);
+    background-image: var(--backgroundimage);
+    background-color: var(--lightmodecolour2);
     min-height: 300px;
 }
 .smallPostMap{
@@ -76,7 +78,7 @@
 .smallPostMap > *{
     flex: 1 1 380px;
     min-height: 350px;
-    border: solid 1px rgb(197, 186, 175);
+    border: solid 1px var(--lightmodetext2);
     border-radius: 5px;
     margin: 20px 8px;
 }

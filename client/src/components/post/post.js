@@ -14,7 +14,7 @@ function Post ({post}) {
                     <p style={{textAlign: "justify", minHeight:"150px", maxHeight:"150px", overflowY: 'auto'}}> {post.postContent}</p>
                     {/* <p style={{textAlign: "justify", minHeight:"150px", maxHeight:"150px", overflowY: 'auto'}}> {post.postReContent}</p> */}
                     {/* <hr style={{width: "80%"}}/> */}
-                    <p style={{fontWeight: "bolder",textAlign: "center"}}><span>{post.postGenre}</span></p>
+                    <p className="textEffect"><span>{post.postGenre.join(' - ')}</span></p>
                     {/* <p style={{textAlign: "right"}}>Interest: {post.postInterest}</p> */}
                 </div>
             </div>
