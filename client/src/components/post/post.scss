@@ -60,7 +60,9 @@
     max-width: 470px;
     background-image: var(--backgroundimage);
     background-color: var(--lightmodecolour2);
-    min-height: 300px;
+    height: 400px;
+    border: solid 0.5px var(--lightmodetext2);
+    border-radius: 5px;
 }
 .smallPostMap{
     display:flex;
@@ -76,11 +78,11 @@
     margin: 0 10px;
 }
 .smallPostMap > *{
-    flex: 1 1 380px;
-    min-height: 350px;
-    border: solid 1px var(--lightmodetext2);
-    border-radius: 5px;
-    margin: 20px 8px;
+    // flex: 1 1 380px;
+    // min-height: 350px;
+    // border: solid 1px var(--lightmodetext2);
+    // border-radius: 5px;
+    // margin: 20px 8px;
 }
 .buttonPost{
     display: block;

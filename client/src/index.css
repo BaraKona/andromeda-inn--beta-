@@ -92,3 +92,7 @@ html, body {
   max-width: 1900px;
   margin: 0 auto;
 }
+.swiperClass{
+  max-width: 1400px;
+  height: 430px;
+}
