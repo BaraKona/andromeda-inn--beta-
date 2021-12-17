@@ -52,7 +52,7 @@ const Navbar = () => {
       return <>
         <NavLink style={{marginLeft:'auto'}} activeClassName="navActive" className={`nav-items ${mobileMenu}`} to="/about">About</NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`} exact to="/">Home</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`}  to="/inn"> Dashboard </NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`}  to="/inn"> Hub </NavLink>
       </>
     }
   }
