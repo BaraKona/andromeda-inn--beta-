@@ -96,3 +96,9 @@ html, body {
   max-width: 1400px;
   height: 430px;
 }
+.firstLetter::first-letter{
+  font-size: 150%;
+}
+.rtl{
+  direction: rtl;
+}
