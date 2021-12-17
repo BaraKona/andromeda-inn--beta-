@@ -31,16 +31,16 @@ const Navbar = () => {
 
   //Determines what Icons to show depending on view
   function icon (){
-    if (splitLocation[1] === 'about'){return <> <img src={book2} className="svgIcon"/><h2 id="title" style={{color:"rgb(180, 161, 152)"}}> AI </h2></>}
-    else if(splitLocation[1] === 'inn'){return <> <img src={book3} className="svgIcon"/><h2 id="title" style={{color:"rgb(180, 161, 152)"}}> AI </h2></>}
+    if (splitLocation[1] === 'about'){return <> <img src={book2} className="svgIcon"/><h2 id="title" style={{color:"rgb(233,227,209)"}}> AI </h2></>}
+    else if(splitLocation[1] === 'inn'){return <> <img src={book3} className="svgIcon"/><h2 id="title" style={{color:"black"}}> AI </h2></>}
 
-    else{return <> <img src={book1} className="svgIcon"/><h2 id="title"> AI </h2></>}
+    else{return <> <img src={book1} className="svgIcon"/><h2 id="title" style={{color:"rgb(233,227,209)"}}> AI </h2></>}
   }
   function isDashboard () {
     if (splitLocation[1] === 'inn'){
       return <>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/" style={{marginLeft: '20px'}}>Home</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/about" >About</NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/about" style={{marginLeft: '20px'}}>About</NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/">Home</NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn" style={{marginLeft:'auto'}}> Hub </NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/discover"> Discover </NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/projects"> Projects </NavLink>

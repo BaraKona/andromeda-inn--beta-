@@ -17,34 +17,26 @@ export default function NewAbout() {
                     pasts. We all have stories. And we all, every single one of us, no
                     matter who we are and no matter what’s
                     been taken from us or what poison we’ve internalized or how hard we’ve had to work to expel
-                    it –– we all get to dream.<br/> <span>~ N. K. Jemisin"</span>
+                    it –– we all get to dream.<br/> <span className="textEffect">~ N. K. Jemisin"</span>
                     </p>
                     <div className="aboutSectionImage"/>
                 </div>
                 <div className="aboutSection">
-                <p>
-                    Eiusmod ex ipsum dolore labore dolor anim mollit eu sit
-                    nostrud. Laboris quis amet consequat sit. In aliquip aliquip
-                    excepteur officia. Aliqua excepteur ipsum Lorem nostrud
-                    cillum commodo ad magna occaecat esse voluptate. Laborum
-                    ea reprehenderit minim in ad aliquip sit irure fugiat
-                    consequat irure excepteur consequat. Consequat aliquip eu
-                    ipsum commodo. <br/><br/>
-                    Eiusmod ex ipsum dolore labore dolor anim mollit eu sit
-                    nostrud. Laboris quis amet consequat sit. In aliquip aliquip
-                    excepteur officia. Aliqua excepteur ipsum Lorem nostrud
-                    cillum commodo ad magna occaecat esse voluptate. Laborum
-                    ea reprehenderit minim in ad aliquip sit irure fugiat
-                    consequat irure excepteur consequat. Consequat aliquip eu
-                    ipsum commodo.<br/><br/>
-                    Eiusmod ex ipsum dolore labore dolor anim mollit eu sit
-                    nostrud. Laboris quis amet consequat sit. In aliquip aliquip
-                    excepteur officia. Aliqua excepteur ipsum Lorem nostrud
-                    cillum commodo ad magna occaecat esse voluptate. Laborum
-                    ea reprehenderit minim in ad aliquip sit irure fugiat
-                    consequat irure excepteur consequat. Consequat aliquip eu
-                    ipsum commodo.
-                </p>
+                    <p>
+                        For a long time, myself and some friends have been wanting to form a writing group.
+                        Not only as a way to meet more like-minded people, but also to receive feedback and
+                        learn from each other. More often than not, writing is a solitary endeavour and in this day and age,
+                        there is really no need for that to be the case. <br/><br/>
+                    </p>
+                    <p>
+                        Some of the greatest stories came to as a product of collaboration. Very few people write truly alone.
+                        Stories are created from experiences, and why limit yourself to just yours ? In <diff class="textEffect"> Andromeda Inn </diff>
+                        we make it possible for you to expand and reach new height in your writing.<br/><br/>
+                    </p>
+                    <p>
+                        Collaborate with people from all around the world and bring to life storytelling as we've never seen before. Explore what others have made,
+                        draw inspiration from thousands of experiences and lets see where we can take it.
+                    </p>
                 </div>
                 <div className="aboutSection">
                     <div className="aboutSectionImage1"></div>

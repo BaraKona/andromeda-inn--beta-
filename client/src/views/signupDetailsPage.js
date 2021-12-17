@@ -78,7 +78,7 @@ function SignupDetailsPage() {
                         userEmail: currentUser.email,
                         userAbout: 'Something about me...',
                         userLanguages: 'English',
-                        userTags: ['Reader']})}> Enter Inn </button>
+                        userTags: ['Explorer']})}> Enter Inn </button>
                     </form>
                 </div>
             </div>

@@ -3,6 +3,7 @@
   // background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
   background: linear-gradient(115deg, rgb(32,47,51) 55%, transparent 55%);
   z-index: 50vh;
+  padding-bottom: 50px;;
 }
 
 .imageContainer{
@@ -53,20 +54,19 @@
   flex-wrap: wrap;
 }
 .homeItemRight > *{
-    flex: 1 1 100%;
-    font-size: 1.2em;
+  flex: 1 1 100%;
+  font-size: 1.2em;
 }
 .homeSubItem{
   display: flex;
   flex-wrap: wrap;
+  max-height: 400px;
 }
 .homeSubItem > *{
   flex: 1 1 150px;
-  text-align: justify;
+  min-width: 250px;
 }
 .hold{
-  display: block;
-  margin: 25px auto auto auto;
   width: 150px;
   height: 150px;
 }

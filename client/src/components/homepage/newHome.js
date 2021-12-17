@@ -39,10 +39,10 @@ function NewHome() {
                 <div className="imageContainer"></div>
                 <div className="homeItemRight">
                     <div className="homeSubItem">
-                        <p>Anim anim irure non incididunt quis. Incididunt irure in id sunt cillum irure mollit.  Incididunt irure in id sunt cillum irure mollit. Amet Amet quis eiusmod esse elit esse. Fugiat sint non consequat in eu deserunt fugiat veniam pariatur irure non velit.Amet Amet quis eiusmod esse elit esse. Fugiat sint non consequat in eu deserunt fugiat veniam pariatur irure non velit.</p>
+                        <p className="firstLetter"> Have a look at the "About" section for some insight in what we are trying to do here. Alternatively, if you're already aware, you can journey into the Hub. Although, bear in mind, you will need to have an account and log in to have access.</p>
                         <img className="hold" src={Hold}/>
+                        <p className="firstLetter">We suggest you go to profile first and make it presentable. You will be more likely to find a partner with a detailed profile section. Best of luck!</p>
                     </div>
-                    <div className="homeSubItem"><p>Qui fugiat est reprehenderit Lorem duis non enim. Eiusmod minim deserunt fugiat do consequat dolore id excepteur aliqua nisi commodo. Incididunt consectetur dolore aliqua id commodo nulla duis reprehenderit. Aute occaecat eu occaecat minim amet. Amet laborum dolor amet voluptate magna. Quis anim aliquip exercitation esse nulla.</p></div>
                 </div>
             </div>
         </section>

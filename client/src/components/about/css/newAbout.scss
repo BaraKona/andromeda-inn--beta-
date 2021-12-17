@@ -17,6 +17,11 @@
     margin: 0 50px;
     gap: 3%;
 }
+.aboutSection {
+    p::first-letter {
+        font-size: 150%;
+      }
+}
 .aboutContainer > *{
     padding: 10px;
     font-size: 1.5em;
@@ -62,7 +67,7 @@
     margin-left: auto;
     margin-right: auto;
     h2{text-align: right;}
-    p{text-align: justify;}
+    p{text-align: justify; &::first-letter{ font-size: 150%}}
 }
 .cardImg{
     display:block;
