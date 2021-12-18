@@ -102,3 +102,27 @@ html, body {
 .rtl{
   direction: rtl;
 }
+.shadow:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.scale:hover{
+  transform: scale(1.01);
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.flex{display:flex; gap: 50px;}
+.flex >*{
+  flex: 1 1 500px;
+}
+.wrap{flex-wrap: wrap;}

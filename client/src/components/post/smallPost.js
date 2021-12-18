@@ -14,7 +14,7 @@ function MiniPost ({post}) {
                 </div>
             </div >
             <div className="smallPostText"> <p>{post.postContent}</p></div>
-            <p class="textEffect center">{post.postGenre.join(' - ')}</p>
+            <p className="textEffect center">{post.postGenre.join(' - ')}</p>
             <button className="button buttonPost">Read More</button>
         </section>
     )

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { getPosts } from '../../actions/posts';
 import Navbar from '../layout/newNavbar'
 import Post from '../post/post'
+import PostView from '../post/postView'
 import './css/discover.scss'
 
 function Discover() {
@@ -10,10 +11,12 @@ function Discover() {
     const users = useSelector((state) => state.users);
     console.log(users)
     console.log(posts)
+    const [modal, showModal] = useState('')
     const [showCat, setShowCat] = useState('')
     const [showTyp, setShowTyp] = useState('')
     const [showCol, setShowCol] = useState('')
     const [error, setError] = useState('')
+    const [currentPost, setCurrentPost] = useState({postGenre: ['fantasy']})
     const [filteredPosts, setFilteredPosts] = useState([])
     const allRef = useRef()
     const fantasyRef = useRef()
@@ -77,9 +80,31 @@ function Discover() {
         setFilteredPosts(posts.filter((posts) => posts.postType == filter.current.outerText))
         console.log(posts.postType)
     }
+    function openPost(postId, post){
+        console.log(postId)
+        setCurrentPost(post)
+        console.log(post)
+        showModal(modal === '' ? 'show' : '')
+    }
+    function closeModal (){
+        showModal('')
+    }
     return (
         <section className="discover">
             <Navbar/>
+            <div className={`postModal ${modal}`}>
+                <div className="postModal-content">
+                    <span className="close" onClick={closeModal}>&times;</span>
+                    <div className="flex wrap">
+                        <div className = "postItem postWide" key={currentPost._id}>
+                            <PostView post={currentPost}></PostView>
+                        </div>
+                        <div className="postViewChat">
+                            <h2> Chat: </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className ="discoverContainer container">
                 <div className="discoverMenu">
                 <div className="discoverCategory">
@@ -132,7 +157,7 @@ function Discover() {
                             {error}
                             {!posts.length ? <div> Loading... there may not be any posts here </div> : (
                                 <div className="postMap"> {filteredPosts.map((post) => (
-                                    <div className = "postItem" key={post._id}>
+                                    <div onClick={(e) => openPost(post._id, post)} className = "postItem shadow scale" key={post._id}>
                                         <Post post={post}></Post>
                                     </div>
                                 ))}
