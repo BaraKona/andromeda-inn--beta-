@@ -1,16 +1,21 @@
 import React, {useState, useEffect, useRef} from 'react'
-import { useSelector } from 'react-redux';
-import { getPosts } from '../../actions/posts';
+import { useSelector, useDispatch } from 'react-redux'
+import { updatePost } from '../../actions/posts'
+import { getPosts } from '../../actions/posts'
+import { useAuth } from '../../contexts/AuthContext'
 import Navbar from '../layout/newNavbar'
 import Post from '../post/post'
 import PostView from '../post/postView'
 import './css/discover.scss'
 
 function Discover() {
+    const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts); // Get all posts
     const users = useSelector((state) => state.users);
-    console.log(users)
+    const {currentUser, currentPostId, setCurrentPostId} = useAuth()
+    console.log(currentUser)
     console.log(posts)
+    const [postsComment, setPostComment] = useState({postComment: {commenter: '', comment: '', commentTime: ''}})
     const [modal, showModal] = useState('')
     const [showCat, setShowCat] = useState('')
     const [showTyp, setShowTyp] = useState('')
@@ -49,8 +54,18 @@ function Discover() {
 
     useEffect(() => {
         setFilteredPosts(posts)
-      }, [posts])
+      }, [posts, dispatch])
 
+    const submitComment = (e) => {
+        e.preventDefault()
+        try {
+            dispatch(updatePost(currentPostId, postsComment))
+            setError("Sent")
+        } catch (error) {
+            setError('failed to edit. Try again later or contact support')
+        }
+        console.log(postsComment)
+    }
     const showCategory = () =>{
         setShowCat(showCat === '' ? 'active' : '')
     }
@@ -82,6 +97,7 @@ function Discover() {
     }
     function openPost(postId, post){
         console.log(postId)
+        setCurrentPostId(postId)
         setCurrentPost(post)
         console.log(post)
         showModal(modal === '' ? 'show' : '')
@@ -101,6 +117,14 @@ function Discover() {
                         </div>
                         <div className="postViewChat">
                             <h2> Chat: </h2>
+                            {/* <p>{currentPost.postComments.postComment.comment}</p> */}
+                            <textarea
+                              className="chatInput"
+                              type="text"
+                              placeholder="Be kind"
+                              name="comment"
+                              onChange={(e) => setPostComment({postComment: {commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()}})}/>
+                              <button className="button buttonGreen" onClick={submitComment}>Send</button>
                         </div>
                     </div>
                 </div>

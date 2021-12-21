@@ -64,6 +64,16 @@ html, body {
   padding: 5px 10px;
   border: 0;
 }
+.buttonGreen{
+  background: var(--darkgreen);
+  color: var(--lightmodetext1);
+  border:  solid 1px var(--lightmodetext1);
+  display: block;
+  margin-left: auto;
+}
+.buttonGreen:hover{
+  background: rgba(255, 255, 255, 0.5);
+}
 .errorPage{
   background:rgb(32,47,51);
   width: 100%;
@@ -126,3 +136,16 @@ html, body {
   flex: 1 1 500px;
 }
 .wrap{flex-wrap: wrap;}
+.chatInput{
+  position: relative;
+  min-width: 97%;
+  max-width: 500px;
+  min-height: 3ch;
+  padding: 10px 5px;
+  border: 1px solid var(--lightmodetext1);
+  background: rgba(255, 255, 255, 0.05);
+  bottom: 0;
+}
+.chatInput:focus, .chatInput:active{
+  border: none;
+}
