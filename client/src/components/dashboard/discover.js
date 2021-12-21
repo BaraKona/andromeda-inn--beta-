@@ -59,6 +59,7 @@ function Discover() {
     const submitComment = (e) => {
         e.preventDefault()
         try {
+            setPostComment({postsComment: { postsComment}})
             dispatch(updatePost(currentPostId, postsComment))
             setError("Sent")
         } catch (error) {
