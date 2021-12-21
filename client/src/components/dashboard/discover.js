@@ -15,7 +15,8 @@ function Discover() {
     const {currentUser, currentPostId, setCurrentPostId} = useAuth()
     console.log(currentUser)
     console.log(posts)
-    const [postsComment, setPostComment] = useState({postComment: {commenter: '', comment: '', commentTime: ''}})
+    const [postComment, setPostComment] = useState({commenter: '', comment: '', commentTime: ''})
+    const [commentArray, setCommentArray] = useState([])
     const [modal, showModal] = useState('')
     const [showCat, setShowCat] = useState('')
     const [showTyp, setShowTyp] = useState('')
@@ -59,12 +60,14 @@ function Discover() {
     const submitComment = (e) => {
         e.preventDefault()
         try {
-            dispatch(updatePost(currentPostId, postsComment))
+            setCommentArray(commentArray.push(postComment))
+            console.log(commentArray)
+            dispatch(updatePost(currentPostId, postComment))
             setError("Sent")
         } catch (error) {
             setError('failed to edit. Try again later or contact support')
         }
-        console.log(postsComment)
+        console.log(postComment)
     }
     const showCategory = () =>{
         setShowCat(showCat === '' ? 'active' : '')
@@ -123,7 +126,7 @@ function Discover() {
                               type="text"
                               placeholder="Be kind"
                               name="comment"
-                              onChange={(e) => setPostComment({postComment: {commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()}})}/>
+                              onChange={(e) => setPostComment({...postComment, commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()})}/>
                               <button className="button buttonGreen" onClick={submitComment}>Send</button>
                         </div>
                     </div>

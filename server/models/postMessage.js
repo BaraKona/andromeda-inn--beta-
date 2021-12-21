@@ -18,13 +18,11 @@ const postSchema = mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    postComments: {
-        postComment: {
-            commenter: String,
-            comment: String,
-            commentTime: Date,
-        }
-    }
+    postComments: [{
+        commenter: String,
+        comment: String,
+        commentTime: Date,
+    }]
 });
 
 const PostMessage = mongoose.model('PostMessage', postSchema)
