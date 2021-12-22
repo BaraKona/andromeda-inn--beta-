@@ -24,6 +24,7 @@ function Discover() {
     const [error, setError] = useState('')
     const [currentPost, setCurrentPost] = useState({postGenre: ['fantasy']})
     const [filteredPosts, setFilteredPosts] = useState([])
+    const [currentPostComment, setCurrentPostComment] = useState([])
     const allRef = useRef()
     const fantasyRef = useRef()
     const sciFiRef = useRef()
@@ -63,12 +64,10 @@ function Discover() {
             dispatch(updatePostComment(currentPostId, postComment))
             console.log(postComment)
             setError("Sent")
-            console.log(error)
         } catch (error) {
             setError('failed to edit. Try again later or contact support')
             console.log(error)
         }
-        console.log(postComment)
     }
     const showCategory = () =>{
         setShowCat(showCat === '' ? 'active' : '')
