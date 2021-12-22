@@ -38,9 +38,14 @@ export const updatePostComment = async (req, res) => {
     const post = req.body;
 
     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id')
-    const updatedPostComment = await PostMessage.findByIdAndUpdate(_id, { ...post, _id}, {$push: { postComments: post}})
 
-    res.json(updatedPostComment);
+    try {
+        const updatedPostComment = await PostMessage.findByIdAndUpdate(_id, {$push: {postComments: post.postComments}}, {new: true})
+        // console.log(updatedPostComment)
+        res.json(updatedPostComment);
+    } catch (error) {
+        console.log(error)
+    }
 }
 export const deletePost = async (req, res) => {
     const { id } = req.params;
