@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { updatePost } from '../../actions/posts'
+import { updatePost, updatePostComment } from '../../actions/posts'
 import { getPosts } from '../../actions/posts'
 import { useAuth } from '../../contexts/AuthContext'
 import Navbar from '../layout/newNavbar'
@@ -13,9 +13,9 @@ function Discover() {
     const posts = useSelector((state) => state.posts); // Get all posts
     const users = useSelector((state) => state.users);
     const {currentUser, currentPostId, setCurrentPostId} = useAuth()
-    console.log(currentUser)
-    console.log(posts)
-    const [postComment, setPostComment] = useState({commenter: '', comment: '', commentTime: ''})
+    // console.log(currentUser)
+    // console.log(posts)
+    const [postComment, setPostComment] = useState({postComments: []})
     const [commentArray, setCommentArray] = useState([])
     const [modal, showModal] = useState('')
     const [showCat, setShowCat] = useState('')
@@ -60,12 +60,13 @@ function Discover() {
     const submitComment = (e) => {
         e.preventDefault()
         try {
-            setCommentArray(commentArray.push(postComment))
-            console.log(commentArray)
-            dispatch(updatePost(currentPostId, postComment))
+            dispatch(updatePostComment(currentPostId, postComment))
+            console.log(postComment)
             setError("Sent")
+            console.log(error)
         } catch (error) {
             setError('failed to edit. Try again later or contact support')
+            console.log(error)
         }
         console.log(postComment)
     }
@@ -82,7 +83,6 @@ function Discover() {
         e.preventDefault()
         if (filter.current.outerText == 'All'){
             setFilteredPosts(posts)
-            console.log(posts)
         }
         else{
             setFilteredPosts(posts.filter((posts) => posts.postGenre.includes(filter.current.outerText)))
@@ -91,22 +91,19 @@ function Discover() {
     function filterCollabPosts(e, filter){
         e.preventDefault()
         setFilteredPosts(posts.filter((posts) => posts.postCollab == filter.current.outerText))
-        console.log(posts.postCollab)
     }
     function filterTypePosts(e, filter){
         e.preventDefault()
         setFilteredPosts(posts.filter((posts) => posts.postType == filter.current.outerText))
-        console.log(posts.postType)
     }
     function openPost(postId, post){
-        console.log(postId)
         setCurrentPostId(postId)
         setCurrentPost(post)
-        console.log(post)
         showModal(modal === '' ? 'show' : '')
     }
     function closeModal (){
         showModal('')
+        setPostComment([])
     }
     return (
         <section className="discover">
@@ -120,13 +117,13 @@ function Discover() {
                         </div>
                         <div className="postViewChat">
                             <h2> Chat: </h2>
-                            {/* <p>{currentPost.postComments.postComment.comment}</p> */}
+                            <p></p>
                             <textarea
                               className="chatInput"
                               type="text"
                               placeholder="Be kind"
                               name="comment"
-                              onChange={(e) => setPostComment({...postComment, commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()})}/>
+                              onChange={(e) => setPostComment({postComments : [{commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()}]})}/>
                               <button className="button buttonGreen" onClick={submitComment}>Send</button>
                         </div>
                     </div>
