@@ -16,7 +16,7 @@ function NewHome() {
                         <p> A collaboration place for creatives. <br></br> Join writers from all corners of the literary world and collaborate together
                         inside the inn.
                         </p>
-                        <Link exact to="/inn/discover">
+                        <Link to="/inn/discover">
                             <li className="content__item">
                                 <button className="button button--surtur">
                                     <svg className="textcircle" viewBox="0 0 500 500">
