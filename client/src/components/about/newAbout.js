@@ -30,7 +30,7 @@ export default function NewAbout() {
                     </p>
                     <p>
                         Some of the greatest stories came to as a product of collaboration. Very few people write truly alone.
-                        Stories are created from experiences, and why limit yourself to just yours ? In <diff class="textEffect"> Andromeda Inn </diff>
+                        Stories are created from experiences, and why limit yourself to just yours ? In <diff className="textEffect"> Andromeda Inn </diff>
                         we make it possible for you to expand and reach new height in your writing.<br/><br/>
                     </p>
                     <p>

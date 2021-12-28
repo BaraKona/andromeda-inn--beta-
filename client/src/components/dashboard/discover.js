@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { updatePost, updatePostComment } from '../../actions/posts'
-import { getPosts } from '../../actions/posts'
+import { updatePostComment } from '../../actions/posts'
 import { useAuth } from '../../contexts/AuthContext'
 import Navbar from '../layout/newNavbar'
 import Post from '../post/post'
@@ -16,7 +15,6 @@ function Discover() {
     // console.log(currentUser)
     // console.log(posts)
     const [postComment, setPostComment] = useState({postComments: []})
-    const [commentArray, setCommentArray] = useState([])
     const [modal, showModal] = useState('')
     const [showCat, setShowCat] = useState('')
     const [showTyp, setShowTyp] = useState('')

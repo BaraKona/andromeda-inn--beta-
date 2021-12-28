@@ -1,4 +1,4 @@
-import React, {useEffect, Suspense, useState} from "react"
+import React, {useEffect, Suspense} from "react"
 import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage, SignupDetailsPage, SinglePost} from './views'
 import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
@@ -14,12 +14,10 @@ import {getUsers} from './actions/users'
 import PrivateRoute from "./route/PrivateRoute.js";
 import loading from './images/Ripple.gif'
 import './index.css'
-import { set } from "firebase/database"
 
 
 export default function App() {
   const dispatch = useDispatch();
-  const [viewPost, setViewPost] = useState(null)
 
   useEffect(() => {
     dispatch(getPosts());

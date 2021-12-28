@@ -19,9 +19,9 @@ const postSchema = mongoose.Schema({
         default: Date.now()
     },
     postComments: [{
-        commenter: String,
-        comment: String,
-        commentTime: Date,
+        // commenter: String,
+        // comment: String,
+        // commentTime: Date,
     }]
 });
 

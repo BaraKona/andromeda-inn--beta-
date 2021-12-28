@@ -33,6 +33,7 @@ export const updatePost = async (req, res) => {
 
     res.json(updatedPost);
 }
+
 export const updatePostComment = async (req, res) => {
     const { id: _id } = req.params;
     const post = req.body;
@@ -47,6 +48,7 @@ export const updatePostComment = async (req, res) => {
         console.log(error)
     }
 }
+
 export const deletePost = async (req, res) => {
     const { id } = req.params;
 
