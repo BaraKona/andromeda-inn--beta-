@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv'
 import postRoutes from './routes/posts.js'
 import userRoutes from './routes/users.js'
+import projectRoutes from './routes/projects.js'
 
 const app = express();
 
@@ -19,9 +20,10 @@ app.use(cors());
 //Routes for different data routes
 app.use('/posts', postRoutes);
 app.use('/users', userRoutes);
+app.use('/projects', projectRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Hello Andromeda Inn')
+    res.send('This is Andromeda Inn')
 });
 
 const PORT = process.env.PORT || 5000;

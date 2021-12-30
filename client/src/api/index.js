@@ -3,10 +3,10 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-// const postUrl = process.env.REACT_APP_POSTS_URL;
-// const userUrl = process.env.REACT_APP_USER_URL;
-const postUrl = 'http://localhost:5000/posts';
-const userUrl = 'http://localhost:5000/users';
+const postUrl = process.env.REACT_APP_POSTS_URL;
+const userUrl = process.env.REACT_APP_USER_URL;
+// const postUrl = 'http://localhost:5000/posts';
+// const userUrl = 'http://localhost:5000/users';
 
 //Posts
 export const fetchPosts = () => axios.get(postUrl);
