@@ -11,6 +11,7 @@ import { AuthProvider } from './contexts/AuthContext.js';
 import {useDispatch} from 'react-redux';
 import {getPosts} from './actions/posts'
 import {getUsers} from './actions/users'
+import {getProjects} from './actions/projects'
 import PrivateRoute from "./route/PrivateRoute.js";
 import loading from './images/Ripple.gif'
 import './index.css'
@@ -21,7 +22,8 @@ export default function App() {
 
   useEffect(() => {
     dispatch(getPosts());
-    dispatch(getUsers())
+    dispatch(getUsers());
+    dispatch(getProjects());
   }, [dispatch])
 
   return (
