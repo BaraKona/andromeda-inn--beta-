@@ -228,7 +228,7 @@ const Profile = () => {
                     <div className ="">
                     <p><span> You have {3 - posts.length} / 3 Posts left </span></p>
                         {!posts.length ? <div> Loading... </div> : (
-                            <div className="postMap"> {posts.map((post) => (
+                            <div className="profilePostMap"> {posts.map((post) => (
                                 <div className = "profilePostItem" key={post._id}>
                                     <div className = "postButtons">
                                         <button className = "updatePostButton" onClick={(e) => updatePostClick(post._id)}> Update your post?</button>

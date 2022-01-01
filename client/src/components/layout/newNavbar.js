@@ -2,9 +2,7 @@ import './css/new-navbar.scss'
 import React, {useState} from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
-import book1 from '../../images/Icon/cyclops_1.svg'
-import book2 from '../../images/Icon/cyclops_3.svg'
-import book3 from '../../images/Icon/cyclops_6.svg'
+import {cyclops1, cyclops3, cyclops6} from '../../images/Icon/index'
 
 const Navbar = () => {
   const { currentUser, logout, displayImg, displayName} = useAuth();
@@ -31,10 +29,10 @@ const Navbar = () => {
 
   //Determines what Icons to show depending on view
   function icon (){
-    if (splitLocation[1] === 'about'){return <> <img src={book2} className="svgIcon"/><h2 id="title" style={{color:"rgb(233,227,209)"}}> AI </h2></>}
-    else if(splitLocation[1] === 'inn'){return <> <img src={book3} className="svgIcon"/><h2 id="title" style={{color:"black"}}> AI </h2></>}
+    if (splitLocation[1] === 'about'){return <> <img src={cyclops3} className="svgIcon"/><h2 id="title" style={{color:"rgb(233,227,209)"}}> AI </h2></>}
+    else if(splitLocation[1] === 'inn'){return <> <img src={cyclops6} className="svgIcon"/><h2 id="title" style={{color:"black"}}> AI </h2></>}
 
-    else{return <> <img src={book1} className="svgIcon"/><h2 id="title" style={{color:"rgb(233,227,209)"}}> AI </h2></>}
+    else{return <> <img src={cyclops1} className="svgIcon"/><h2 id="title" style={{color:"rgb(233,227,209)"}}> AI </h2></>}
   }
   function isDashboard () {
     if (splitLocation[1] === 'inn'){
@@ -66,7 +64,7 @@ const Navbar = () => {
             {loggedIn()}
         </div>
       </div>
-      <div id="centerImg1" onClick={switchMobile}><img className="iconImg" src ={book3} alt="centerImg1"></img></div>
+      <div id="centerImg1" onClick={switchMobile}><img className="iconImg" src ={cyclops3} alt="centerImg1"></img></div>
     </div>
     )
 }

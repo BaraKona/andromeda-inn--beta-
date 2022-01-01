@@ -26,29 +26,32 @@ export default function App() {
 
   return (
     <Router>
-      <Suspense fallback={<img src={loading} alt="loading"></img>}>
         <AuthProvider>
           <div className="App">
             <Switch>
               <ErrorBoundary>
-              <Route path="/login" component={LoginPage} />
-              <Route path="/signup" component={SignupPage} />
-              <Route path="/forgot-password" component={ForgotPasswordPage} />
-              <Route exact path="/" component={ HomePage }/>
-              <Route path="/about" component={ AboutPage }/>
+              <Suspense fallback={<img src={loading} alt="loading"></img>}>
+                <Route path="/login" component={LoginPage} />
+                <Route path="/signup" component={SignupPage} />
+                <Route path="/forgot-password" component={ForgotPasswordPage} />
+                <Route exact path="/" component={ HomePage }/>
+                <Route path="/about" component={ AboutPage }/>
+              </Suspense>
               {/* <Route path="/explore" component={ ExplorePage }/> */}
-              <PrivateRoute exact path="/inn" component={Dashboard}/>
-              <PrivateRoute exact path="/details" component={SignupDetailsPage}/>
-              <PrivateRoute exact path={`/inn/discover/posts/:id`} component={SinglePost}/>
-              <PrivateRoute exact path="/inn/projects" component={Projects}/>
-              <PrivateRoute exact path="/inn/discover" component={Discover}/>
-              <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>
-              <PrivateRoute exact path="/inn/profile/create-post" component={CreatePostPage}/>
-              {/* <PrivateRoute exact path="/connect" component={ ConnectPage }/> */}</ErrorBoundary>
+              <Suspense fallback={<img src={loading} alt="loading"></img>}>
+                <PrivateRoute exact path="/inn" component={Dashboard}/>
+                <PrivateRoute exact path="/details" component={SignupDetailsPage}/>
+                <PrivateRoute exact path={`/inn/discover/posts/:id`} component={SinglePost}/>
+                <PrivateRoute exact path="/inn/projects" component={Projects}/>
+                <PrivateRoute exact path="/inn/discover" component={Discover}/>
+                <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>
+                <PrivateRoute exact path="/inn/profile/create-post" component={CreatePostPage}/>
+              </Suspense>
+              {/* <PrivateRoute exact path="/connect" component={ ConnectPage }/> */}
+              </ErrorBoundary>
             </Switch>
           </div>
         </AuthProvider>
-      </Suspense>
     </Router>
   );
 }

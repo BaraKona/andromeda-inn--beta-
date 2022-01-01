@@ -2,7 +2,7 @@
   min-height: 100vh;
   // background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
   background: linear-gradient(115deg, rgb(32,47,51) 55%, transparent 55%);
-  z-index: 50vh;
+  z-index: 50;
   padding-bottom: 50px;;
 }
 
@@ -34,7 +34,7 @@
   background-position-y: -450px;
 }
 .homeContainer{
-  padding: 150px 50px 0 50px;
+  padding: 50px 50px 0 50px;
   // margin: auto 5% auto 5%;
   display: flex;
   flex-wrap: wrap;

@@ -1,5 +1,6 @@
 .profile{
     min-height: 100vh;
+    padding-bottom: 50px;
     background:  rgb(27,29,36);
     color: rgb(241, 218, 196);
 }
@@ -107,6 +108,10 @@
 }
 .modal.show{
     display: block;
+}
+.yourPosts{
+    max-width: 1500px;
+    margin: auto;
 }
 .aboutMe{
     textarea{
