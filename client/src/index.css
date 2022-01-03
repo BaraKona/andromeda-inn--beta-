@@ -130,7 +130,10 @@ html, body {
   text-decoration: none;
   cursor: pointer;
 }
-
+.icon{
+  height: 50px;
+  width: 50px;
+}
 .flex{display:flex; gap: 50px;}
 .flex >*{
   flex: 1 1 500px;

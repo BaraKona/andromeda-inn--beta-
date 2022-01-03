@@ -1,0 +1,32 @@
+.projectCardSection{
+    position: relative;
+}
+.projectCard{
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--lightmodetext2);
+    border-radius: 5px;
+    cursor: pointer;
+    h4{
+        margin: 0;
+        padding: 1em 0.5rem;
+        font-size: 1.2rem;
+    }
+}
+.projectCard:hover{
+    background-color:rgba(0, 12, 3, 0.1);
+}
+.closeButton{
+    cursor: pointer;
+    position: absolute;
+    top: -25px;
+    right: 5px;;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.closeButton:hover{
+    transform: scale(1.2)
+}
