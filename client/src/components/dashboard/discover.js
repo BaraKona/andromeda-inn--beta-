@@ -5,6 +5,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import Navbar from '../layout/newNavbar'
 import Post from '../post/post'
 import PostView from '../post/postView'
+import PostComments from '../componentSnippets/postComments'
 import './css/discover.scss'
 
 function Discover() {
@@ -20,9 +21,9 @@ function Discover() {
     const [showTyp, setShowTyp] = useState('')
     const [showCol, setShowCol] = useState('')
     const [error, setError] = useState('')
-    const [currentPost, setCurrentPost] = useState({postGenre: ['fantasy']})
+    const [currentPost, setCurrentPost] = useState(['', ''])
     const [filteredPosts, setFilteredPosts] = useState([])
-    const [currentPostComment, setCurrentPostComment] = useState([])
+    const commentRef = useRef()
     const allRef = useRef()
     const fantasyRef = useRef()
     const sciFiRef = useRef()
@@ -52,9 +53,6 @@ function Discover() {
     const collaborationRef = useRef()
     const accountabilityRef = useRef()
 
-    useEffect(() => {
-        setFilteredPosts(posts)
-      }, [posts, dispatch])
 
     const submitComment = (e) => {
         e.preventDefault()
@@ -67,6 +65,7 @@ function Discover() {
             console.log(error)
         }
     }
+
     const showCategory = () =>{
         setShowCat(showCat === '' ? 'active' : '')
     }
@@ -102,6 +101,9 @@ function Discover() {
         showModal('')
         setPostComment([])
     }
+    useEffect(() => {
+      if (posts) setFilteredPosts(posts)
+    }, [posts, dispatch, submitComment])
     return (
         <section className="discover">
             <Navbar/>
@@ -114,14 +116,21 @@ function Discover() {
                         </div>
                         <div className="postViewChat">
                             <h2> Chat: </h2>
-                            <p></p>
+                                <PostComments post={currentPost} />
+                                {/* <div>
+                                    {currentComments.map((comments) => (
+                                        <p>{comments.comment}</p>
+                                    ))}
+                                </div> */}
                             <textarea
+                              ref = {commentRef}
                               className="chatInput"
                               type="text"
                               placeholder="Be kind"
                               name="comment"
                               onChange={(e) => setPostComment({postComments : [{commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()}]})}/>
-                              <button className="button buttonGreen" onClick={submitComment}>Send</button>
+                            <button className="button buttonGreen" onClick={submitComment}>Send</button>
+                            {error}
                         </div>
                     </div>
                 </div>
@@ -175,7 +184,6 @@ function Discover() {
                 <div>
                     <div className="discoverProject">
                         <div className ="recentPosts">
-                            {error}
                             {!posts.length ? <div> Loading... there may not be any posts here </div> : (
                                 <div className="postMap"> {filteredPosts.map((post) => (
                                     <div onClick={(e) => openPost(post._id, post)} className = "postItem shadow scale" key={post._id}>
@@ -193,5 +201,6 @@ function Discover() {
         </section>
     )
 }
+
 
 export default Discover

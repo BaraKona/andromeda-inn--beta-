@@ -37,7 +37,14 @@ function Dashboard() {
           <div className="dashboardProjectModal-content">
               <span className="close" onClick={closeModal}>&times;</span>
               <div className="flex wrap">
-
+                <form className="formContainer">
+                  <div>
+                    <h2> Your Project </h2>
+                    <label> Title: </label>
+                      <input type="text" className=""/>
+                    <label> Title: </label>
+                  </div>
+                </form>
               </div>
           </div>
       </div>

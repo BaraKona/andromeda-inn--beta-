@@ -40,15 +40,15 @@ export default function App() {
                 <Route path="/about" component={ AboutPage }/>
               </Suspense>
               {/* <Route path="/explore" component={ ExplorePage }/> */}
-              <Suspense fallback={<img src={loading} alt="loading"></img>}>
                 <PrivateRoute exact path="/inn" component={Dashboard}/>
                 <PrivateRoute exact path="/details" component={SignupDetailsPage}/>
                 <PrivateRoute exact path={`/inn/discover/posts/:id`} component={SinglePost}/>
                 <PrivateRoute exact path="/inn/projects" component={Projects}/>
+              <Suspense fallback={<img src={loading} alt="loading"></img>}>
                 <PrivateRoute exact path="/inn/discover" component={Discover}/>
+              </Suspense>
                 <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>
                 <PrivateRoute exact path="/inn/profile/create-post" component={CreatePostPage}/>
-              </Suspense>
               {/* <PrivateRoute exact path="/connect" component={ ConnectPage }/> */}
               </ErrorBoundary>
             </Switch>

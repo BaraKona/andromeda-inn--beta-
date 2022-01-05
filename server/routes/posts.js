@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', getPosts)
 router.post('/', createPost)
 router.patch('/:id', updatePost)
-// router.patch('/:id', updatePostComment)
-router.delete('/:id', deletePost)
+router.patch('/:id/comment', updatePostComment)
+router.delete('/:id/delete-post', deletePost)
 
 export default router
