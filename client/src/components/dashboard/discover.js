@@ -57,13 +57,17 @@ function Discover() {
     const submitComment = (e) => {
         e.preventDefault()
         try {
-            dispatch(updatePostComment(currentPostId, postComment))
+            dispatch(updatePostComment(currentPostId, postComment)).then((data) => {
+                // console.log(data)
+                setCurrentPost(data)
+            })
             console.log(postComment)
             setError("Sent")
         } catch (error) {
             setError('failed to edit. Try again later or contact support')
             console.log(error)
         }
+
     }
 
     const showCategory = () =>{

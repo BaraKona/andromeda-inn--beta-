@@ -46,6 +46,7 @@ export const updatePostComment = (id, post) => async (dispatch) => {
         const { data } = await api.updatePostComment(id, post);
         console.log( data )
         dispatch ({ type: 'UPDATE_POST_COMMENT', payload: data });
+        return(data)
     } catch (error) {
         console.log(error.message)
     }
