@@ -4,7 +4,7 @@
     background-color: var(--lightmodecolour2);
 }
 .postWide{
-    max-width: 550px;
+    max-width: clamp(400px, 550px, 550px);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .postCard{
@@ -27,7 +27,7 @@
 }
 .postImgWide{
     min-height: 200px;
-    width: 550px;
+    width: min(100%, 550px);
 }
 .postMap{
     // display:flex;

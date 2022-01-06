@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import './post.scss'
 
 function Post ({post}) {
@@ -9,7 +9,7 @@ function Post ({post}) {
             <div className = "postImageContainer"><img alt="postImg" className="postImgWide" src={post.selectedFile}></img></div>
             <div className = "postCardWide">
                 <div className = "postBody">
-                    <p style={{textAlign: "right", textDecoration: "underline"}}><span>Posted: </span>{moment(post.createdAt).calendar()}</p>
+                    <p style={{textAlign: "right", textDecoration: "underline"}}><span>Posted: </span>{dayjs(post.createdAt).format('DD/MM/YYYY')}</p>
                     <h1 className = "postTitle">{post.postTitle}</h1>
                     <p style={{textAlign: "justify", minHeight:"150px", maxHeight:"250px", overflowY: 'auto'}}> {post.postContent}</p>
                     <p style={{textAlign: "justify", minHeight:"150px", maxHeight:"250px", overflowY: 'auto'}}> {post.postReContent}</p>

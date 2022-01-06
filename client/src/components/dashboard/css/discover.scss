@@ -9,6 +9,9 @@
     flex-wrap: wrap;
     padding: 20px;
 }
+.discoverContainer.show{
+    overflow-y: hidden;
+}
 .discoverContainer > *:nth-child(1) {
     flex: 1 1 17.5%;
     min-width: 200px;
@@ -76,6 +79,7 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding: 0 5px;
     .postModal-content {
+      position: relative;
       background-color: var(--darkgreen);
       margin: 20px auto auto auto;
       padding: 20px;

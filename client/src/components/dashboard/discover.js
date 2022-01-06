@@ -107,7 +107,7 @@ function Discover() {
     }
     useEffect(() => {
       if (posts) setFilteredPosts(posts)
-    }, [posts, dispatch, submitComment])
+    }, [posts, dispatch, openPost])
     return (
         <section className="discover">
             <Navbar/>
@@ -120,7 +120,7 @@ function Discover() {
                         </div>
                         <div className="postViewChat">
                             <h2> Chat: </h2>
-                                <PostComments post={currentPost} />
+                                <PostComments post={currentPost} key={currentPost._id}/>
                                 {/* <div>
                                     {currentComments.map((comments) => (
                                         <p>{comments.comment}</p>
@@ -134,12 +134,12 @@ function Discover() {
                               name="comment"
                               onChange={(e) => setPostComment({postComments : [{commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()}]})}/>
                             <button className="button buttonGreen" onClick={submitComment}>Send</button>
-                            {error}
+                            {/* {error} */}
                         </div>
                     </div>
                 </div>
             </div>
-            <div className ="discoverContainer container">
+            <div className ={`discoverContainer container ${modal}`}>
                 <div className="discoverMenu">
                 <div className="discoverCategory">
                     <button className="categoryButton" onClick={showCategory}>Categories</button>
