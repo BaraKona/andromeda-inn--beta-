@@ -11,6 +11,7 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding: 0 5px;
     .dashboardProjectModal-content {
+      position: relative;
       background-color: var(--darkgreen);
       margin: 20px auto auto auto;
       padding: 20px;

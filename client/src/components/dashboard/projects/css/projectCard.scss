@@ -6,9 +6,8 @@
     display: flex;
     text-align: center;
     align-items: center;
-    padding: 10px;
+    padding: 2px 5px;
     border-bottom: 1px solid var(--lightmodetext2);
-    border-radius: 5px;
     cursor: pointer;
     h4{
         margin: 0;
@@ -17,7 +16,7 @@
     }
 }
 .projectCard:hover{
-    background-color:rgba(0, 12, 3, 0.1);
+    background-color:rgba(0, 12, 3, 0.05);
 }
 .closeButton{
     cursor: pointer;

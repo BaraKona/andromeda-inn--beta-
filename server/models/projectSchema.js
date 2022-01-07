@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
 const projectSchema = mongoose.Schema({
+    projectName: String,
     projectCreator: String,
     projectCollaborators: [String],
     projectSummary: String,

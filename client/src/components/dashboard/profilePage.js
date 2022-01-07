@@ -11,7 +11,7 @@ const Profile = () => {
     const history = useHistory()
     const { currentUser, displayImg, displayName, updateName, uploadImg, deleteImg, getAllUsers } = useAuth()
     const user = useSelector((state) => currentUser ? state.users.filter((user) => user.userID === currentUser.uid): null);
-    const [userData, setUserData] = useState({ userEmail: '', userName: user[0].userName, userAbout: user[0].userAbout, userTags: user[0].userTags })
+    const [userData, setUserData] = useState({ userEmail: '', userName: user[0]?.userName, userAbout: user[0]?.userAbout, userTags: user[0]?.userTags })
     const [modal, showModal] = useState('')
     const [imageSelected, setImageSelected] = useState("")
     const [loading, setLoading] = useState(false)
@@ -128,6 +128,7 @@ const Profile = () => {
   console.log(profileTag)
   console.log(userData.userTags)
   const birthDate = new Date(userInfo.dateOfBirth).toLocaleDateString("sq-AL",{ year: 'numeric', month: '2-digit', day: '2-digit' })
+
   return(
     <section className = "profile">
         <Navbar/>
@@ -158,7 +159,7 @@ const Profile = () => {
             </div>
             <div className = "profileItems">
                 <div className = "profileName">
-                    <h3>{user[0].userName}</h3>
+                    <h3>{user[0]?.userName|| 'No Name'}</h3>
                 </div>
                 <div className = "profileImgContainer">
                     <img src={displayImg()} className = "profileImg"></img>
@@ -169,7 +170,7 @@ const Profile = () => {
                     <label>Name: </label>
                     <input type="text"  value={userData.userName} ref={nameRef} onChange={(e) => setUserData({...userData, userName: nameRef.current.value})} />
                     <div><p>Email: {userInfo.email}</p><button className="profileButton"> Edit </button></div>
-                    <p>Tag&#40;s&#41;: <span className="textEffect">{user[0].userTags.join(' - ')}</span></p>
+                    <p>Tag&#40;s&#41;: <span className="textEffect">{user[0]?.userTags.join(' - ')}</span></p>
                     <p>Member Since: {userInfo.memberSince}</p>
                     <p>Location: {userInfo.location}</p>
                     <p>Sex: {userInfo.sex}</p>

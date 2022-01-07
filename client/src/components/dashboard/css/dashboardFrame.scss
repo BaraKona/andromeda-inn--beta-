@@ -72,6 +72,7 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding: 0 5px;
     .dashboardProjectModal-content {
+      position: relative;
       background-color: var(--darkgreen);
       margin: 20px auto auto auto;
       padding: 20px;
@@ -79,7 +80,7 @@
       border-radius: 10px;
       min-width: 400px;
       max-width: 1500px;
-      height: 500px;
+      min-height: 500px;
       color: var(--lightmodecolour)
     }
 }
@@ -89,26 +90,18 @@
 
 .formContainer{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1000px;
+    flex-wrap: wrap;
+    // align-items: center;
+    // justify-content: center;
+    max-width: 1400px;
     margin: auto;
     h2{
         text-align: center;
     }
-    input {
-        width: 98%;
-        border: none;
-        outline: none;
-        font-size: 12px;
-        padding: 10px 0 10px 2% ;
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--lightmodecolour)
-    }
+
 }
-.formContainer > *:nth-child(1){
-    min-width: 400px;
-    margin: 0 10px;
+.formContainer{
+    flex: 1 1 400px;
 }
 // @media only screen and (max-width: 1530px){
 //     .dashboardNarrow{

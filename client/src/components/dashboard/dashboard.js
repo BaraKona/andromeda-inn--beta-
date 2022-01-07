@@ -27,8 +27,8 @@ function Dashboard() {
                         spaceBetween={20}
                         slidesPerView={2.6}
                         autoplay={{ "delay": 10000, "disableOnInteraction": true}}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
+                        // onSlideChange={() => console.log('slide change')}
+                        // onSwiper={(swiper) => console.log(swiper)}
                         breakpoints={{
                             0: {
                               width: 0,

@@ -1,0 +1,16 @@
+.projectListItemSection{
+    position: relative;
+}
+.projectListItemCard{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 2px 5px;
+    border-bottom: 1px solid var(--lightmodetext2);
+    cursor: pointer;
+}
+.projectListItemCard:hover{
+    background-color:rgba(0, 12, 3, 0.05);
+}
