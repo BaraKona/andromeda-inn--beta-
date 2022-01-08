@@ -24,8 +24,9 @@ html, body {
   --color-link: #1352d1;
   --color-link-hover: rgb(61, 19, 44);
   --green: rgb(2, 110, 2);
-  --neonBlue: rgb(0, 91, 175);
+  --neonBlue: rgb(3,170,236);;
   --darkgreen: rgb(32,47,51);
+  --blue: rgb(0, 183, 255);
   /* --font: Palatino, URW Palladio L, serif; */
 
   }
@@ -196,5 +197,7 @@ html, body {
 .right{
   text-align: right;
   margin: 0;
-
+}
+.blue{
+  color: var(--neonBlue);
 }

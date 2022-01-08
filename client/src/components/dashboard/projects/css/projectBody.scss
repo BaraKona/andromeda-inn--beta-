@@ -25,3 +25,18 @@
 .dashboardProjectModal.show{
     display: block;
 }
+
+.projectDetails{
+  margin: 20px 15px 0 15px;
+}
+.projectSummary, .projectCreateDate{
+  margin: 0;
+  font-size: 1rem;
+  span{font-weight: bolder; color: black;}
+}
+.projectCreateDate {
+  color: var(--neonBlue);
+  text-align: right;
+  margin-top: 0;
+  text-transform: capitalize;
+}

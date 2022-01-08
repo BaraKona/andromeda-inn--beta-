@@ -8,6 +8,8 @@ export default (projects = [], action) => {
         //     return posts.filter((post) => post._id !== action.payload);
         case 'UPDATE_PROJECT':
             return projects.map((user) => user._id === action.payload._id ? action.payload : user);
+        case 'UPDATE_PROJECT_COMPONENT':
+            return projects.map((project) => project._id === action.payload._id ? action.payload : project);
         default:
             return projects;
     }

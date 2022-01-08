@@ -3,12 +3,12 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const postUrl = process.env.REACT_APP_POSTS_URL;
-const userUrl = process.env.REACT_APP_USER_URL;
-const projectUrl = process.env.REACT_APP_PROJECT_URL;
-// const postUrl = 'http://localhost:5000/posts';
-// const userUrl = 'http://localhost:5000/users';
-// const projectUrl = 'http://localhost:5000/projects';
+// const postUrl = process.env.REACT_APP_POSTS_URL;
+// const userUrl = process.env.REACT_APP_USER_URL;
+// const projectUrl = process.env.REACT_APP_PROJECT_URL;
+const postUrl = 'http://localhost:5000/posts';
+const userUrl = 'http://localhost:5000/users';
+const projectUrl = 'http://localhost:5000/projects';
 
 //Posts
 export const fetchPosts = () => axios.get(postUrl);
@@ -27,3 +27,5 @@ export const updateUser = (id, updatedUser) => axios.patch(`${userUrl}/${id}`, u
 export const fetchProjects = () => axios.get(projectUrl);
 export const createProject = (newProject) => axios.post(projectUrl, newProject);
 export const updateProject = (id, updatedProject) => axios.patch(`${projectUrl}/${id}`, updatedProject);
+export const updateProjectComponent = (id, updatedProjectComponent) => axios.patch(`${projectUrl}/${id}/component`, updatedProjectComponent);
+

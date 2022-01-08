@@ -4,24 +4,21 @@ export const getProjects = () => async (dispatch) => {
     try {
         const { data } = await api.fetchProjects();
         console.log(data)
-        console.log("data above")
         dispatch({type: 'FETCH_ALL_PROJECTS', payload: data})
     } catch (error) {
         console.log(error.message)
     }
 }
-//This method fetches 4 posts from the database.
-// export const getLimit = () => async (dispatch) => {
-//     try {
-//         const { data } = await api.fetchLimit();
-//         data.reverse()
-//         dispatch({type: 'FETCH_FOUR', payload: data})
-//         console.log(data)
-//     } catch (error) {
-//         console.log(error.message)
-//     }
-// }
-//This method creates a post and puts it in the database
+export const updateProjectComponent = (id, project) => async (dispatch) => {
+    try {
+        const { data } = await api.updateProjectComponent(id, project);
+        console.log( data )
+        dispatch ({ type: 'UPDATE_PROJECT_COMPONENT', payload: data });
+        return(data)
+    } catch (error) {
+        console.log(error.message)
+    }
+}
 export const createProject = (user) => async (dispatch) => {
     try {
         const { data } = await api.createProject(user);

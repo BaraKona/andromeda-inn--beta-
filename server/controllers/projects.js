@@ -34,20 +34,20 @@ export const updateProject = async (req, res) => {
     res.json(updatedProject);
 }
 
-// export const updatePostComment = async (req, res) => {
-//     const { id: _id } = req.params;
-//     const post = req.body;
+export const updateProjectComponent = async (req, res) => {
+    const { id: _id } = req.params;
+    const project = req.body;
 
-//     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id')
+    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No project with that id')
 
-//     try {
-//         const updatedPostComment = await PostMessage.findByIdAndUpdate(_id, {$push: {postComments: post.postComments}}, {new: true})
-//         // console.log(updatedPostComment)
-//         res.json(updatedPostComment);
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
+    try {
+        const updatedProjectComponents = await Project.findByIdAndUpdate(_id, {$push: {projectComponents: project}}, {new: true})
+        // console.log(updatedPostComment)
+        res.json(updatedProjectComponents);
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 export const deleteProject = async (req, res) => {
     const { id } = req.params;
