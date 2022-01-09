@@ -19,7 +19,7 @@ function PostComments({post}) {
             <div className="parentComments">
                 {post.postComments.slice(0).reverse().map((comments, index) => (
                     <div className="parentComment" key={index}>
-                        <p className ="commentComment"><span className="textEffect">{findUser(comments.commenter)}</span>:{comments.comment}</p>
+                        <p className ="commentComment"><span className="textEffect">{findUser(comments.commenter)}</span>: {comments.comment}</p>
                         <p className = "commentDate">{dayjs(comments.commentTime).fromNow()}</p>
                     </div>
 

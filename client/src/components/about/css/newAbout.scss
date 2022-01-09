@@ -1,14 +1,15 @@
 .newAbout{
     min-height: 100vh;
     background: rgb(32,47,51);
-    color: rgb(249,218,196);
+    color: rgb(224, 190, 165);
+    // color: rgb(224, 208, 201);
 }
 .aboutTitle{
+    font-family: 'Elsie Swash Caps', cursive;
     margin: -20px auto;
     max-width: 800px;
-    font-size: 60px;
-    font-weight: 100;
-    text-align: left;
+    font-size: 50px;
+    text-align: center;
     padding: 0 20px;
 }
 .aboutContainer{

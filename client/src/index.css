@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Elsie+Swash+Caps&family=Fredericka+the+Great&family=Raleway:wght@100&display=swap');
 html, body {
   margin: 0;
-  /* font-family: 'Alegreya Sans SC'; */
-  font-family: Palatino serif;
+  /* font-family: 'Fredericka the Great', cursive; */
+  /* font-family: 'Raleway', sans-serif; */
+  /* font-family: 'Elsie Swash Caps', cursive; */
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(249,218,196);
@@ -54,6 +58,9 @@ html, body {
 /* hr{
    width: 50%;
 } */
+input, textarea {
+  font-family: 'Cormorant Garamond', serif;
+}
 .iconImg{
   width: 50px;
   height: 50px;

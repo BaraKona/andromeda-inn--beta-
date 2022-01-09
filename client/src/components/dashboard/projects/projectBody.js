@@ -8,7 +8,7 @@ import './css/projectBody.scss'
 
 function ProjectBody(props) {
     const {currentUser, currentPostId, setCurrentPostId} = useAuth()
-    const [allComponents, setAllComponents] = useState()
+    const [allComponents, setAllComponents] = useState(props.currentProject)
     const [component, setComponent] = useState([{componentCreator: currentUser?.uid || '' , componentPosition: props.currentProject?.projectComponents?.length + 1, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now()}])
     const users = useSelector((state) => state.users);
     const dispatch = useDispatch();
@@ -25,7 +25,7 @@ function ProjectBody(props) {
             // ))}
 
         }
-        else return <h1> no projects </h1>
+        else return <h1> Add a component to get started </h1>
     }
     function findUser (creator) {
         const username = users.find((user) => user.userID === creator)
@@ -45,7 +45,7 @@ function ProjectBody(props) {
     }
     useEffect(() => {
         if (props) setAllComponents(props.currentProject)
-    }, [dispatch])
+    }, [dispatch, props.currentProject])
     return (
         <div>
             {console.log(props.currentProject)}

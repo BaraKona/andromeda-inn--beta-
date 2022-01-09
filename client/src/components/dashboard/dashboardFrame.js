@@ -53,18 +53,8 @@ function Dashboard() {
       showModal('')
   }
   function addProject(){
-    setNewProject(true)
-  }
-  function showProject(){
-    if (newProject === true){
-      return <ProjectCard
-              newProject={newProject}
-              setNewProject={setNewProject}
-              openModal={openModal}
-              />
-    } else if (newProject === false){
-      return <></>
-    }
+    openModal()
+    // setNewProject(true)
   }
   function isTag (e, tag){
     e.preventDefault()
@@ -95,6 +85,7 @@ function Dashboard() {
       try {
         dispatch(createProject(projectData))
         setError('We have created a project for you :))')
+        closeModal()
       } catch (error) {
           console.log(error)
           setError(' Sorry, something went wrong... Try again later?')
@@ -143,8 +134,7 @@ function Dashboard() {
                       <textarea className="textarea" type="text" required onChange={(e) => setProjectData({ ...projectData, projectSummary: e.target.value })}/>
                     {/* <label> Project Summary </label>
                       <textarea className="textarea" type="text" required/> */}
-                  </div>
-                  <div className="rightProjectForm">
+
                     {/* <label> Title: </label>
                       <input type="text" className="input" required/> */}
                       <div id="postGenre">
@@ -186,8 +176,9 @@ function Dashboard() {
                             <p onChange={(e) => setProjectData({ ...projectData, projectGenre: e.target.value })}>{types.join(' ')}</p>
                             <hr/>
                         </div>
-                  </div>
+
                   <button className="postSubmit" type="submit" onClick={(e) => setProjectData({ ...projectData, projectCreator: currentUser.uid, projectGenre: genres, projectType: types, createdAt :{user: currentUser.uid, date: Date.now()}})}>Submit</button>
+                  </div>
                 </form>
               </div>
                 <p className="right">{error}</p>
@@ -201,7 +192,7 @@ function Dashboard() {
                   </div>
                   <div className="hubProjects">
                     {yourProjects()}
-                    {showProject()}
+                    {/* {showProject()} */}
                     <div className="hubAddProjects">
                       <p>Create New Project</p>
                       <button onClick={addProject} className="plusButton">&#x2B;</button>
