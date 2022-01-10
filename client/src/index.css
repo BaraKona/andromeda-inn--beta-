@@ -29,7 +29,7 @@ html, body {
   --color-link-hover: rgb(61, 19, 44);
   --green: rgb(2, 110, 2);
   --neonBlue: rgb(3,170,236);;
-  --darkgreen: rgb(32,47,51);
+  --darkgreen: #202f33;
   --blue: rgb(0, 183, 255);
   /* --font: Palatino, URW Palladio L, serif; */
 
@@ -207,4 +207,24 @@ input, textarea {
 }
 .blue{
   color: var(--neonBlue);
+}
+.project-Component-icon{
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  opacity: 85%;
+}
+.projectComponentPosition{
+  font-weight: bolder;
+  text-align: left;
+  text-decoration: underline;
+}
+.component-setting-icon{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.component-setting-icon:hover{
+  transform: scale(1.15);
 }

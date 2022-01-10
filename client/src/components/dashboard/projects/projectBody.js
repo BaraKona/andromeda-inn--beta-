@@ -9,42 +9,38 @@ import './css/projectBody.scss'
 function ProjectBody(props) {
     const {currentUser, currentPostId, setCurrentPostId} = useAuth()
     const [allComponents, setAllComponents] = useState(props.currentProject)
-    const [component, setComponent] = useState([{componentCreator: currentUser?.uid || '' , componentPosition: props.currentProject?.projectComponents?.length + 1, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now()}])
+    const [component, setComponent] = useState([{componentCreator: currentUser?.uid, componentPosition: props?.currentProject?.projectComponents?.length, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now()}])
     const users = useSelector((state) => state.users);
     const dispatch = useDispatch();
     var relativeTime = require('dayjs/plugin/relativeTime')
     dayjs.extend(relativeTime)
 
     function hasComponent () {
-        if (allComponents?.projectComponents?.length > 0) {
-            return <ProjectComponents components={allComponents.projectComponents}/>
-            // {props.currentProject.projectComponents.map((project) => (
-
-            //     console.log(project)
-            //     // return <ProjectComponent components={project}/>
-            // ))}
-
-        }
-        else return <h1> Add a component to get started </h1>
+      if (allComponents?.projectComponents?.length > 0) {
+        return <ProjectComponents components={allComponents.projectComponents}/>
+      } else
+        return <h1> Add a component to get started </h1>
     }
     function findUser (creator) {
-        const username = users.find((user) => user.userID === creator)
-        return (username.userName)
+      const username = users.find((user) => user.userID === creator)
+      return (username.userName)
     }
     function createComponent (e) {
-        e.preventDefault()
-        try {
-            dispatch(updateProjectComponent(props.currentProject._id, component)).then((data) => {
-                console.log(data);
-                setAllComponents(data)
-            })
-            console.log('success')
-        } catch (error) {
-            console.log(error)
-        }
+      e.preventDefault()
+      setComponent([{componentCreator: currentUser?.uid, componentPosition: allComponents.projectComponents?.length + 1, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: ''}])
+      try {
+        dispatch(updateProjectComponent(props.currentProject._id, component)).then((data) => {
+          console.log(data);
+          setAllComponents(data)
+        })
+          console.log('success')
+      } catch (error) {
+          console.log(error)
+      }
     }
     useEffect(() => {
         if (props) setAllComponents(props.currentProject)
+        setComponent([{componentCreator: currentUser?.uid, componentPosition: props.currentProject.projectComponents?.length, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: ''}])
     }, [dispatch, props.currentProject])
     return (
         <div>

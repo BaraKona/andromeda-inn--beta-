@@ -8,6 +8,7 @@ import Projects from './components/dashboard/projects'
 import ErrorBoundary from "./components/componentSnippets/errorBoundary"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from './contexts/AuthContext.js';
+import {ProjectProvider} from './contexts/ProjectContext.js'
 import {useDispatch} from 'react-redux';
 import {getPosts} from './actions/posts'
 import {getUsers} from './actions/users'
@@ -40,6 +41,7 @@ export default function App() {
                 <Route path="/about" component={ AboutPage }/>
               </Suspense>
               {/* <Route path="/explore" component={ ExplorePage }/> */}
+              <ProjectProvider>
                 <PrivateRoute exact path="/inn" component={Dashboard}/>
                 <PrivateRoute exact path="/details" component={SignupDetailsPage}/>
                 <PrivateRoute exact path={`/inn/discover/posts/:id`} component={SinglePost}/>
@@ -50,6 +52,7 @@ export default function App() {
                 <PrivateRoute exact path="/inn/profile" component={ProfilePage}/>
                 <PrivateRoute exact path="/inn/profile/create-post" component={CreatePostPage}/>
               {/* <PrivateRoute exact path="/connect" component={ ConnectPage }/> */}
+              </ProjectProvider>
               </ErrorBoundary>
             </Switch>
           </div>

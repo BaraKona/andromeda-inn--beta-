@@ -2,6 +2,7 @@ import React, {useState, useRef, useEffect} from 'react'
 import Navbar from '../layout/newNavbar'
 import { useDispatch, useSelector } from 'react-redux'
 import { useAuth } from '../../contexts/AuthContext'
+import { useProject } from '../../contexts/ProjectContext'
 import {createProject, updateProject, deleteProject} from '../../actions/projects'
 import DashboardBody from './dashboard'
 import ProjectCard from './projects/projectCard'
@@ -12,6 +13,7 @@ import './css/dashboardFrame.scss'
 function Dashboard() {
   const dispatch = useDispatch();
   const {currentUser, currentPostId, setCurrentPostId} = useAuth()
+  const {currentProjectComponent, setCurrentProjectComponent} = useProject()
   const projects = useSelector((state) => currentUser ? state.projects.filter((project) => project.projectCreator === currentUser.uid || project.projectCollaborators.includes(currentUser.uid)): null);
   const [projectData, setProjectData] = useState({ projectName: '', projectCreator: '', projectSummary: '', projectGenre: [], projectType: [], createdAt: { user: '', date: ''}})
   const [modal, showModal] = useState('')

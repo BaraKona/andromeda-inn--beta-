@@ -50,3 +50,15 @@
 .projectComponentContainer-update{
     margin: 0;
 }
+.projectComponentName{
+    text-align: center;
+    max-width: 200px;
+    margin: 15px auto;
+}
+.projectComponentPosition{
+    margin-top: 0;
+
+    & img{
+        float: right;
+    }
+}

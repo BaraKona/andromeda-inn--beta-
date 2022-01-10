@@ -19,6 +19,7 @@ export {default as  cyclops6} from './cyclops_6.svg'
 export {default as  cyclops7} from './cyclops_7.svg'
 export {default as  cyclops8} from './cyclops_8.svg'
 export {default as  plane} from './paperPlane.png'
+export {default as settings} from './setting.svg'
 
 
 

@@ -9,6 +9,7 @@ const projectSchema = mongoose.Schema({
     projectType: [String],
     selectedFile: String,
     projectComponents: [{
+        componentName: String,
         componentCreator: String,
         componentPosition: Number,
         componentBody: String,
