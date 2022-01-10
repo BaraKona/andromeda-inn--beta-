@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updatePostComment } from '../../actions/posts'
 import { useAuth } from '../../contexts/AuthContext'
+import {send} from '../../images/Icon'
 import Navbar from '../layout/newNavbar'
 import Post from '../post/post'
 import PostView from '../post/postView'
@@ -133,7 +134,7 @@ function Discover() {
                               placeholder="Be kind"
                               name="comment"
                               onChange={(e) => setPostComment({postComments : [{commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()}]})}/>
-                            <button className="button buttonGreen" onClick={submitComment}>Send</button>
+                            <img src={send} className="send-icon" onClick={submitComment}/>
                             {/* {error} */}
                         </div>
                     </div>

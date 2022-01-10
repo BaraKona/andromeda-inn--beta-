@@ -28,7 +28,7 @@ html, body {
   --color-link: #1352d1;
   --color-link-hover: rgb(61, 19, 44);
   --green: rgb(2, 110, 2);
-  --neonBlue: rgb(3,170,236);;
+  --neonBlue: #03aaec;;
   --darkgreen: #202f33;
   --blue: rgb(0, 183, 255);
   /* --font: Palatino, URW Palladio L, serif; */
@@ -227,4 +227,14 @@ input, textarea {
 }
 .component-setting-icon:hover{
   transform: scale(1.15);
+}
+.send-icon{
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin-left: auto;
+}
+
+.rel{
+  position: relative;
 }
