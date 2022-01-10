@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {book2, settings} from '../../../images/Icon/index'
+import {book2, settings} from '../../../images/Icon'
 import dayjs from 'dayjs'
 import './css/projectComponent.scss'
 
