@@ -23,16 +23,16 @@ const Navbar = () => {
       return <><Link style={{marginLeft:'auto'}} className={`nav-items ${mobileMenu} loginLogout`} to="/login" id="logout" onClick = {logout} >Logout</Link></>
     }
     else {
-        return <><Link style={{marginLeft:'auto'}} className={`nav-items ${mobileMenu} loginLogout`}  to="/login" >Login</Link></>
+      return <><Link style={{marginLeft:'auto'}} className={`nav-items ${mobileMenu} loginLogout`}  to="/login" >Login</Link></>
     }
   }
 
   //Determines what Icons to show depending on view
   function icon (){
-    if (splitLocation[1] === 'about'){return <> <img src={cyclops3} className="svgIcon"/><h2 id="title" style={{color:"rgb(233,227,209)"}}> AI </h2></>}
-    else if(splitLocation[1] === 'inn'){return <> <img src={cyclops6} className="svgIcon"/><h2 id="title" style={{color:"black"}}> AI </h2></>}
+    if (splitLocation[1] === 'about'){return <Link to="/"> <h2 id="title" style={{color:"rgb(233,227,209)"}}><img src={cyclops3} className="svgIcon"/> AI </h2></Link>}
+    else if(splitLocation[1] === 'inn'){return <Link to="/"> <h2 id="title" style={{color:"black"}}><img src={cyclops6} className="svgIcon"/> AI </h2></Link>}
 
-    else{return <> <img src={cyclops1} className="svgIcon"/><h2 id="title" style={{color:"rgb(233,227,209)"}}> AI </h2></>}
+    else{return <Link to="/"> <h2 id="title" style={{color:"rgb(233,227,209)"}}> <img src={cyclops1} className="svgIcon"/> AI </h2></Link>}
   }
   function isDashboard () {
     if (splitLocation[1] === 'inn'){
@@ -48,9 +48,9 @@ const Navbar = () => {
     }
     else {
       return <>
-        <NavLink style={{marginLeft:'auto'}} activeClassName="navActive" className={`nav-items ${mobileMenu}`} to="/about">About</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`} exact to="/">Home</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`}  to="/inn"> Hub </NavLink>
+        <NavLink style={{marginLeft:'20px'}}activeClassName="navActive" className={`nav-items ${mobileMenu}`} exact to="/">Home</NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`} to="/about">About</NavLink>
+        <NavLink style={{justifySelf: 'center'}} activeClassName="navActive" className={`nav-items ${mobileMenu}`}  to="/inn"> Hub </NavLink>
       </>
     }
   }

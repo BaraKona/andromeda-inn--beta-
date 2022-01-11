@@ -21,6 +21,7 @@
     background: var(--neonBlue);
 }
 .projectComponent{
+    position: relative;
     background-image: var(--backgroundimage);
     background-color: var(--lightmodecolour2);
     border-radius: 5px;
@@ -60,5 +61,33 @@
 
     & img{
         float: right;
+    }
+}
+.settings-info{
+    display: none;
+}
+.settings-info.show{
+    position: absolute;
+    top: 40px;
+    right: -10px;
+    display: block;
+    // background-image: var(--backgroundimage);
+    background-color: var(--darkgreen);
+    border: solid 1px var(--lightmodetext2);
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    p{
+        color: var(--lightmodecolour);
+        margin: 0;
+        padding: 10px;
+        font-weight: bolder;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+    p:hover{
+        text-decoration: underline;
+    }
+    p:last-child:hover{
+        color: rgb(190, 50, 50);
     }
 }

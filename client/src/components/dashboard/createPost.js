@@ -233,7 +233,6 @@ const Profile = () => {
                                     <div className = "postButtons">
                                         <button className = "updatePostButton" onClick={(e) => updatePostClick(post._id)}> Update your post?</button>
                                         <button className = "deletePostButton" onClick={() => dispatch(deletePost(post._id))}> Delete your post?</button>
-                                        {/* <button className = "deletePostButton" onClick={() => dispatch(deletePost(post._id))}> Delete your post?</button> */}
                                     </div>
                                     <Post post={post}></Post>
                                 </div>

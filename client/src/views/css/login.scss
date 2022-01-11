@@ -3,8 +3,9 @@
   background:rgb(32,47,51);
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.3);
   min-width: 400px;
-  min-height: 100vh;
+  min-height: 20vh;
   color:white;
+  padding: 0 10px 15px 10px;
 }
 
 .login h1,
@@ -87,11 +88,11 @@
 .login .loginContainer input,
 .signup .signupContainer input,
 .forgotPassword .forgotContainer input {
-  width: 100%;
+  width: 95%;
   border: none;
   outline: none;
   font-size: 19px;
-  padding: 10px 0 10px 0 ;
+  padding: 10px 10px 10px 10px ;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   letter-spacing: 1px;

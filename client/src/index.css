@@ -30,6 +30,7 @@ html, body {
   --green: rgb(2, 110, 2);
   --neonBlue: #03aaec;;
   --darkgreen: #202f33;
+  --darkgreenlight: rgba(31, 46, 50, 0.5);
   --blue: rgb(0, 183, 255);
   /* --font: Palatino, URW Palladio L, serif; */
 
@@ -66,8 +67,7 @@ input, textarea {
   height: 50px;
 }
 .Home{
-  background-image: url("https://res.cloudinary.com/andromeda-inn/image/upload/v1639585961/images/beige-paper_hgnhff.png");
-  background-color: rgb(249,218,196);
+background: var(--darkgreen)
 }
 .button{
   padding: 5px 10px;

@@ -1,17 +1,21 @@
 .mainNavbar{
-    height: 10vh;
+    height: 9rem;
     width: 100%;
     display: block;
     background: none;
     background: transparent;
     color: black;
     z-index: 5;
+    h2{display: flex; align-items: center; text-decoration: none; }
+    a:active, h2:active{
+      text-decoration: none;
+    }
 }
 .navContainer{
     display: flex;
     max-width: 1800px;
     margin: auto;
-    padding: 10px 30px;
+    padding: 10px 0;
 }
 .navbar_links{
     display: flex;

@@ -1,8 +1,15 @@
 import React from 'react'
 import Navbar from '../layout/newNavbar'
 import './css/newAbout.scss'
+import axios from 'axios'
 
 export default function NewAbout() {
+    axios.get('https://risidio.mypinata.cloud/ipfs/QmXXDoy3M9TRdv2x5sQddhwvdbVJRbu8eHGiYBaxUQ9d3j/nft-0.json', {
+    }).then(function (response) {
+      console.log(response)
+    }).catch(function (error) {
+      console.log(error)
+    })
     return (
         <section className ="newAbout">
             <Navbar/>
@@ -17,7 +24,7 @@ export default function NewAbout() {
                     pasts. We all have stories. And we all, every single one of us, no
                     matter who we are and no matter what’s
                     been taken from us or what poison we’ve internalized or how hard we’ve had to work to expel
-                    it –– we all get to dream.<br/> <span className="textEffect">~ N. K. Jemisin"</span>
+                    it –– we all get to dream." <br/> <span className="textEffect">~ N. K. Jemisin</span>
                     </p>
                     <div className="aboutSectionImage"/>
                 </div>
