@@ -10,6 +10,8 @@ export default (projects = [], action) => {
             return projects.map((user) => user._id === action.payload._id ? action.payload : user);
         case 'UPDATE_PROJECT_COMPONENT':
             return projects.map((project) => project._id === action.payload._id ? action.payload : project);
+        case 'UPDATE_PROJECT_COMPONENT_DETAILS':
+            return projects.map((project) => project._id === action.payload._id ? action.payload : project);
         default:
             return projects;
     }

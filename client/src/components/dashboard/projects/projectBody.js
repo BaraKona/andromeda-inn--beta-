@@ -27,7 +27,7 @@ function ProjectBody(props) {
     }
     function createComponent (e) {
       e.preventDefault()
-      setComponent([{componentCreator: currentUser?.uid, componentPosition: allComponents.projectComponents?.length + 1, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: ''}])
+      setComponent([{componentCreator: currentUser?.uid, componentPosition: allComponents.projectComponents?.length + 1, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: 'Unnamed Component'}])
       try {
         dispatch(updateProjectComponent(props.currentProject._id, component)).then((data) => {
           console.log(data);
@@ -40,7 +40,7 @@ function ProjectBody(props) {
     }
     useEffect(() => {
         if (props) setAllComponents(props.currentProject)
-        setComponent([{componentCreator: currentUser?.uid, componentPosition: props.currentProject.projectComponents?.length, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: ''}])
+        setComponent([{componentCreator: currentUser?.uid, componentPosition: props.currentProject.projectComponents?.length, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: 'Unnamed Component'}])
     }, [dispatch, props.currentProject])
     return (
         <div>

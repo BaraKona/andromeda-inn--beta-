@@ -70,7 +70,6 @@ function Discover() {
         }
 
     }
-
     const showCategory = () =>{
         setShowCat(showCat === '' ? 'active' : '')
     }

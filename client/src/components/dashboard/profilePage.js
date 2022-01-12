@@ -11,7 +11,7 @@ const Profile = () => {
     const history = useHistory()
     const { currentUser, displayImg, displayName, updateName, uploadImg, deleteImg, getAllUsers } = useAuth()
     const user = useSelector((state) => currentUser ? state.users.filter((user) => user.userID === currentUser.uid): null);
-    const [userData, setUserData] = useState({ userEmail: '', userName: user[0]?.userName, userAbout: user[0]?.userAbout, userTags: user[0]?.userTags })
+    const [userData, setUserData] = useState({ userEmail: '', userName: user[0]?.userName, userAbout: user[0]?.userAbout, userTags: user[0]?.userTags, userImage: '' })
     const [modal, showModal] = useState('')
     const [imageSelected, setImageSelected] = useState("")
     const [loading, setLoading] = useState(false)

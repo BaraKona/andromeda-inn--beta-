@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Elsie+Swash+Caps&family=Fredericka+the+Great&family=Raleway:wght@100&display=swap');
+
 html, body {
-  margin: 0;
-  /* font-family: 'Fredericka the Great', cursive; */
-  /* font-family: 'Raleway', sans-serif; */
-  /* font-family: 'Elsie Swash Caps', cursive; */
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(249,218,196);
   --backgroundcolour: rgb(249,218,196);
   --backgroundimage: url("https://res.cloudinary.com/andromeda-inn/image/upload/v1639585961/images/beige-paper_hgnhff.png");
   --darkmodecolour: rgb(30, 26, 31);
@@ -32,6 +24,16 @@ html, body {
   --darkgreen: #202f33;
   --darkgreenlight: rgba(31, 46, 50, 0.5);
   --blue: rgb(0, 183, 255);
+  margin: 0;
+  /* font-family: 'Fredericka the Great', cursive; */
+  /* font-family: 'Raleway', sans-serif; */
+  /* font-family: 'Elsie Swash Caps', cursive; */
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: var(--backgroundimage);
+  background-color: rgb(249,218,196);
   /* --font: Palatino, URW Palladio L, serif; */
 
   }
@@ -67,7 +69,9 @@ input, textarea {
   height: 50px;
 }
 .Home{
-background: var(--darkgreen)
+  background-image: var(--backgroundimage);
+  background-color: var(--backgroundcolour)
+
 }
 .button{
   padding: 5px 10px;
@@ -80,9 +84,16 @@ background: var(--darkgreen)
   display: block;
   margin-left: auto;
 }
-.buttonGreen:hover{
+.buttonDefault{
+  background: var(--lightmodecolour2);
+  color: var(--lightmodetext1);
+  border:  solid 1px var(--lightmodetext2);
+  display: block;
+}
+.buttonGreen:hover, .buttonDefault:hover{
   background: rgba(255, 255, 255, 0.5);
 }
+
 .errorPage{
   background:rgb(32,47,51);
   width: 100%;
@@ -150,6 +161,7 @@ background: var(--darkgreen)
   flex: 1 1 500px;
 }
 .wrap{flex-wrap: wrap;}
+.flex-no-gap{display:flex;}
 .chatInput{
   position: relative;
   resize: vertical;
@@ -224,6 +236,7 @@ background: var(--darkgreen)
   width: 25px;
   height: 25px;
   cursor: pointer;
+  z-index: 10;
 }
 .component-setting-icon:hover{
   transform: scale(1.15);

@@ -15,6 +15,7 @@ const projectSchema = mongoose.Schema({
         componentBody: String,
         createdAt: Date,
         lastUpdated: Date,
+        lastUpdatedUser: String,
         componentProgress: String,
         componentImage: String
     }],

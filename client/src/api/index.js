@@ -28,4 +28,6 @@ export const fetchProjects = () => axios.get(projectUrl);
 export const createProject = (newProject) => axios.post(projectUrl, newProject);
 export const updateProject = (id, updatedProject) => axios.patch(`${projectUrl}/${id}`, updatedProject);
 export const updateProjectComponent = (id, updatedProjectComponent) => axios.patch(`${projectUrl}/${id}/component`, updatedProjectComponent);
+export const updateProjectComponentDetails = (id, componentId, updatedProjectComponentDetails) => axios.patch(`${projectUrl}/${id}/component-details`, {params: {componentId, updatedProjectComponentDetails}});
+
 

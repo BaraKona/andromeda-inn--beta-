@@ -19,6 +19,16 @@ export const updateProjectComponent = (id, project) => async (dispatch) => {
         console.log(error.message)
     }
 }
+export const updateProjectComponentDetails = (id, componentId, project) => async (dispatch) => {
+    try {
+        const { data } = await api.updateProjectComponentDetails(id, componentId, project);
+        console.log( data )
+        dispatch ({ type: 'UPDATE_PROJECT_COMPONENT_DETAILS', payload: data });
+        return(data)
+    } catch (error) {
+        console.log(error.message)
+    }
+}
 export const createProject = (user) => async (dispatch) => {
     try {
         const { data } = await api.createProject(user);

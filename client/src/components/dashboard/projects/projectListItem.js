@@ -1,10 +1,15 @@
 import React from 'react'
 import './css/projectListItem.scss'
 import {settings} from '../../../images/Icon'
+import {useProject} from '../../../contexts/ProjectContext'
+
 function ProjectListItem(props) {
+    const {currentProjectComponent, setCurrentProjectComponent, setCurrentProject} =useProject()
 
     function openProject (project) {
         props.setCurrentProject(project)
+        setCurrentProject(project)
+        setCurrentProjectComponent(null)
     }
     return (
     <div className="projectListItemSection">

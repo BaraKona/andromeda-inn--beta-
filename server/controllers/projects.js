@@ -49,6 +49,22 @@ export const updateProjectComponent = async (req, res) => {
     }
 }
 
+export const updateProjectComponentDetails = async (req, res) => {
+    const _id = req.params.id;
+    const componentId = req.body.params.componentId
+    const project = req.body.params.updatedProjectComponentDetails;
+    console.log(req.params.id)
+
+    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No project with that id')
+    try {
+        const updatedProjectComponentsDetails = await Project.findByIdAndUpdate(_id, {$set: {projectComponents: project}}, {new: true})
+        // console.log(updatedPostComment)
+        res.json(updatedProjectComponentsDetails);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const deleteProject = async (req, res) => {
     const { id } = req.params;
 

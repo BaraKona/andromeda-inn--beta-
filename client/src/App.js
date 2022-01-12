@@ -1,5 +1,6 @@
 import React, {useEffect, Suspense} from "react"
 import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage, SignupDetailsPage, SinglePost} from './views'
+import { ProjectBody, ProjectComponents, ProjectListItem, ComponentEditor} from './components/dashboard/projects/index'
 import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
@@ -43,6 +44,7 @@ export default function App() {
               {/* <Route path="/explore" component={ ExplorePage }/> */}
               <ProjectProvider>
                 <PrivateRoute exact path="/inn" component={Dashboard}/>
+                <PrivateRoute exact path="/inn/project-view" component={ProjectBody}/>
                 <PrivateRoute exact path="/details" component={SignupDetailsPage}/>
                 <PrivateRoute exact path={`/inn/discover/posts/:id`} component={SinglePost}/>
                 <PrivateRoute exact path="/inn/projects" component={Projects}/>

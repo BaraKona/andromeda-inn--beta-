@@ -5,6 +5,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import { useProject } from '../../contexts/ProjectContext'
 import {createProject, updateProject, deleteProject} from '../../actions/projects'
 import DashboardBody from './dashboard'
+import ComponentEditor from './projects/componentEditor'
 import ProjectCard from './projects/projectCard'
 import ProjectListItem from './projects/projectListItem'
 import ProjectBody from './projects/projectBody'
@@ -90,7 +91,7 @@ function Dashboard() {
         closeModal()
       } catch (error) {
           console.log(error)
-          setError(' Sorry, something went wrong... Try again later?')
+          setError('Sorry, something went wrong... Try again later?')
       }clear()
   }
   function yourProjects () {
@@ -104,8 +105,10 @@ function Dashboard() {
     }
   }
   function dashboardView () {
-    if (Object.keys(currentProject)?.length > 0){
+    if (Object.keys(currentProject)?.length > 0 && currentProjectComponent == null){
       return <ProjectBody currentProject={currentProject}/>
+    } else if (Object.keys(currentProject)?.length > 0 && Object.keys(currentProjectComponent)) {
+      return <ComponentEditor />
     } else {
       return <DashboardBody/>
     }

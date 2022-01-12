@@ -76,6 +76,7 @@
     border: solid 1px var(--lightmodetext2);
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 20;
     p{
         color: var(--lightmodecolour);
         margin: 0;
@@ -89,5 +90,14 @@
     }
     p:last-child:hover{
         color: rgb(190, 50, 50);
+    }
+}
+.projectComponentMain{
+    position: relative;
+    .csi{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 10;
     }
 }
