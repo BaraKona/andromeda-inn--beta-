@@ -57,7 +57,12 @@ export const updateProjectComponentDetails = async (req, res) => {
 
     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No project with that id')
     try {
-        const updatedProjectComponentsDetails = await Project.findByIdAndUpdate(_id, {$set: {projectComponents: project}}, {new: true})
+        const updatedProjectComponentsDetails = await Project.findOneAndUpdate({_id: _id, "projectComponents._id": componentId }, {$set: {
+            "projectComponents.$.componentBody": project.componentBody,
+            "projectComponents.$.lastUpdated": project.lastUpdated,
+            "projectComponents.$.lastUpdatedUser": project.lastUpdatedUser,
+            "projectComponents.$.componentName": project.componentName
+        }}, {new: true})
         // console.log(updatedPostComment)
         res.json(updatedProjectComponentsDetails);
     } catch (error) {
