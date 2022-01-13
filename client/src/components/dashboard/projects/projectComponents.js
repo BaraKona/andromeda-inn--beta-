@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef, createRef} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {book4, settings} from '../../../images/Icon'
+import {book2, settings} from '../../../images/Icon'
 import {useProject} from '../../../contexts/ProjectContext'
 import dayjs from 'dayjs'
 import './css/projectComponent.scss'
@@ -37,7 +37,7 @@ function ProjectComponents(props) {
                     <div className="projectComponent"  ref={settingsRef} onClick={(e) => setCurrentProjectComponent(component)}>
                         <p className="textEffect projectComponentPosition"> {component.componentPosition}</p>
                         <p className="projectComponentName">{component.componentName || 'Unnamed Component'}</p>
-                        <img src={book4} className="project-Component-icon" href="Icon-by-Eszter"/>
+                        <img src={book2} className="project-Component-icon" href="Icon-by-Eszter"/>
                         <p className="projectComponentContainer-user textEffect">{findUser(component.componentCreator)}</p>
                         <p className="projectComponentContainer-update">{dayjs(component.lastUpdated).fromNow()}</p>
                     </div>

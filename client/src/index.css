@@ -225,7 +225,8 @@ input, textarea {
   width: 200px;
   height: 200px;
   margin: auto;
-  opacity: 85%;
+  /* opacity: 85%; */
+  z-index: 10;
 }
 .projectComponentPosition{
   font-weight: bolder;
