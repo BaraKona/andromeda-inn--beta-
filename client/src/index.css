@@ -24,6 +24,7 @@ html, body {
   --darkgreen: #202f33;
   --darkgreenlight: rgba(31, 46, 50, 0.5);
   --blue: rgb(0, 183, 255);
+  --red: rgb(126, 26, 26);
   margin: 0;
   /* font-family: 'Fredericka the Great', cursive; */
   /* font-family: 'Raleway', sans-serif; */
@@ -248,7 +249,6 @@ input, textarea {
   display: block;
   margin-left: auto;
 }
-
 .rel{
   position: relative;
 }

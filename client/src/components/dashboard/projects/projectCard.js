@@ -12,7 +12,7 @@ function ProjectCard(props) {
             <div className="projectCard" onClick={props.openModal}>
                 <img src={book2} alt="default" className="icon"/>
                 <h4>
-                    Add New Project
+                    Add New Project fff
                 </h4>
             </div>
             <p className="closeButton" onClick={closeProject}> &times;</p>
