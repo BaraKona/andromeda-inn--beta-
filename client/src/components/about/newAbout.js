@@ -3,6 +3,7 @@ import Navbar from '../layout/newNavbar'
 import './css/newAbout.scss'
 import axios from 'axios'
 
+
 export default function NewAbout() {
     axios.get('https://risidio.mypinata.cloud/ipfs/QmXXDoy3M9TRdv2x5sQddhwvdbVJRbu8eHGiYBaxUQ9d3j/nft-0.json', {
     }).then(function (response) {

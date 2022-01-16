@@ -9,7 +9,8 @@ function ProjectListItem(props) {
     function openProject (project) {
         props.setCurrentProject(project)
         setCurrentProject(project)
-        setCurrentProjectComponent(null)
+        // setCurrentProjectComponent(null)
+        props.dashboardView()
     }
     return (
     <div className="projectListItemSection">
