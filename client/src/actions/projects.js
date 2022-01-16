@@ -46,3 +46,12 @@ export const updateProject = (id, user) => async (dispatch) => {
         console.log(error.message)
     }
 }
+export const deleteProject = (id) => async(dispatch) => {
+    try {
+        await api.deleteProject(id)
+
+        dispatch({ type: 'DELETE_PROJECT', payload: id})
+    } catch (error) {
+        console.log(error)
+    }
+}

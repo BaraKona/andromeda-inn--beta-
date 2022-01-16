@@ -10,8 +10,10 @@ function ProjectComponents(props) {
     const users = useSelector((state) => state.users);
     const history = useHistory()
     const location = useLocation()
-    const { currentProjectComponent, setCurrentProjectComponent, currentProject} = useProject()
-    const [showSettings, setShowSettings] = useState('')
+    const {currentProjectComponent, setCurrentProjectComponent, currentProject} = useProject()
+    const [showSettings, setShowSettings] = useState()
+    const [componentSelectedId, setComponentSelectedId] = useState()
+
     const settingsRef = useRef([])
     var relativeTime = require('dayjs/plugin/relativeTime')
     dayjs.extend(relativeTime)
@@ -28,11 +30,11 @@ function ProjectComponents(props) {
     }
     async function openComponent (e, component) {
       e.preventDefault()
-      console.log(currentProjectComponent)
+    //   console.log(currentProjectComponent)
        setCurrentProjectComponent(component)
-      console.log(component)
-      console.log(currentProject)
-      console.log(currentProjectComponent)
+    //   console.log(component)
+    //   console.log(currentProject)
+    //   console.log(currentProjectComponent)
 
       history.push({
         pathname: '/inn/project-view/' + currentProject._id + '/component/' + currentProjectComponent._id + '/' + currentProjectComponent?.componentPosition,
@@ -40,13 +42,15 @@ function ProjectComponents(props) {
       })
     }
 
-    function openSettings (index, target) {
-        console.log(index)
-        console.log(target)
-
-       target === true ? setShowSettings( showSettings === '' ? 'show' : ''): setShowSettings( showSettings === '' ? 'show' : '')
+    function openSettings (id, show) {
+        setShowSettings(!show)
+        if (!show) {
+            setComponentSelectedId(id)
+        }
+        else {
+            setComponentSelectedId(null)
+        }
     }
-    console.log(showSettings)
     return (
         <div className="projectComponentContainer">
             {props.components?.slice(0).reverse().map((component, index) => (
@@ -58,11 +62,13 @@ function ProjectComponents(props) {
                         <p className="projectComponentContainer-user textEffect">{findUser(component.componentCreator)}</p>
                         <p className="projectComponentContainer-update">{dayjs(component.lastUpdated).fromNow()}</p>
                     </div>
-                    <div className={`settings-info ${showSettings}`}>
-                        <p> Rename </p>
-                        <p> Delete </p>
-                    </div>
-                    <img onClick={(e) => openSettings(index, e.target.matches("component-setting-icon"))} className="component-setting-icon csi" src={settings} href="settings"/>
+                    {component?._id === componentSelectedId &&
+                        <div className="settings-info show">
+                            <p> Rename </p>
+                            <p> Delete </p>
+                        </div>
+                    }
+                    <img onClick={(e) => openSettings(component._id, showSettings)} className="component-setting-icon csi" src={settings} alt="settings"/>
                 </div>
             ))}
         </div>
