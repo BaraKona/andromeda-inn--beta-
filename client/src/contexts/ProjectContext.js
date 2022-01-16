@@ -8,7 +8,7 @@ export function useProject() {
 }
 
 export function ProjectProvider({ children }) {
-  const [currentProjectComponent, setCurrentProjectComponent] = useState(null)
+  const [currentProjectComponent, setCurrentProjectComponent] = useState({})
   const [currentProject, setCurrentProject] = useState({})
 
   const projectContextData = {

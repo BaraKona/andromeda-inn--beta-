@@ -1,4 +1,5 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import {useLocation} from 'react-router-dom'
 import {useProject} from '../../../contexts/ProjectContext'
 import {useAuth} from '../../../contexts/AuthContext'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,6 +10,7 @@ import './css/componentEditor.scss'
 function ComponentEditor() {
     const {currentProjectComponent, setCurrentProjectComponent, currentProject} = useProject()
     const {currentUser} = useAuth()
+    const location = useLocation()
     const [update, setUpdate] = useState({componentBody: '', lastUpdated: '', lastUpdatedUser: '', componentName: ''})
     const [activeComponentName, setActiveComponentName] = useState(currentProjectComponent?.componentName)
     const [activeComponentBody, setActiveComponentBody] = useState(currentProjectComponent?.componentBody)
@@ -47,15 +49,21 @@ function ComponentEditor() {
     //     var txttostore = '<p>' + txt.replace(/\n/g, "</p>\n<p>") + '</p>';
     //     return <div>{txttostore}</div>
     // }
+    useEffect (() => {
+
+      if (Object.keys(currentProjectComponent)?.length === 0) {
+        setCurrentProjectComponent(location.state)
+      }
+    },[])
     console.log(users);
     console.log(currentProjectComponent)
     return (
         <div className="componentEditorComponentBody">
             <div className="componentEditorHeader">
-                <p>{findUser(currentProjectComponent.componentCreator)}</p>
+                <p>{findUser(currentProjectComponent?.componentCreator)}</p>
                 {/* <p>Last Updated: {dayjs(currentProjectComponent.lastUpdated).format('DD/MM/YYYY')}</p> */}
-                <p>Last Updated: {dayjs(currentProjectComponent.lastUpdated).fromNow()}</p>
-                <p>Last Updated By: {findUser(currentProjectComponent.lastUpdatedUser)}</p>
+                <p>Last Updated: {dayjs(currentProjectComponent?.lastUpdated).fromNow()}</p>
+                <p>Last Updated By: {findUser(currentProjectComponent?.lastUpdatedUser)}</p>
             </div>
             <form onSubmit={saveChanges} className="componentEditorBody">
                 <div className="flex-no-gap componentEditorButtonContainer">

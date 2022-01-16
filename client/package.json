@@ -23,6 +23,8 @@
     "react-scripts": "4.0.3",
     "redux-thunk": "^2.4.0",
     "sass": "^1.43.4",
+    "slate": "^0.72.3",
+    "slate-react": "^0.72.4",
     "swiper": "^7.3.2",
     "web-vitals": "^1.1.2"
   },

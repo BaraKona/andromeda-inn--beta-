@@ -1,15 +1,21 @@
 import React, {useState, useEffect} from 'react'
+import {useLocation} from 'react-router-dom'
 import ProjectComponents from './projectComponents'
 import {useDispatch, useSelector} from 'react-redux'
 import {createProject, updateProjectComponent, deleteProject} from '../../../actions/projects'
 import { useAuth } from '../../../contexts/AuthContext'
+import { useProject } from '../../../contexts/ProjectContext'
 import dayjs from 'dayjs'
 import './css/projectBody.scss'
 
 function ProjectBody(props) {
-    const {currentUser, currentPostId, setCurrentPostId} = useAuth()
-    const [allComponents, setAllComponents] = useState(props.currentProject)
-    const [component, setComponent] = useState([{componentCreator: currentUser?.uid, componentPosition: props?.currentProject?.projectComponents?.length, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now()}])
+  const {currentUser, currentPostId, setCurrentPostId} = useAuth()
+  const location = useLocation()
+  const {currentProject} = useProject()
+  // console.log(props)
+  // console.log(currentProject)
+    const [allComponents, setAllComponents] = useState(currentProject)
+    const [component, setComponent] = useState([{componentCreator: currentUser?.uid, componentPosition: currentProject?.projectComponents?.length, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now()}])
     const users = useSelector((state) => state.users);
     const dispatch = useDispatch();
     var relativeTime = require('dayjs/plugin/relativeTime')
@@ -22,14 +28,19 @@ function ProjectBody(props) {
         return <h1> Add a component to get started </h1>
     }
     function findUser (creator) {
-      const username = users.find((user) => user.userID === creator)
-      return (username.userName)
+      try {
+        const username = users?.find((user) => user.userID === creator)
+        return (username.userName)
+      } catch (error) {
+          const username = "none"
+          return (username)
+      }
     }
     function createComponent (e) {
       e.preventDefault()
       setComponent([{componentCreator: currentUser?.uid, componentPosition: allComponents.projectComponents?.length + 1, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: 'Unnamed Component'}])
       try {
-        dispatch(updateProjectComponent(props.currentProject._id, component)).then((data) => {
+        dispatch(updateProjectComponent(currentProject._id, component)).then((data) => {
           console.log(data);
           setAllComponents(data)
         })
@@ -39,16 +50,16 @@ function ProjectBody(props) {
       }
     }
     useEffect(() => {
-        if (props) setAllComponents(props.currentProject)
-        setComponent([{componentCreator: currentUser?.uid, componentPosition: props.currentProject.projectComponents?.length, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: 'Unnamed Component'}])
-    }, [dispatch, props.currentProject])
+        if (currentProject) setAllComponents(currentProject)
+        setComponent([{componentCreator: currentUser?.uid, componentPosition: currentProject?.projectComponents?.length, componentBody: '', createdAt: Date.now(), lastUpdated: Date.now(), projectName: 'Unnamed Component'}])
+    }, [dispatch, currentProject])
     return (
         <div>
-            {console.log(props.currentProject)}
+            {console.log(currentProject)}
             <div className="projectDetails">
-                <p className="projectSummary">{props?.currentProject?.projectSummary}</p>
-                <p className="projectCreateDate"><span>Project Created:</span> {dayjs(props?.currentProject?.createdAt?.date).fromNow()}</p>
-                <p className="projectCreateDate"><span>Project Created By:</span> {findUser(props?.currentProject?.createdAt?.user)}</p>
+                <p className="projectSummary">{currentProject?.projectSummary}</p>
+                <p className="projectCreateDate"><span>Project Created:</span> {dayjs(currentProject?.createdAt?.date).fromNow()}</p>
+                <p className="projectCreateDate"><span>Project Created By:</span> {findUser(currentProject?.createdAt?.user)}</p>
                 {hasComponent()}
             </div>
             <form className="addComponent" onSubmit={createComponent}>
