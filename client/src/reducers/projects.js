@@ -12,6 +12,8 @@ export default (projects = [], action) => {
             return projects.map((project) => project._id === action.payload._id ? action.payload : project);
         case 'UPDATE_PROJECT_COMPONENT_DETAILS':
             return projects.map((project) => project._id === action.payload._id ? action.payload : project);
+        case 'DELETE_PROJECT_COMPONENT':
+            return projects.filter((project) => project._id !== action.payload);
         default:
             return projects;
     }

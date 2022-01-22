@@ -3,12 +3,12 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const postUrl = process.env.REACT_APP_POSTS_URL;
-const userUrl = process.env.REACT_APP_USER_URL;
-const projectUrl = process.env.REACT_APP_PROJECT_URL;
-// const postUrl = 'http://localhost:5000/posts';
-// const userUrl = 'http://localhost:5000/users';
-// const projectUrl = 'http://localhost:5000/projects';
+// const postUrl = process.env.REACT_APP_POSTS_URL;
+// const userUrl = process.env.REACT_APP_USER_URL;
+// const projectUrl = process.env.REACT_APP_PROJECT_URL;
+const postUrl = 'http://localhost:5000/posts';
+const userUrl = 'http://localhost:5000/users';
+const projectUrl = 'http://localhost:5000/projects';
 
 //Posts
 export const fetchPosts = () => axios.get(postUrl);
@@ -30,5 +30,7 @@ export const updateProject = (id, updatedProject) => axios.patch(`${projectUrl}/
 export const updateProjectComponent = (id, updatedProjectComponent) => axios.patch(`${projectUrl}/${id}/component`, updatedProjectComponent);
 export const updateProjectComponentDetails = (id, componentId, updatedProjectComponentDetails) => axios.patch(`${projectUrl}/${id}/component-details`, {params: {componentId, updatedProjectComponentDetails}});
 export const deleteProject = (id) => axios.delete(`${projectUrl}/${id}`)
+export const deleteProjectComponent = (id, componentId) => axios.delete(`${projectUrl}/${id}/delete-component`, {data: {componentId}})
+
 
 

@@ -70,6 +70,21 @@ export const updateProjectComponentDetails = async (req, res) => {
     }
 }
 
+export const deleteProjectComponent = async (req, res) => {
+    const _id = req.params.id;
+    const componentId = req.body.componentId
+    // console.log(req.body.componentId)
+
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No Component with that id')
+    try {
+        await Project.updateMany({id: _id}, {$pull: {'projectComponents': {"_id": componentId}}}, {new: true})
+        console.log('deleted')
+    } catch (error) {
+        console.log(error)
+    }
+    res.json({message: 'project deleted successfully'})
+}
+
 export const deleteProject = async (req, res) => {
     const { id } = req.params;
 
