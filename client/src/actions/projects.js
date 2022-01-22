@@ -46,6 +46,17 @@ export const updateProject = (id, user) => async (dispatch) => {
         console.log(error.message)
     }
 }
+export const deleteProjectComponent = (id, componentId) => async (dispatch) => {
+    try {
+        const { data } = await api.deleteProjectComponent(id, componentId)
+        console.log(data)
+        dispatch ({ type: 'DELETE_PROJECT_COMPONENT', payload: data })
+        return (data)
+
+    } catch (error) {
+        console.log(error.message)
+    }
+}
 export const deleteProject = (id) => async(dispatch) => {
     try {
         await api.deleteProject(id)

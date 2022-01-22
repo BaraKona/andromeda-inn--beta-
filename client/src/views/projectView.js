@@ -8,14 +8,14 @@ import '../components/dashboard/css/dashboardFrame.scss'
 
 function ProjectView() {
   const location = useLocation();
-  const {currentProject, setCurrentProject} = useProject()
+  const {currentProject, setCurrentProject, currentProjectComponent} = useProject()
 
   useEffect(() => {
     if (Object.keys(currentProject)?.length === 0) {
-        setCurrentProject(location.state)
+      setCurrentProject(location.state)
     }
     console.log(currentProject)
-  }, [currentProject])
+  }, [currentProject, currentProjectComponent])
 
   return (
   <>

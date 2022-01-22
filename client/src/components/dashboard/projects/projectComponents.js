@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import {useHistory, useLocation } from 'react-router-dom'
 import {book2, settings} from '../../../images/Icon'
 import {useProject} from '../../../contexts/ProjectContext'
+import {getProjects} from '../../../actions/projects'
+import {deleteProjectComponent} from '../../../actions/projects'
 import dayjs from 'dayjs'
 import './css/projectComponent.scss'
 
@@ -10,9 +12,11 @@ function ProjectComponents(props) {
     const users = useSelector((state) => state.users);
     const history = useHistory()
     const location = useLocation()
-    const {currentProjectComponent, setCurrentProjectComponent, currentProject} = useProject()
+    const dispatch = useDispatch()
+    const {currentProjectComponent, setCurrentProjectComponent, currentProject, setCurrentProject} = useProject()
     const [showSettings, setShowSettings] = useState()
     const [componentSelectedId, setComponentSelectedId] = useState()
+    const projects = useSelector((state) => currentProject ? state.projects.find((project) => project._id === currentProject._id): null);
 
     const settingsRef = useRef([])
     var relativeTime = require('dayjs/plugin/relativeTime')
@@ -41,7 +45,19 @@ function ProjectComponents(props) {
         state: currentProjectComponent
       })
     }
+    async function deleteComponent (e, componentId) {
+        e.preventDefault()
 
+        try {
+            dispatch(deleteProjectComponent(currentProject._id, componentId)).then((data)=>{
+                console.log(data)
+            })
+            console.log('perfect')
+
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
     function openSettings (id, show) {
         setShowSettings(!show)
         if (!show) {
@@ -51,6 +67,10 @@ function ProjectComponents(props) {
             setComponentSelectedId(null)
         }
     }
+    useEffect(() =>{
+        // setCurrentProject(projects)
+        dispatch(getProjects());
+    }, [dispatch, props.setAllComponents])
     return (
         <div className="projectComponentContainer">
             {props.components?.slice(0).reverse().map((component, index) => (
@@ -65,7 +85,7 @@ function ProjectComponents(props) {
                     {component?._id === componentSelectedId &&
                         <div className="settings-info show">
                             <p> Rename </p>
-                            <p> Delete </p>
+                            <p onClick={(e) => deleteComponent(e, component._id)}> Delete </p>
                         </div>
                     }
                     <img onClick={(e) => openSettings(component._id, showSettings)} className="component-setting-icon csi" src={settings} alt="settings"/>
