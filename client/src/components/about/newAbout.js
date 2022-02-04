@@ -11,6 +11,11 @@ export default function NewAbout() {
     }).catch(function (error) {
       console.log(error)
     })
+    axios.get('https://staging.stacksmate.com/mesh/v2/tokensByContractId/ST22QPESFJ8XKJDWR1MHVXV2S4NBE44BA944NS4D2.test_collections5').then(function (data) {
+        console.log(data)
+      }).catch((error) => {
+        console.log(error.message)
+      })
     return (
         <section className ="newAbout">
             <Navbar/>

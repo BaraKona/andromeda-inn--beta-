@@ -11,17 +11,17 @@ import './css/projectComponent.scss'
 function ProjectComponents(props) {
     const users = useSelector((state) => state.users);
     const history = useHistory()
-    const location = useLocation()
     const dispatch = useDispatch()
     const {currentProjectComponent, setCurrentProjectComponent, currentProject, setCurrentProject} = useProject()
     const [showSettings, setShowSettings] = useState()
     const [componentSelectedId, setComponentSelectedId] = useState()
     const projects = useSelector((state) => currentProject ? state.projects.find((project) => project._id === currentProject._id): null);
-
+    console.log("projects")
+    console.log(projects)
     const settingsRef = useRef([])
     var relativeTime = require('dayjs/plugin/relativeTime')
     dayjs.extend(relativeTime)
-
+    console.log(props)
     function findUser (creator) {
         try {
             const username = users?.find((user) => user.userID === creator)
@@ -47,10 +47,8 @@ function ProjectComponents(props) {
     }
     async function deleteComponent (e, componentId) {
         e.preventDefault()
-
         try {
-            dispatch(deleteProjectComponent(currentProject._id, componentId)).then((data)=>{
-                console.log(data)
+            dispatch(deleteProjectComponent(currentProject._id, componentId)).then((data)=> {
             })
             console.log('perfect')
 
@@ -69,8 +67,9 @@ function ProjectComponents(props) {
     }
     useEffect(() =>{
         // setCurrentProject(projects)
+        setCurrentProject(projects)
         dispatch(getProjects());
-    }, [dispatch, props.setAllComponents])
+    }, [dispatch, projects])
     return (
         <div className="projectComponentContainer">
             {props.components?.slice(0).reverse().map((component, index) => (
