@@ -23,7 +23,10 @@ function ProjectBody(props) {
 
     function hasComponent () {
       if (allComponents?.projectComponents?.length > 0) {
-        return <ProjectComponents setAllComponents={setAllComponents} components={allComponents.projectComponents}/>
+        return <ProjectComponents
+          setAllComponents={setAllComponents}
+          allComponents={allComponents}
+          components={allComponents.projectComponents}/>
       } else
         return <h1> Add a component to get started </h1>
     }
