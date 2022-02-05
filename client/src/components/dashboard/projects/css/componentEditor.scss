@@ -1,62 +1,62 @@
-.componentEditorComponentBody{
-    max-width: 1000px;
-    margin: 20px auto;
-    background-image: var(--backgroundimage);
-    background-color: var(--lightmodecolour2);
+.componentEditorComponentBody {
+	max-width: 1600px;
+	margin: 20px;
+	background-image: var(--backgroundimage);
+	background-color: var(--lightmodecolour2);
 }
-.componentEditorHeader{
-    display: flex;
-    background: var(--darkgreen);
-    color: var(--lightmodetext2);
-    border: 1px solid var(--darkgreen);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    p{
-        padding: 10px 20px;
-        margin: 0;
-    }
-    p:nth-child(2){
-        margin-left: auto;
-    }
+.componentEditorHeader {
+	display: flex;
+	background: var(--darkgreen);
+	color: var(--lightmodetext2);
+	border: 1px solid var(--darkgreen);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	p {
+		padding: 10px 20px;
+		margin: 0;
+	}
+	p:nth-child(2) {
+		margin-left: auto;
+	}
 }
-.componentEditorButtonContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-left: auto;
-    border-right: 1px solid var(--lightmodetext2);
-    border-left: 1px solid var(--lightmodetext2);
-
+.componentEditorButtonContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin-left: auto;
+	border-right: 1px solid var(--lightmodetext2);
+	border-left: 1px solid var(--lightmodetext2);
 }
-.componentTitle{
-    display: block;
-    padding: 30px 15px;
-    text-align: center;
-    min-width: 400px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    background: transparent;
-    border: none;
-    margin: auto;
+.componentTitle {
+	display: block;
+	padding: 30px 15px;
+	text-align: center;
+	min-width: 400px;
+	font-size: 1.2rem;
+	font-weight: 500;
+	background: transparent;
+	border: none;
+	margin: auto;
 }
-.componentTitle:focus, .componentTitle:active{
-    outline: none;
+.componentTitle:focus,
+.componentTitle:active {
+	outline: none;
 }
-.componentEditorBodyText{
-    border: 1px solid var(--lightmodetext2);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    textarea{
-        // overflow: hidden;
-        min-height: 600px;
-        overflow-wrap: break-word;
-        resize: none;
-        height: 100px;
-        color: black;
-        border: none;
-        font-size: 1.2rem;
-    }
-    textarea:focus{
-        border: none;
-    }
+.componentEditorBodyText {
+	border: 1px solid var(--lightmodetext2);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	textarea {
+		// overflow: hidden;
+		min-height: 600px;
+		overflow-wrap: break-word;
+		resize: none;
+		height: 100px;
+		color: black;
+		border: none;
+		font-size: 1.2rem;
+	}
+	textarea:focus {
+		border: none;
+	}
 }

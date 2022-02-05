@@ -59,8 +59,8 @@ function Discover() {
         e.preventDefault()
         try {
             dispatch(updatePostComment(currentPostId, postComment)).then((data) => {
-                // console.log(data)
                 setCurrentPost(data)
+                commentRef.current.value = ''
             })
             console.log(postComment)
             setError("Sent")
@@ -133,7 +133,7 @@ function Discover() {
                               placeholder="Be kind"
                               name="comment"
                               onChange={(e) => setPostComment({postComments : [{commenter: currentUser.uid, comment: e.target.value, commentTime: Date.now()}]})}/>
-                            <img src={send} className="send-icon" onClick={submitComment}/>
+                            <abbr title="Send"><img src={send} className="send-icon" onClick={submitComment}/></abbr>
                             {/* {error} */}
                         </div>
                     </div>

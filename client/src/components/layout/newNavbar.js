@@ -2,7 +2,7 @@ import './css/new-navbar.scss'
 import React, {useState} from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
-import {cyclops1, cyclops3, cyclops6} from '../../images/Icon/index'
+import {cyclops1, cyclops3, cyclops6, cyclops8} from '../../images/Icon/index'
 
 const Navbar = () => {
   const { currentUser, logout, displayImg, displayName} = useAuth();
@@ -64,7 +64,7 @@ const Navbar = () => {
             {loggedIn()}
         </div>
       </div>
-      <div id="centerImg1" onClick={switchMobile}><img className="iconImg" src ={cyclops3} alt="centerImg1"></img></div>
+      <div id="centerImg1" onClick={switchMobile}><img className="iconImg" src ={cyclops8} alt="centerImg1"></img></div>
     </div>
     )
 }

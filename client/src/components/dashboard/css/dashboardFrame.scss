@@ -1,107 +1,105 @@
-.mainDashboard{
-    min-height:100vh;
-    background-color: var(--lightmodecolour);
-    background-image: var(--backgroundimage);
+.mainDashboard {
+	min-height: 100vh;
+	background-color: var(--lightmodecolour);
+	background-image: var(--backgroundimage);
 }
-.dashboardFlex{
-    padding: 15px;
-    display: flex;
-    flex-wrap: wrap;
+.dashboardFlex {
+	padding: 15px;
+	display: flex;
+	flex-wrap: wrap;
 }
-.dashboardFlex > *:nth-child(1){
-    flex: 1 1 20%;
-    min-width: 300px;
-    max-width: 400px;
+.dashboardFlex > *:nth-child(1) {
+	flex: 1 1 20%;
+	min-width: 300px;
+	max-width: 400px;
 }
-.dashboardFlex > *:nth-child(2){
-    flex: 1 1 70%;
-    min-width: 400px;
+.dashboardFlex > *:nth-child(2) {
+	flex: 1 1 70%;
+	min-width: 400px;
 }
-.dashboardProjects{
-    margin: 20px 0 20px 0;
-    max-width: 100%;
-    min-height: 750px;
-    background-image: var(--backgroundimage);
-    background-color: var(--lightmodecolour2);
-    border: solid 1px var(--lightmodetext2);
-    border-radius: 5px;
+.dashboardProjects {
+	margin: 20px 0 20px 0;
+	max-width: 100%;
+	min-height: 750px;
+	background-image: var(--backgroundimage);
+	background-color: var(--lightmodecolour2);
+	border: solid 1px var(--lightmodetext2);
+	border-radius: 5px;
 }
-.hubAddProjects{
-    text-align: center;
+.hubAddProjects {
+	text-align: center;
 }
-.plusButton{
-    border-radius: 50%;
-    border: solid 1px #c5baaf;
-    background: inherit;
-    color: inherit;
+.plusButton {
+	border-radius: 50%;
+	border: solid 1px #c5baaf;
+	background: inherit;
+	color: inherit;
 }
-.plusButton:hover{
-    background-color: var(--darkgreen);
-    color: var(--lightmodecolour);
-    cursor: pointer;
+.plusButton:hover {
+	background-color: var(--darkgreen);
+	color: var(--lightmodecolour);
+	cursor: pointer;
 }
-.dashboardProjectsContainer{
-    border-bottom: solid 1px var(--lightmodetext);
-    background: var(--darkgreen);
-    padding: 5px 30px;
-    color: var(--lightmodecolour);
-    font-weight: 800;
+.dashboardProjectsContainer {
+	border-bottom: solid 1px var(--lightmodetext);
+	background: var(--darkgreen);
+	padding: 5px 30px;
+	color: var(--lightmodecolour);
+	font-weight: 800;
 }
-.dashboardProjects h1{
-    color: white;
-    padding-left: 30px;
-    padding-top: 50px;
+.dashboardProjects h1 {
+	color: white;
+	padding-left: 30px;
+	padding-top: 50px;
 }
-.hubProjects{
+.hubProjects {
+}
+.topTags {
+	background: transparent;
+	min-height: 400px;
+}
+.dashboardProjectModal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 20; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	padding: 0 5px;
+	.dashboardProjectModal-content {
+		position: relative;
+		background-color: var(--darkgreen);
+		margin: 20px auto auto auto;
+		padding: 20px;
+		border: 1px solid var(--lightmodetext2);
+		border-radius: 10px;
+		min-width: 400px;
+		max-width: 750px;
+		min-height: 500px;
+		color: var(--lightmodecolour);
+	}
+}
+.dashboardProjectModal.show {
+	display: block;
+}
 
+.formContainer {
+	display: flex;
+	flex-wrap: wrap;
+	// align-items: center;
+	// justify-content: center;
+	max-width: 1400px;
+	margin: auto;
+	h2 {
+		text-align: center;
+	}
 }
-.topTags{
-    background: transparent;
-    min-height: 400px;
-}
-.dashboardProjectModal{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 3; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding: 0 5px;
-    .dashboardProjectModal-content {
-      position: relative;
-      background-color: var(--darkgreen);
-      margin: 20px auto auto auto;
-      padding: 20px;
-      border: 1px solid var(--lightmodetext2);
-      border-radius: 10px;
-      min-width: 400px;
-      max-width: 750px;
-      min-height: 500px;
-      color: var(--lightmodecolour)
-    }
-}
-.dashboardProjectModal.show{
-    display: block;
-}
-
-.formContainer{
-    display: flex;
-    flex-wrap: wrap;
-    // align-items: center;
-    // justify-content: center;
-    max-width: 1400px;
-    margin: auto;
-    h2{
-        text-align: center;
-    }
-
-}
-.formContainer{
-    flex: 1 1 400px;
+.formContainer {
+	flex: 1 1 400px;
 }
 // @media only screen and (max-width: 1530px){
 //     .dashboardNarrow{
