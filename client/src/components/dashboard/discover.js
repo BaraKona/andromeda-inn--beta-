@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updatePostComment } from '../../actions/posts'
 import { useAuth } from '../../contexts/AuthContext'
 import {send} from '../../images/Icon'
-import { io } from 'socket.io-client'
+import {io} from 'socket.io-client'
 import Navbar from '../layout/newNavbar'
 import Post from '../post/post'
 import PostView from '../post/postView'
@@ -11,6 +11,7 @@ import PostComments from '../componentSnippets/postComments'
 import './css/discover.scss'
 
 function Discover() {
+    const socket = io();
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts); // Get all posts
     const users = useSelector((state) => state.users);
@@ -55,22 +56,16 @@ function Discover() {
     const collaborationRef = useRef()
     const accountabilityRef = useRef()
 
-    const getSocket = io();
-    getSocket.on('chat message', function(msg) {
-        console.log(msg)
-        setCurrentPost(msg)
-    });
 
     const submitComment = (e) => {
         e.preventDefault()
         try {
             dispatch(updatePostComment(currentPostId, postComment)).then((data) => {
                 const socket = io();
-                socket.emit('chat message', data);
+                socket.emit('comment', 'postComment');
                 setCurrentPost(data)
                 commentRef.current.value = ''
             })
-            console.log(postComment)
             setError("Sent")
         } catch (error) {
             setError('failed to edit. Try again later or contact support')
@@ -113,8 +108,13 @@ function Discover() {
         showModal('')
         setPostComment([])
     }
+    socket.on('comment', function(msg) {
+        console.log('smg recieved')
+        setCurrentPost(msg)
+    });
     useEffect(() => {
       if (posts) setFilteredPosts(posts)
+      console.log('reee')
     }, [posts, dispatch, openPost, currentPost])
     return (
         <section className="discover">
