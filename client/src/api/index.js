@@ -5,7 +5,7 @@ dotenv.config()
 
 const postUrl = process.env.REACT_APP_POSTS_URL;
 const userUrl = process.env.REACT_APP_USER_URL;
-const projectUrl = process.env.REACT_APP_PROJECT_URL;
+const projectUrl = process.env.REACT_APP_PROJECT_URL;;
 // const postUrl = 'http://localhost:5000/posts';
 // const userUrl = 'http://localhost:5000/users';
 // const projectUrl = 'http://localhost:5000/projects';
