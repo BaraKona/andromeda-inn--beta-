@@ -29,13 +29,13 @@ app.use('/projects', projectRoutes);
 
 // run when a client connects
 io.on('connection', (socket) => {
-  console.log('a user is connected')
+//   console.log('a user is connected')
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    // console.log('user disconnected');
   });
-  socket.on('chat message', msg => {
+  socket.on('comment', msg => {
     console.log('message');
-    io.emit('chat message', msg);
+    io.emit('comment', msg);
   });
 })
 app.get('/', (req, res) => {
