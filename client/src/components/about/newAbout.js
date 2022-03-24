@@ -5,17 +5,6 @@ import axios from 'axios'
 
 
 export default function NewAbout() {
-    axios.get('https://risidio.mypinata.cloud/ipfs/QmXXDoy3M9TRdv2x5sQddhwvdbVJRbu8eHGiYBaxUQ9d3j/nft-0.json', {
-    }).then(function (response) {
-      console.log(response)
-    }).catch(function (error) {
-      console.log(error)
-    })
-    axios.get('https://staging.stacksmate.com/mesh/v2/tokensByContractId/ST22QPESFJ8XKJDWR1MHVXV2S4NBE44BA944NS4D2.test_collections5').then(function (data) {
-        console.log(data)
-      }).catch((error) => {
-        console.log(error.message)
-      })
     return (
         <section className ="newAbout">
             <Navbar/>
@@ -43,7 +32,7 @@ export default function NewAbout() {
                     </p>
                     <p>
                         Some of the greatest stories came to as a product of collaboration. Very few people write truly alone.
-                        Stories are created from experiences, and why limit yourself to just yours ? In <diff className="textEffect"> Andromeda Inn </diff>
+                        Stories are created from experiences, and why limit yourself to just yours ? In <b className="textEffect"> Andromeda Inn </b>
                         we make it possible for you to expand and reach new height in your writing.<br/><br/>
                     </p>
                     <p>

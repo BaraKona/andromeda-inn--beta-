@@ -36,7 +36,7 @@
 	text-decoration: none;
 }
 .nav-items:hover {
-	color: rgb(180, 161, 152);
+	color: #b4a198;
 	border-bottom: solid 1px;
 }
 // .nav-items:nth-child(3){
@@ -111,6 +111,10 @@
 	}
 	.nav-items.active {
 		display: flex;
+		z-index: 50;
+		text-align: center;
+		padding: 5px 10px;
+		background: var(--darkgreen);
 	}
 	// .mainNavbar.active{
 

@@ -5,8 +5,13 @@ import dotenv from 'dotenv'
 import postRoutes from './routes/posts.js'
 import userRoutes from './routes/users.js'
 import projectRoutes from './routes/projects.js'
+import { Server } from 'socket.io'
+import http from 'http'
 
 const app = express();
+const server = http.createServer(app)
+const io = new Server(server)
+
 
 //config dotenv to allow use of env
 dotenv.config()
@@ -22,6 +27,17 @@ app.use('/posts', postRoutes);
 app.use('/users', userRoutes);
 app.use('/projects', projectRoutes);
 
+// run when a client connects
+io.on('connection', (socket) => {
+  console.log('a user is connected')
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+  socket.on('chat message', msg => {
+    console.log('message');
+    io.emit('chat message', msg);
+  });
+})
 app.get('/', (req, res) => {
     res.send('This is Andromeda Inn')
 });
@@ -29,5 +45,5 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.CONNECTION_URL)
-.then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
+.then(() => server.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
 .catch((error) => console.log(error.message))
