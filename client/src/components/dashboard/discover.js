@@ -110,6 +110,7 @@ function Discover() {
     }
     useEffect(() => {
       if (posts) setFilteredPosts(posts)
+    //   if(currentPost) setCurrentComment(currentPost.postComments)
       if (socket) socket.on('comment', (data) => {
         if(data) setCurrentComment(data)
       });
