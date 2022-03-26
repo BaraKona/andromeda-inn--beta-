@@ -37,8 +37,8 @@ const Navbar = () => {
   function isDashboard () {
     if (splitLocation[1] === 'inn'){
       return <>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/about" style={{marginLeft: '20px'}}>About</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/">Home</NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/" style={{marginLeft: '20px'}}>Home</NavLink>
+        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/about">About</NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn" style={{marginLeft:'auto'}}> Hub </NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/discover"> Discover </NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/projects"> Projects </NavLink>

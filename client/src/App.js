@@ -1,6 +1,5 @@
 import React, {useEffect, Suspense} from "react"
 import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage, SignupDetailsPage, SinglePost, TextTest, ProjectView, ProjectComponentView} from './views'
-import { ProjectBody, ProjectComponents, ProjectListItem, ComponentEditor} from './components/dashboard/projects/index'
 import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
@@ -10,6 +9,7 @@ import ErrorBoundary from "./components/componentSnippets/errorBoundary"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from './contexts/AuthContext.js';
 import {ProjectProvider} from './contexts/ProjectContext.js'
+import {SocketProvider} from './contexts/SocketContext.js'
 import {useDispatch} from 'react-redux';
 import {getPosts} from './actions/posts'
 import {getUsers} from './actions/users'
@@ -30,7 +30,8 @@ export default function App() {
 
   return (
     <Router>
-        <AuthProvider>
+      <AuthProvider>
+        <SocketProvider>
           <div className="App">
             <Switch>
               <ErrorBoundary>
@@ -60,7 +61,8 @@ export default function App() {
               </ErrorBoundary>
             </Switch>
           </div>
-        </AuthProvider>
+        </SocketProvider>
+      </AuthProvider>
     </Router>
   );
 }
