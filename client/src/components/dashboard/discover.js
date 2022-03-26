@@ -112,6 +112,7 @@ function Discover() {
       if (posts) setFilteredPosts(posts)
     //   if(currentPost) setCurrentComment(currentPost.postComments)
       if (socket) socket.on('comment', (data) => {
+        console.log('errir')
         if(data) setCurrentComment(data)
       });
       console.log('reee')
