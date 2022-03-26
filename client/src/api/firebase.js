@@ -10,7 +10,7 @@ const fire = firebase.initializeApp({
     messagingSenderId: "176761467102",
     appId: "1:176761467102:web:e21c0bb14aa81025c4924f",
     measurementId: "G-9LKL8PGEZD",
-    databaseURL: "https://andromeda-login-auth-dev-default-rtdb.europe-west1.firebasedatabase.app/"
+    databaseURL: "https://andromeda-login-auth-dev-3c5ed-default-rtdb.europe-west1.firebasedatabase.app/"
 })
 
 //exports authentication instance imported above

@@ -2,8 +2,8 @@ import React, {useState, useEffect, useRef} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updatePostComment } from '../../actions/posts'
 import { useAuth } from '../../contexts/AuthContext'
+import { useSocket } from '../../contexts/SocketContext'
 import {send} from '../../images/Icon'
-import {io} from 'socket.io-client'
 import Navbar from '../layout/newNavbar'
 import Post from '../post/post'
 import PostView from '../post/postView'
@@ -11,13 +11,11 @@ import PostComments from '../componentSnippets/postComments'
 import './css/discover.scss'
 
 function Discover() {
-    const socket = io();
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts); // Get all posts
-    const users = useSelector((state) => state.users);
     const {currentUser, currentPostId, setCurrentPostId} = useAuth()
-    // console.log(currentUser)
-    // console.log(posts)
+    const {socket} = useSocket()
+    console.log(socket)
     const [postComment, setPostComment] = useState({postComments: []})
     const [modal, showModal] = useState('')
     const [showCat, setShowCat] = useState('')
@@ -61,9 +59,8 @@ function Discover() {
         e.preventDefault()
         try {
             dispatch(updatePostComment(currentPostId, postComment)).then((data) => {
-                const socket = io();
-                socket.emit('comment', 'postComment');
                 setCurrentPost(data)
+                socket.emit('comment', data);
                 commentRef.current.value = ''
             })
             setError("Sent")
@@ -108,12 +105,11 @@ function Discover() {
         showModal('')
         setPostComment([])
     }
-    socket.on('comment', function(msg) {
-        console.log('smg recieved')
-        setCurrentPost(msg)
-    });
     useEffect(() => {
       if (posts) setFilteredPosts(posts)
+      socket.on('comment', (data) => {
+        setCurrentPost(data)
+      });
       console.log('reee')
     }, [posts, dispatch, openPost, currentPost])
     return (

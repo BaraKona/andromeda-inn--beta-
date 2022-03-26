@@ -30,13 +30,15 @@ app.use('/projects', projectRoutes);
 // run when a client connects
 io.on('connection', (socket) => {
 //   console.log('a user is connected')
-  socket.on('disconnect', () => {
+    const id = socket.handshake.query.id
+    socket.join(id)
+    socket.on('disconnect', () => {
     // console.log('user disconnected');
-  });
-  socket.on('comment', msg => {
-    console.log('message');
-    io.emit('comment', msg);
-  });
+    });
+    socket.on('comment', msg => {
+      console.log('message');
+      io.emit('comment', msg);
+    });
 })
 app.get('/', (req, res) => {
     res.send('This is Andromeda Inn')
