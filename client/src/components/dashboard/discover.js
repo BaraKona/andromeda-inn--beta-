@@ -17,6 +17,7 @@ function Discover() {
     const {socket} = useSocket()
     console.log(socket)
     const [postComment, setPostComment] = useState({postComments: []})
+    const [currentComment, setCurrentComment] = useState()
     const [modal, showModal] = useState('')
     const [showCat, setShowCat] = useState('')
     const [showTyp, setShowTyp] = useState('')
@@ -60,7 +61,8 @@ function Discover() {
         try {
             dispatch(updatePostComment(currentPostId, postComment)).then((data) => {
                 setCurrentPost(data)
-                socket.emit('comment', data);
+                setCurrentComment(data.postComment)
+                socket.emit('comment', data.postComments);
                 commentRef.current.value = ''
             })
             setError("Sent")
@@ -99,6 +101,7 @@ function Discover() {
     function openPost(postId, post){
         setCurrentPostId(postId)
         setCurrentPost(post)
+        setCurrentComment(post.postComments)
         showModal(modal === '' ? 'show' : '')
     }
     function closeModal (){
@@ -107,11 +110,11 @@ function Discover() {
     }
     useEffect(() => {
       if (posts) setFilteredPosts(posts)
-      socket.on('comment', (data) => {
-        setCurrentPost(data)
+      if (socket) socket.on('comment', (data) => {
+        setCurrentComment(data)
       });
       console.log('reee')
-    }, [posts, dispatch, openPost, currentPost])
+    }, [posts, dispatch, openPost, currentPost, currentComment])
     return (
         <section className="discover">
             <Navbar/>
@@ -124,7 +127,7 @@ function Discover() {
                         </div>
                         <div className="postViewChat">
                             <h2> Chat: </h2>
-                                <PostComments post={currentPost} key={currentPost._id}/>
+                                <PostComments postComments={currentComment} key={currentPost._id}/>
                                 {/* <div>
                                     {currentComments.map((comments) => (
                                         <p>{comments.comment}</p>

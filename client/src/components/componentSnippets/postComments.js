@@ -4,7 +4,8 @@ import './css/comment.scss'
 import dayjs from 'dayjs'
 
 
-function PostComments({post}) {
+function PostComments({postComments}) {
+    console.log(postComments)
     const users = useSelector((state) => state.users);
     var relativeTime = require('dayjs/plugin/relativeTime')
     dayjs.extend(relativeTime)
@@ -14,10 +15,10 @@ function PostComments({post}) {
         return (username.userName)
     }
 
-    if (post?.postComments?.length > 0) {
+    if (postComments?.length > 0) {
         return (
             <div className="parentComments">
-                {post.postComments.slice(0).reverse().map((comments, index) => (
+                {postComments.slice(0).reverse().map((comments, index) => (
                     <div className="parentComment" key={index}>
                         <p className ="commentComment"><span className="textEffect">{findUser(comments.commenter)}</span>: {comments.comment}</p>
                         <p className = "commentDate">{dayjs(comments.commentTime).fromNow()}</p>
