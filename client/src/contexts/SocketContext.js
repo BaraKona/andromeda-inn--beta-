@@ -15,7 +15,9 @@ export function SocketProvider({ children }) {
     socket,
   }
   useEffect(() => {
-    const newSocket = io();
+    const newSocket = io("//url",{
+      transports: ['websocket'],
+    });
     setSocket(newSocket);
     return () => newSocket.close();
   }, [setSocket]);
