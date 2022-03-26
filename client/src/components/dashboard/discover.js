@@ -62,8 +62,8 @@ function Discover() {
             dispatch(updatePostComment(currentPostId, postComment)).then((data) => {
                 setCurrentPost(data)
                 setCurrentComment(data.postComment)
-                socket.emit('comment', data.postComments);
                 commentRef.current.value = ''
+                socket.emit('comment', data.postComments);
             })
             setError("Sent")
         } catch (error) {
@@ -111,7 +111,7 @@ function Discover() {
     useEffect(() => {
       if (posts) setFilteredPosts(posts)
       if (socket) socket.on('comment', (data) => {
-        setCurrentComment(data)
+        if(data) setCurrentComment(data)
       });
       console.log('reee')
     }, [posts, dispatch, openPost, currentPost, currentComment])
