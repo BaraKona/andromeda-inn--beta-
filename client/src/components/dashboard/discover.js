@@ -129,7 +129,7 @@ function Discover() {
                         </div>
                         <div className="postViewChat">
                             <h2> Chat: </h2>
-                                <PostComments postComments={currentComment} key={currentPost._id}/>
+                                <PostComments postComments={currentComment || currentPost.postComments} key={currentPost._id}/>
                                 {/* <div>
                                     {currentComments.map((comments) => (
                                         <p>{comments.comment}</p>
