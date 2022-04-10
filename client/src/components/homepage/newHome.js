@@ -16,6 +16,7 @@ function NewHome() {
                         <p> A collaboration place for creatives. <br></br> Join writers from all corners of the literary world and collaborate together
                         inside the inn.
                         </p>
+                        {/* <iframe src="https://giphy.com/embed/DyeaRFh450rTqd7yQB" width="372" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/coffee-book-library-DyeaRFh450rTqd7yQB">via GIPHY</a></p> */}
                         <Link to="/inn/discover">
                             <li className="content__item">
                                 <button className="button button--surtur">
