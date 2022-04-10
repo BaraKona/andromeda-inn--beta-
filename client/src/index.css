@@ -175,7 +175,7 @@ input, textarea {
 .chatInput{
   position: relative;
   resize: vertical;
-  width: 99%;
+  width: 600px;
   padding: 10px 5px;
   margin-top: 5px;
   border: 1px solid var(--lightmodetext2);

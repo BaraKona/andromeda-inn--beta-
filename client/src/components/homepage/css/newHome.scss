@@ -8,7 +8,7 @@
 
 .imageContainer{
   display:block;
-  margin:auto;
+  margin: auto;
   background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636984601/images/portal-g0acf30396_1920_ga3r45.jpg);
   background-repeat: no-repeat;
   background-size: 100% center;
@@ -41,7 +41,7 @@
 }
 .homeContainer >*:nth-child(1), .homeContainer>*:nth-child(3){
   flex: 1 1 200px;
-  min-width: 350px;
+  min-width: 300px;
 
 }
 .homeContainer >*:nth-child(2){
@@ -224,5 +224,11 @@
 @keyframes rotateIt {
   to {
 	transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 700px) {
+  .imageContainer{
+    min-width: 80vw;
+    min-height: 80vw;
   }
 }

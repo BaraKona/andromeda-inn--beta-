@@ -10,7 +10,7 @@
 	padding: 20px;
 }
 .discoverContainer.show {
-	overflow-y: hidden;
+	// overflow-y: hidden;
 }
 .discoverContainer > *:nth-child(1) {
 	flex: 1 1 17.5%;
@@ -95,7 +95,7 @@
 }
 .postModal.show {
 	display: block;
-	overflow-y: hidden;
+	// overflow-y: hidden;
 }
 .postViewChat {
 	h2 {
