@@ -4,7 +4,7 @@ import DashboardBody from './dashboard'
 import ProjectList from './projects/projectList'
 import './css/dashboardFrame.scss'
 
-function Dashboard() {
+function DashboardFrame() {
 
   return (
   <>
@@ -23,4 +23,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard
+export default DashboardFrame

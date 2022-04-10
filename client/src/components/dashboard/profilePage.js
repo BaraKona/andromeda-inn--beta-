@@ -154,7 +154,7 @@ const Profile = () => {
                 </ul>
                 <hr/>
                 <ul>
-                    <NavLink activeClassName="settingActive" exact className="settingLink" to="/about"><li> About </li></NavLink>
+                    {/* <NavLink activeClassName="settingActive" exact className="settingLink" to="/#About"><li> About </li></NavLink> */}
                 </ul>
             </div>
             <div className = "profileItems">

@@ -15,7 +15,7 @@
 }
 .dashboardFlex > *:nth-child(2) {
 	flex: 1 1 70%;
-	min-width: 400px;
+	min-width: 300px;
 }
 .dashboardProjects {
 	margin: 20px 0 20px 0;
@@ -77,7 +77,7 @@
 		padding: 20px;
 		border: 1px solid var(--lightmodetext2);
 		border-radius: 10px;
-		min-width: 400px;
+		min-width: 300px;
 		max-width: 750px;
 		min-height: 500px;
 		color: var(--lightmodecolour);

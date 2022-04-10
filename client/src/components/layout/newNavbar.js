@@ -38,7 +38,7 @@ const Navbar = () => {
     if (splitLocation[1] === 'inn'){
       return <>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/" style={{marginLeft: '20px'}}>Home</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/about">About</NavLink>
+        {/* <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/about">About</NavLink> */}
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn" style={{marginLeft:'auto'}}> Hub </NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/discover"> Discover </NavLink>
         <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu} dark`} exact to="/inn/projects"> Projects </NavLink>
@@ -49,7 +49,7 @@ const Navbar = () => {
     else {
       return <>
         <NavLink style={{marginLeft:'20px'}}activeClassName="navActive" className={`nav-items ${mobileMenu}`} exact to="/">Home</NavLink>
-        <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`} to="/about">About</NavLink>
+        {/* <NavLink activeClassName="navActive" className={`nav-items ${mobileMenu}`} to="/about">About</NavLink> */}
         <NavLink style={{justifySelf: 'center'}} activeClassName="navActive" className={`nav-items ${mobileMenu}`}  to="/inn"> Hub </NavLink>
       </>
     }
