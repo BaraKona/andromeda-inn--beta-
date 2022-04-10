@@ -16,7 +16,7 @@ function NewHome() {
                         <p> A collaboration place for creatives. <br></br> Join writers from all corners of the literary world and collaborate together
                         inside the inn.
                         </p>
-                        <Link exact to="/inn/discover">
+                        <Link to="/inn/discover">
                             <li className="content__item">
                                 <button className="button button--surtur">
                                     <svg className="textcircle" viewBox="0 0 500 500">
@@ -43,6 +43,13 @@ function NewHome() {
                         <img className="hold" src={Hold}/>
                         <p className="firstLetter">We suggest you go to profile first and make it presentable. You will be more likely to find a partner with a detailed profile section. Best of luck!</p>
                     </div>
+                </div>
+                <div className="see-more-text floating">
+                    <a href="#About">What is andromeda Inn ?</a>
+                </div>
+                <div className= "see-more">
+                    <div className="see-more-left"></div>
+                    <div className="see-more-right"></div>
                 </div>
             </div>
         </section>

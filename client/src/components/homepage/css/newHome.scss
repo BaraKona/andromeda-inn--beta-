@@ -1,9 +1,9 @@
 .homePage{
-  min-height: 100vh;
+  min-height: 500px;
   // background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
   background: linear-gradient(115deg, rgb(32,47,51) 55%, transparent 55%);
   z-index: 50;
-  padding-bottom: 50px;;
+  // padding-bottom: 100px;
 }
 
 .imageContainer{
@@ -34,8 +34,8 @@
   background-position-y: -450px;
 }
 .homeContainer{
-  padding: 50px 50px 0 50px;
-  // margin: auto 5% auto 5%;
+  padding: 0 50px 0 50px;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 }
@@ -55,7 +55,7 @@
 }
 .homeItemRight > *{
   flex: 1 1 100%;
-  font-size: 1.2em;
+  font-size: 16px;
 }
 .homeSubItem{
   display: flex;
@@ -76,8 +76,9 @@
   color: rgb(180, 161, 152);
   h1{
     font-family: 'Elsie Swash Caps', cursive;
-    font-size: clamp(20px, 70px, 10vw);
+    font-size: clamp(20px, 60px, 8vw);
     font-weight:300;
+    margin: 0;
     // color: var(--text);
   }
   span{
@@ -89,16 +90,44 @@
     animation: text-animation 5s infinite alternate;
   }
   p{
-    padding-top: min(20px);
-    font-size: clamp(20px, 24px, 5vw);
+    font-size: clamp(16px, 20px, 5vw);
   }
 }
 @keyframes text-animation{
   0% {background-position: left;}
   100%{background-position: right;}
 }
-
-
+.see-more-text{
+  position: absolute;
+  bottom: 165px;
+  text-align: center;
+  margin: auto;
+  left: 0; right: 0;
+  font-size: 16px;
+  font-weight: bolder;
+  max-width: 120px;
+  cursor: pointer;
+  & a,
+  a:active{
+    color: var(--neonBlue)
+  }
+}
+.see-more{
+  width: 100%;
+  height: 150px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  & > * {
+    flex: 1 1 50%;
+  }
+  .see-more-right{
+    border-left: solid 1px var(--darkgreen);
+  }
+  .see-more-left{
+    border-right: solid 1px var(--darkgreen);
+  }
+}
 .content__item {
 	width: 100%;
 	height: 100%;

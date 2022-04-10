@@ -1,16 +1,17 @@
 .newAbout{
-    min-height: 100vh;
+    min-height: 500px;
     background: rgb(32,47,51);
     color: rgb(224, 190, 165);
+    margin-top: -50px;
     // color: rgb(224, 208, 201);
 }
 .aboutTitle{
     font-family: 'Elsie Swash Caps', cursive;
-    margin: -20px auto;
+    margin: 0 auto;
     max-width: 800px;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
-    padding: 0 20px;
+    padding: 50px 20px 0;
 }
 .aboutContainer{
     display: flex;
@@ -25,7 +26,7 @@
 }
 .aboutContainer > *{
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 1.25em;
     flex: 1 1 400px;
     p{
         margin-top: 0;
@@ -61,9 +62,9 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 .aboutCardText{
-    min-height: 400px;
+    min-height: 300px;
     padding: 30px;
-    font-size: 1.5em;
+    font-size: 1.25em;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;

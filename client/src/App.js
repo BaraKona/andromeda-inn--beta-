@@ -1,5 +1,5 @@
 import React, {useEffect, Suspense} from "react"
-import { HomePage, AboutPage, LoginPage, SignupPage, ForgotPasswordPage, SignupDetailsPage, SinglePost, TextTest, ProjectView, ProjectComponentView} from './views'
+import { HomePage, LoginPage, SignupPage, ForgotPasswordPage, SignupDetailsPage, SinglePost, TextTest, ProjectView, ProjectComponentView} from './views'
 import ProfilePage from './components/dashboard/profilePage'
 import Discover from './components/dashboard/discover'
 import CreatePostPage from './components/dashboard/createPost'
@@ -40,7 +40,7 @@ export default function App() {
                 <Route path="/signup" component={SignupPage} />
                 <Route path="/forgot-password" component={ForgotPasswordPage} />
                 <Route exact path="/" component={ HomePage }/>
-                <Route path="/about" component={ AboutPage }/>
+                {/* <Route path="/about" component={ AboutPage }/> */}
                 <Route path="/test" component={TextTest}/>
               </Suspense>
               {/* <Route path="/explore" component={ ExplorePage }/> */}

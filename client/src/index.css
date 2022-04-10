@@ -26,6 +26,8 @@ html, body {
   --blue: rgb(0, 183, 255);
   --red: rgb(126, 26, 26);
   margin: 0;
+  scroll-behavior: smooth;
+  transition: all 1s ease;
   /* font-family: 'Fredericka the Great', cursive; */
   /* font-family: 'Raleway', sans-serif; */
   /* font-family: 'Elsie Swash Caps', cursive; */
@@ -33,11 +35,18 @@ html, body {
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: var(--backgroundimage);
-  background-color: rgb(249,218,196);
+  /* background-image: var(--backgroundimage); */
+  /* background-color: rgb(249,218,196); */
   /* --font: Palatino, URW Palladio L, serif; */
 
   }
+  a,
+  a:focus,
+  a:active{
+    text-decoration: none;
+    outline: none;
+  }
+
   /* width */
 ::-webkit-scrollbar {
   width: 8px;
@@ -120,7 +129,7 @@ input, textarea {
     text-align: center;
 }
 .container{
-  max-width: 1900px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 .swiperClass{
@@ -251,4 +260,16 @@ input, textarea {
 }
 .rel{
   position: relative;
+}
+.floating{
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-top: min(50px);
+}
+@keyframes floating{
+  from{transform: translate(0, 0px);}
+  65%{transform: translate(0, 15px);}
+  to{transform: translate(0, -0px);}
 }

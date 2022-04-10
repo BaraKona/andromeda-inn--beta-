@@ -13,7 +13,7 @@ function Dashboard() {
 
     return (
         <>
-        <div className="dashboardWide">
+        <div className="">
             <div className="dashboardChat">
                 <h2> This page is being worked on </h2>
             </div>

@@ -1,4 +1,4 @@
-import React, {logErrorToMyService}from "react";
+import React from "react";
 import {Link} from 'react-router-dom'
 class ErrorBoundary extends React.Component {
     constructor(props) {

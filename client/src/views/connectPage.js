@@ -1,6 +1,6 @@
 import React from 'react'
 import {Switch} from 'react-router-dom'
-import Navbar from '../components/layout/navbar'
+import Navbar from '../components/layout/newNavbar'
 import ConnectLanding from '../components/connect/connectLanding'
 
 export default function connectPage() {

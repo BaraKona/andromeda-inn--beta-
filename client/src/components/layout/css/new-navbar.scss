@@ -1,12 +1,12 @@
 .mainNavbar {
-	height: 9rem;
 	width: 100%;
 	display: block;
-	background: none;
-	background: transparent;
+	background: rgba(255, 255, 255, 0.021);
 	color: black;
 	z-index: 5;
+	margin-bottom: 50px;
 	h2 {
+		margin: 5px 0;
 		display: flex;
 		align-items: center;
 		text-decoration: none;
@@ -16,11 +16,25 @@
 		text-decoration: none;
 	}
 }
+#logout:hover{
+  color:red;
+}
+#centerImg1{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40px;
+	top: 10px;
+	align-items: center;
+	display: none;
+}
 .navContainer {
 	display: flex;
 	max-width: 1800px;
 	margin: auto;
-	padding: 10px 50px;
+	padding: 0 20px;
 }
 .navbar_links {
 	display: flex;
@@ -39,14 +53,10 @@
 	color: #b4a198;
 	border-bottom: solid 1px;
 }
-// .nav-items:nth-child(3){
-//     margin-left:auto;
-// }
-// .nav-items:nth-child(5){
-//     margin-right:auto;
-// }
+
 .dark {
-	color: rgb(32, 47, 51);
+	// color: rgb(32, 47, 51);
+	color: rgba(180, 161, 152, 0.692);
 }
 .dark:hover {
 	color: rgb(0, 117, 163);
@@ -54,7 +64,6 @@
 .svgIcon {
 	display: block;
 	margin: auto 10px auto 0;
-	height: 50px;
 	width: 50px;
 }
 .navActive {
