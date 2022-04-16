@@ -22,7 +22,7 @@ html, body {
   --green: rgb(2, 110, 2);
   --neonBlue: #03aaec;;
   --darkgreen: #202f33;
-  --darkgreenlight: rgba(31, 46, 50, 0.5);
+  --darkgreenlight: rgba(32, 47, 51, 0.95);
   --blue: rgb(0, 183, 255);
   --red: rgb(126, 26, 26);
   margin: 0;

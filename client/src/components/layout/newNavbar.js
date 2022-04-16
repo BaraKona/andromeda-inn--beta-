@@ -29,10 +29,10 @@ const Navbar = () => {
 
   //Determines what Icons to show depending on view
   function icon (){
-    if (splitLocation[1] === 'about'){return <Link to="/"> <h2 id="title" style={{color:"rgb(233,227,209)"}}><img src={cyclops3} className="svgIcon"/> AI </h2></Link>}
+    if (splitLocation[1] === 'about'){return <Link to="/"> <h2 id="title" style={{color:"#B4A198"}}><img src={cyclops3} className="svgIcon"/> AI </h2></Link>}
     else if(splitLocation[1] === 'inn'){return <Link to="/"> <h2 id="title" style={{color:"black"}}><img src={cyclops6} className="svgIcon"/> AI </h2></Link>}
 
-    else{return <Link to="/"> <h2 id="title" style={{color:"rgb(233,227,209)"}}> <img src={cyclops1} className="svgIcon"/> AI </h2></Link>}
+    else{return <Link to="/"> <h2 id="title" style={{color:"#B4A198"}}> <img src={cyclops1} className="svgIcon"/> AI </h2></Link>}
   }
   function isDashboard () {
     if (splitLocation[1] === 'inn'){

@@ -7,7 +7,7 @@ import './css/newHome.scss'
 
 function NewHome() {
     return (
-        <section className="homePage">
+        <section className="">
             <Navbar />
             <div className="homeContainer container">
                 <div className="homeItemLeft">
@@ -41,7 +41,7 @@ function NewHome() {
                 <div className="homeItemRight">
                     <div className="homeSubItem">
                         <p className="firstLetter"> Have a look at the "About" section for some insight in what we are trying to do here. Alternatively, if you're already aware, you can journey into the Hub. Although, bear in mind, you will need to have an account and log in to have access.</p>
-                        <img className="hold" src={Hold}/>
+                        <img className="hold floating" src={Hold}/>
                         <p className="firstLetter">We suggest you go to profile first and make it presentable. You will be more likely to find a partner with a detailed profile section. Best of luck!</p>
                     </div>
                 </div>
@@ -49,8 +49,8 @@ function NewHome() {
                     <a href="#About">What is andromeda Inn ?</a>
                 </div>
                 <div className= "see-more">
-                    <div className="see-more-left"></div>
-                    <div className="see-more-right"></div>
+                    <div className="see-more-left floating"></div>
+                    <div className="see-more-right floating"></div>
                 </div>
             </div>
         </section>

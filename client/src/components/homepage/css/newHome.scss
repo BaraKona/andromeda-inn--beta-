@@ -1,5 +1,5 @@
 .homePage{
-  min-height: 500px;
+  min-height: 100vh;
   // background: radial-gradient(rgb(255, 242, 224),rgb(255, 248, 240));
   // background-image:
   // linear-gradient(115deg, rgb(32,47,51) 50%, rgba(223, 73, 186, 0.0) 40%),
@@ -9,7 +9,8 @@
   // background: linear-gradient(115deg, rgb(32,47,51) 55%, transparent 55%);
   z-index: 50;
   background: center / contain no-repeat url("../../../images/staffanKjellvestad.jpg"),
-  rgb(32,47,51) 35% linear-gradient(115deg, rgb(32,47,51) 50%, rgba(160, 74, 138, 0.185));
+  rgb(32,47,51) 33% linear-gradient(115deg, rgb(32,47,51) 33%, rgba(160, 74, 138, 0.185));
+  background-attachment: fixed;
   // padding-bottom: 100px;
 }
 
@@ -19,9 +20,9 @@
   background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636984601/images/portal-g0acf30396_1920_ga3r45.jpg);
   background-repeat: no-repeat;
   background-size: 100% center;
-  max-width: 500px;
-  min-height: 500px;
-  max-height: 500px;
+  max-width: 450px;
+  min-height: 450px;
+  max-height: 450px;
   box-shadow: rgb(3, 116, 116) 0px 50px 50px -20px;
   border: solid rgb(114, 114, 114) .5px;
   border-radius:50%;
@@ -73,10 +74,12 @@
 .homeSubItem > *{
   flex: 1 1 150px;
   min-width: 250px;
+  margin: 0;
 }
 .hold{
   width: 150px;
   height: 150px;
+  color: green;
 }
 
 .home-text{
@@ -84,7 +87,7 @@
   color: rgb(180, 161, 152);
   h1{
     font-family: 'Elsie Swash Caps', cursive;
-    font-size: clamp(20px, 60px, 8vw);
+    font-size: clamp(20px, 48px, 8vw);
     font-weight:300;
     margin: 0;
     // color: var(--text);
@@ -98,16 +101,32 @@
     animation: text-animation 5s infinite alternate;
   }
   p{
-    font-size: clamp(16px, 20px, 5vw);
+    font-size: clamp(14px, 16px, 5vw);
   }
 }
 @keyframes text-animation{
   0% {background-position: left;}
   100%{background-position: right;}
 }
+.home-arrow-1, .home-arrow-2{
+  position: absolute;
+  height: 25px;
+  bottom: -5px;
+  left: 0; right: 0;
+  margin: auto;
+  width: 0;
+}
+.home-arrow-2{
+  border-right: solid 2px rgb(180, 161, 152);
+  transform: rotate(45deg);
+}
+.home-arrow-1{
+  border-left: solid 2px rgb(180, 161, 152);
+  transform: rotate(-45deg);
+}
 .see-more-text{
   position: absolute;
-  bottom: 165px;
+  bottom: 145px;
   text-align: center;
   margin: auto;
   left: 0; right: 0;
@@ -117,23 +136,25 @@
   cursor: pointer;
   & a,
   a:active{
-    color: var(--neonBlue)
+    color: rgb(180, 161, 152);
   }
 }
 .see-more{
   width: 100%;
-  height: 150px;
-  margin-top: 100px;
+  height: 120px;
+  margin-top: 150px;
   display: flex;
   flex-direction: row;
+  // gap: 1px;
   & > * {
     flex: 1 1 50%;
   }
   .see-more-right{
-    border-left: solid 1px var(--darkgreen);
+    margin: 0;
+    border-left: solid 2px var(--neonBlue);
   }
   .see-more-left{
-    border-right: solid 1px var(--darkgreen);
+    // border-right: solid 2px var(--neonBlue);
   }
 }
 .content__item {
@@ -175,7 +196,7 @@
 .textcircle textPath {
 	letter-spacing: 17px; /* Firefox needs this */
   font-weight: bolder;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 // .button--surtur:hover .textcircle {
@@ -234,9 +255,22 @@
 	transform: rotate(360deg);
   }
 }
+@media only screen and (max-width: 760px) {
+  .homePage{
+    background: url("../../../images/staffanKjellvestad.jpg");
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .homeContainer >*:nth-child(2){
+    margin: 10px auto;
+  }
+  h1, .homeSubItem, .home-text, .see-more-text a, a:active {
+    color:rgb(5, 13, 53)
+  }
+}
 @media only screen and (max-width: 700px) {
   .imageContainer{
-    min-width: 80vw;
-    min-height: 80vw;
+    min-width: 70vw;
+    min-height: 70vw;
   }
 }

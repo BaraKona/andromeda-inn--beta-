@@ -1,70 +1,99 @@
 .newAbout{
+    position: relative;
     min-height: 500px;
-    background: rgb(32,47,51);
-    color: rgb(224, 190, 165);
-    margin-top: -50px;
-    // color: rgb(224, 208, 201);
+    // background: rgb(32,47,51);
+    // color: rgb(224, 190, 165);
+    margin-top: 50px;
+    padding-top: 50px;
+    color: rgb(180, 161, 152);
 }
 .aboutTitle{
+  h1{
     font-family: 'Elsie Swash Caps', cursive;
-    margin: 0 auto;
-    max-width: 800px;
-    font-size: 40px;
-    text-align: center;
-    padding: 50px 20px 0;
+    font-size: clamp(20px, 48px, 8vw);
+    font-weight:300;
+    margin: 0;
+}
 }
 .aboutContainer{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 50px;
-    gap: 3%;
+    margin: 0 20px;
+    row-gap: 3%;
+    // column-gap: 20px;
 }
 .aboutSection {
     p::first-letter {
         font-size: 150%;
       }
 }
+.withImage {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    & > *{
+        flex: 1 1 300px;
+        min-width: 300px;
+    }
+}
 .aboutContainer > *{
-    padding: 10px;
-    font-size: 1.25em;
-    flex: 1 1 400px;
+    // padding: 10px;
+    font-size: 16px;
     p{
         margin-top: 0;
+        max-width: 500px;
     }
     span{
         float: right;
     }
 }
+.aboutContainer > *:nth-child(2){
+    flex: 1 1 100px;
+}
+.aboutContainer > *:nth-child(1){
+    flex: 1 1 600px;
+}
+.aboutContainer > *:nth-child(3){
+    flex: 1 1 410px;
+}
 .aboutSectionImage{
     background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1637316293/images/daria-kraplak-d34DtRp1bqo-unsplash_eu41aq_2_dajvpz.jpg);
     background-repeat: no-repeat;
     background-size: contain;
-    min-height: 400px;
-    margin-top: 50px;
+    min-height: 250px;
+    width: 100%;
 }
-.aboutSectionImage1{
-    display: block;
-    margin-left: auto;
-    max-width: 435px;
-    min-height: 650px;
-    background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636995193/images/annie-spratt-7eDCK1U--OE-unsplash_ewhsma.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-top-left-radius: 300px;
-}
+// .aboutSectionImage1{
+//     display: block;
+//     margin-left: auto;
+//     max-width: 435px;
+//     min-height: 650px;
+//     background: url(https://res.cloudinary.com/andromeda-inn/image/upload/v1636995193/images/annie-spratt-7eDCK1U--OE-unsplash_ewhsma.jpg);
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     border-top-left-radius: 300px;
+// }
 .aboutFlex{
+    position: absolute;
     display:flex;
     flex-wrap: wrap;
+    max-width: min(900px, 60%);
+    gap: 10px;
+    bottom: 50px;
+    margin-left: 20px;
 }
 .aboutFlex >*{
-    flex: 1 1 400px;
-    margin: 30px;
+    flex: 1 1 250px;
+    background: var(--darkgreenlight);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
+.ff{
+    height: 200px;
+}
 .aboutCardText{
-    min-height: 300px;
-    padding: 30px;
-    font-size: 1.25em;
+    padding: 10px;
+    font-size: 16px;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -79,4 +108,49 @@
     width: 60px;
     height: 60px;
     transition: all 1s ease-in-out;
+}
+@media only screen and (max-width: 760px) {
+    .aboutContainer {
+        color:rgb(5, 13, 53);
+    }
+}
+@media only screen and (max-width: 1500px) {
+    .aboutFlex{
+        // max-width: 800px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .aboutContainer > *{
+        p { margin: 0 auto;}
+        .aboutTitle{
+            h1{
+                max-width: 500px;
+                margin: auto;
+                // mix-blend-mode: difference;
+                // filter: invert(1);
+            }
+        }
+    }
+    .aboutContainer{
+        gap: 50px;
+        flex-direction: column-reverse;
+    }
+    .aboutContainer > *:nth-child(2){
+        display: none;
+    }
+    .aboutContainer > *:nth-child(1){
+        flex: 1 1 300px;
+    }
+    .aboutContainer > *:nth-child(3){
+        flex: 1 1 300px;
+    }
+    .aboutFlex{
+        position: relative;
+        max-width: 1000px;
+        margin: 100px auto;
+        padding: 10px;
+    }
+    .ff {
+        height: 10px;
+    }
 }

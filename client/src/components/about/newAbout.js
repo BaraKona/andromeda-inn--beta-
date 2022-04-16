@@ -6,21 +6,23 @@ export default function NewAbout() {
         <section className ="newAbout" id="About">
             {/* <Navbar/> */}
             <div className = "container">
-            <div className="aboutTitle">
-                <h1> What is Andromeda Inn? </h1>
-            </div>
             <div className="aboutContainer">
-                <div className="aboutSection">
+                <div className="aboutSection withImage">
                 <p>
                     "<b className="textEffect">S</b>o here is why I write what I do: We all have futures. We all have
                     pasts. We all have stories. And we all, every single one of us, no
                     matter who we are and no matter what’s
                     been taken from us or what poison we’ve internalized or how hard we’ve had to work to expel
                     it –– we all get to dream." <br/> <span className="textEffect">~ N. K. Jemisin</span>
-                    </p>
+                </p>
                     <div className="aboutSectionImage"/>
                 </div>
                 <div className="aboutSection">
+                </div>
+                <div className="aboutSection">
+                    <div className="aboutTitle">
+                        <h1> What is Andromeda Inn? </h1>
+                    </div>
                     <p>
                     <b className="textEffect">F</b>or a long time, myself and some friends have been wanting to form a writing group.
                         Not only as a way to meet more like-minded people, but also to receive feedback and
@@ -36,12 +38,9 @@ export default function NewAbout() {
                     <b className="textEffect">C</b>ollaborate with people from all around the world and bring to life storytelling as we've never seen before. Explore what others have made,
                         draw inspiration from thousands of experiences and lets see where we can take it.
                     </p>
-                </div>
-                <div className="aboutSection">
-                    <div className="aboutSectionImage1"></div>
+                    {/* <div className="aboutSectionImage1"></div> */}
                 </div>
             </div>
-
             <div className = "aboutFlex">
                 <div className="aboutCards">
                     <div className="aboutCardText">
@@ -59,8 +58,9 @@ export default function NewAbout() {
                         <h2> Version Control </h2>
                         <p> <b className="textEffect">W</b>ith Andromeda Version Control you will be able to monitor
                             the changes to stories you craft. A seamless interface that
-                            will facilitate collaborative writing. <br/><br/>Sounds technical right?
-                            Do not despair, we will walk you through it.
+                            will facilitate collaborative writing.
+                            {/* <br/><br/>Sounds technical right?
+                            Do not despair, we will walk you through it. */}
                         </p>
                         {/* <img className="cardImg" src={witch} alt="witch"/> */}
                     </div>
@@ -76,6 +76,7 @@ export default function NewAbout() {
                     </div>
                 </div>
             </div>
+            <div className="ff"></div>
             </div>
         </section>
     )
