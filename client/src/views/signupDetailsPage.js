@@ -34,7 +34,7 @@ function SignupDetailsPage() {
             try {
                 dispatch(createUser(userData))
                 setError("Your post has been edited")
-                history.push('/about')
+                history.push('/inn')
             } catch (error) {
                 setError('failed to edit. Try again later or contact support')
             }
